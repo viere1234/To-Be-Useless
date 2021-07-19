@@ -41,13 +41,17 @@ struct FirstView: View {
                         HStack {
                             Spacer()
                             
-                            NavigationLink(destination: ContentView()) {
+                            Button(action: {
+                                withAnimation{
+                                    first.toggle()
+                                }
+                            }, label: {
                                 Text("Get started")
                                     .frame(width: 160, height: 60, alignment: .center)
                                     .foregroundColor(.white)
                                     .background(Color.green)
                                     .cornerRadius(7)
-                            }
+                            })
                             
                             Spacer()
                         }

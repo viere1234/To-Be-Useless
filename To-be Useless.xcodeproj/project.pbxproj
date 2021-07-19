@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,8 +11,16 @@
 		D30D607126A4FD0C00A5F83C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D607026A4FD0C00A5F83C /* ContentView.swift */; };
 		D30D607326A4FD0D00A5F83C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30D607226A4FD0D00A5F83C /* Assets.xcassets */; };
 		D30D607626A4FD0D00A5F83C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30D607526A4FD0D00A5F83C /* Preview Assets.xcassets */; };
+		D370E08626A52139003EA11C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08526A52139003EA11C /* Task.swift */; };
+		D370E08826A544C3003EA11C /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08726A544C3003EA11C /* TaskListViewModel.swift */; };
+		D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08926A544E9003EA11C /* TaskCellViewModel.swift */; };
+		D370E08D26A5469B003EA11C /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08C26A5469B003EA11C /* TaskRepository.swift */; };
+		D370E09026A54CB4003EA11C /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = D370E08F26A54CB4003EA11C /* Resolver */; };
+		D370E09326A5537F003EA11C /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = D370E09226A5537F003EA11C /* Disk */; };
 		D38F31A226A5105A00154C86 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A126A5105A00154C86 /* FirstView.swift */; };
-		D38F31A426A5126B00154C86 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A326A5126B00154C86 /* MainView.swift */; };
+		D38F31A426A5126B00154C86 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A326A5126B00154C86 /* TaskListView.swift */; };
+		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
+		D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49AA026A58D670029D8B3 /* SupportView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,8 +30,14 @@
 		D30D607226A4FD0D00A5F83C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D30D607526A4FD0D00A5F83C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D30D607726A4FD0D00A5F83C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D370E08526A52139003EA11C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		D370E08726A544C3003EA11C /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		D370E08926A544E9003EA11C /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
+		D370E08C26A5469B003EA11C /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		D38F31A126A5105A00154C86 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
-		D38F31A326A5126B00154C86 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		D38F31A326A5126B00154C86 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		D3F49AA026A58D670029D8B3 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +45,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D370E09026A54CB4003EA11C /* Resolver in Frameworks */,
+				D370E09326A5537F003EA11C /* Disk in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D308C27226A5739C00B1B410 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D370E08926A544E9003EA11C /* TaskCellViewModel.swift */,
+				D370E08726A544C3003EA11C /* TaskListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		D30D606226A4FD0C00A5F83C = {
 			isa = PBXGroup;
 			children = (
@@ -56,7 +81,10 @@
 		D30D606D26A4FD0C00A5F83C /* To-be Useless */ = {
 			isa = PBXGroup;
 			children = (
-				D30D606E26A4FD0C00A5F83C /* To_be_UselessApp.swift */,
+				D370E08326A51AD6003EA11C /* App */,
+				D370E08426A5210C003EA11C /* Models */,
+				D370E08B26A5467D003EA11C /* Repositories */,
+				D308C27226A5739C00B1B410 /* ViewModels */,
 				D38F31A026A5103D00154C86 /* Views */,
 				D30D607226A4FD0D00A5F83C /* Assets.xcassets */,
 				D30D607726A4FD0D00A5F83C /* Info.plist */,
@@ -73,14 +101,48 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		D370E08326A51AD6003EA11C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D30D606E26A4FD0C00A5F83C /* To_be_UselessApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D370E08426A5210C003EA11C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D370E08526A52139003EA11C /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D370E08B26A5467D003EA11C /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D370E08C26A5469B003EA11C /* TaskRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		D38F31A026A5103D00154C86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				D30D607026A4FD0C00A5F83C /* ContentView.swift */,
 				D38F31A126A5105A00154C86 /* FirstView.swift */,
-				D38F31A326A5126B00154C86 /* MainView.swift */,
+				D38F31A326A5126B00154C86 /* TaskListView.swift */,
+				D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */,
+				D3F49A9F26A58D410029D8B3 /* SettingViews */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D3F49A9F26A58D410029D8B3 /* SettingViews */ = {
+			isa = PBXGroup;
+			children = (
+				D3F49AA026A58D670029D8B3 /* SupportView.swift */,
+			);
+			path = SettingViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +161,10 @@
 			dependencies = (
 			);
 			name = "To-be Useless";
+			packageProductDependencies = (
+				D370E08F26A54CB4003EA11C /* Resolver */,
+				D370E09226A5537F003EA11C /* Disk */,
+			);
 			productName = "To-be Useless";
 			productReference = D30D606B26A4FD0C00A5F83C /* To-be Useless.app */;
 			productType = "com.apple.product-type.application";
@@ -126,6 +192,10 @@
 				Base,
 			);
 			mainGroup = D30D606226A4FD0C00A5F83C;
+			packageReferences = (
+				D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */,
+				D370E09126A5537F003EA11C /* XCRemoteSwiftPackageReference "Disk" */,
+			);
 			productRefGroup = D30D606C26A4FD0C00A5F83C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -152,10 +222,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */,
+				D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */,
 				D30D607126A4FD0C00A5F83C /* ContentView.swift in Sources */,
-				D38F31A426A5126B00154C86 /* MainView.swift in Sources */,
+				D370E08D26A5469B003EA11C /* TaskRepository.swift in Sources */,
+				D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */,
+				D38F31A426A5126B00154C86 /* TaskListView.swift in Sources */,
+				D370E08626A52139003EA11C /* Task.swift in Sources */,
 				D38F31A226A5105A00154C86 /* FirstView.swift in Sources */,
 				D30D606F26A4FD0C00A5F83C /* To_be_UselessApp.swift in Sources */,
+				D370E08826A544C3003EA11C /* TaskListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +369,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brianChang.To-be-Useless";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -315,6 +392,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brianChang.To-be-Useless";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -344,6 +422,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.3;
+			};
+		};
+		D370E09126A5537F003EA11C /* XCRemoteSwiftPackageReference "Disk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://8n38g2l@gitroyalty.com/saoudrizwan/Disk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D370E08F26A54CB4003EA11C /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		D370E09226A5537F003EA11C /* Disk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D370E09126A5537F003EA11C /* XCRemoteSwiftPackageReference "Disk" */;
+			productName = Disk;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D30D606326A4FD0C00A5F83C /* Project object */;
 }

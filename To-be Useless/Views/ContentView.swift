@@ -16,7 +16,7 @@ struct ContentView: View {
         if first {
             FirstView()
         } else {
-            MainView()
+            TaskListView()
         }
     }
 }

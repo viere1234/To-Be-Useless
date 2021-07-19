@@ -6,12 +6,20 @@
 //
 
 import SwiftUI
+import Resolver
 
 @main
 struct To_be_UselessApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
         }
     }
+}
+
+extension Resolver: ResolverRegistering {
+  public static func registerAllServices() {
+    register { LocalTaskRepository() as TaskRepository }.scope(.application)
+  }
 }
