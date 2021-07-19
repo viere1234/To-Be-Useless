@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("First") var first = true
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        if first {
+            FirstView()
+        } else {
+            MainView()
+        }
     }
 }
 
