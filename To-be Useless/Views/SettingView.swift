@@ -22,6 +22,17 @@ struct SettingView: View {
                 }
             }
             
+            Section (header: Text("General")) {
+                NavigationLink (
+                    destination: LoginView(),
+                    label: {
+                        Label(
+                            title: { Text("Account") },
+                            icon: { Image(systemName: "person.fill").foregroundColor(.red) }
+                        )
+                    })
+            }
+            
             Section (header: Text("Support")) {
                 NavigationLink(destination: SupportView()) {
                     Label(
@@ -53,12 +64,14 @@ struct SettingView: View {
                     )
                 })
                 
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Label(
-                        title: { Text("About Us").foregroundColor(.black) },
-                        icon: { Image(systemName: "crown.fill").foregroundColor(.red) }
-                    )
-                })
+                NavigationLink(
+                    destination: AboutView(),
+                    label: {
+                        Label(
+                            title: { Text("About Us").foregroundColor(.black) },
+                            icon: { Image(systemName: "crown.fill").foregroundColor(.red) }
+                        )
+                    })
             }
         }
     }
