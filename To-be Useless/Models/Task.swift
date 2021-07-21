@@ -12,6 +12,7 @@ enum TaskPriority: Int, Codable {
   case medium
   case low
 }
+
 struct Task: Codable, Identifiable {
   var id: String = UUID().uuidString
   var title: String
