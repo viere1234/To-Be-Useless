@@ -136,7 +136,6 @@
 				D38F31A126A5105A00154C86 /* FirstView.swift */,
 				D38F31A326A5126B00154C86 /* TaskListView.swift */,
 				D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */,
-				D3FFB53D26A658EF00162E2F /* LoginView.swift */,
 				D3F49A9F26A58D410029D8B3 /* SettingViews */,
 			);
 			path = Views;
@@ -145,6 +144,7 @@
 		D3F49A9F26A58D410029D8B3 /* SettingViews */ = {
 			isa = PBXGroup;
 			children = (
+				D3FFB53D26A658EF00162E2F /* LoginView.swift */,
 				D3F49AA026A58D670029D8B3 /* SupportView.swift */,
 				D3FFB53F26A6599000162E2F /* AboutView.swift */,
 			);

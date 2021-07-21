@@ -46,9 +46,10 @@ struct FirstView: View {
                                     first.toggle()
                                 }
                             }, label: {
-                                Text("Get started")
-                                    .frame(width: 160, height: 60, alignment: .center)
+                                Text("Get Useless")
                                     .foregroundColor(.white)
+                                    .font(.system(size: 20, design: .rounded))
+                                    .frame(width: 375, height: 44, alignment: .center)
                                     .background(Color.green)
                                     .cornerRadius(7)
                             })
