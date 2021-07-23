@@ -10,6 +10,10 @@ import SwiftUI
 struct SettingView: View {
     
     @AppStorage("First") var first = true
+    @AppStorage("HapticActivated") var hapticActivated = true
+    @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
+    @AppStorage("GetMossionTime") var getMissionTime = 1
+    @State private var changeMissionTime = false
     
     var body: some View {
         Form {
@@ -20,6 +24,12 @@ struct SettingView: View {
                         icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
                     )
                 }
+                
+                Picker("Refesh Mission Times", selection: $getMissionTime) {
+                        ForEach(0 ..< 100) {
+                            Text("\($0) Times")
+                        }
+                    }
             }
             
             Section (header: Text("General")) {
@@ -31,6 +41,26 @@ struct SettingView: View {
                             icon: { Image(systemName: "person.fill").foregroundColor(.red) }
                         )
                     })
+                
+                ZStack {
+                    HStack {
+                        Label(
+                            title: { Text("Daly Mission Time") },
+                            icon: { Image(systemName: "calendar.badge.clock").foregroundColor(.red) }
+                        )
+                        
+                        Spacer()
+                    }
+                    
+                    DatePicker("", selection: $missionStartTime, displayedComponents: .hourAndMinute)
+                }
+                
+                Toggle(isOn: $hapticActivated) {
+                    Label(
+                        title: { Text("Core Haptics") },
+                        icon: { Image(systemName: "hand.tap").foregroundColor(.red) }
+                    )
+                }
             }
             
             Section (header: Text("Support")) {
@@ -80,5 +110,18 @@ struct SettingView: View {
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
+    }
+}
+
+
+extension Date: RawRepresentable {
+    private static let formatter = ISO8601DateFormatter()
+    
+    public var rawValue: String {
+        Date.formatter.string(from: self)
+    }
+    
+    public init?(rawValue: String) {
+        self = Date.formatter.date(from: rawValue) ?? Date()
     }
 }

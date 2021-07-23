@@ -9,10 +9,17 @@ import SwiftUI
 import UIKit
 
 struct TaskListView: View {
-    @ObservedObject var taskListVM = TaskListViewModel() // (7)
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var presentAddNewItem = false
+    @State var showAlert = false
+    @State var showMissionAlertSwicher = false
+    @ObservedObject var taskListVM = TaskListViewModel()
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarTitle: CGFloat = 20
+    @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
+    @AppStorage("IsGetDalyMission") var isGetDalyMission = false
+    @AppStorage("GetMossionTime") var getMissionTime = 1
     
     init() {
         let design = UIFontDescriptor.SystemDesign.rounded
@@ -46,40 +53,79 @@ struct TaskListView: View {
                     self.taskListVM.removeTasks(atOffsets: indexSet)
                 }
                 
-                if presentAddNewItem { // (5)
-                    TaskCell(taskCellVM: TaskCellViewModel.newTask()) { result in // (2)
-                        if case .success(let task) = result {
-                            self.taskListVM.addTask(task: task) // (3)
+                    if presentAddNewItem { // (5)
+                        TaskCell(taskCellVM: TaskCellViewModel.newTask()) { result in // (2)
+                            if case .success(let task) = result {
+                                self.taskListVM.addTask(task: task) // (3)
+                            }
+                            self.presentAddNewItem.toggle() // (4)
                         }
-                        self.presentAddNewItem.toggle() // (4)
                     }
                 }
-        }
-        .listStyle(InsetListStyle())
-        
-        Button(action: { self.presentAddNewItem.toggle() }) { // (6)
-          HStack {
-            Image(systemName: "plus.circle.fill")
-                .font(.title2)
-            Text("New Task")
-                .font(.system(Font.TextStyle.headline, design: .rounded))
-          }
-        }
-        .padding()
-        .accentColor(Color(UIColor.systemRed))
-      }
+                .listStyle(InsetListStyle())
+                
+                Button(action: {
+                    if self.getMissionTime <= 0 {
+                        self.showMissionAlertSwicher = true
+                        self.showAlert.toggle()
+                    } else {
+                        self.showMissionAlertSwicher = false
+                        self.showAlert.toggle()
+                    }
+                }) {
+                    HStack {
+                        Image(systemName: "rectangle.fill.on.rectangle.angled.fill")
+                            .font(.title2)
+                        Text("Refresh Mission")
+                            .font(.system(Font.TextStyle.headline, design: .rounded))
+                    }
+                }
+                .alert(isPresented: $showAlert, content: {
+                    if showMissionAlertSwicher {
+                        return Alert(title: Text("Run out of times"),
+                                     message: Text("\(getMissionTime) Times left"))
+                    } else {
+                        return Alert(title: Text("Are you sure?"),
+                                     message: Text("\(getMissionTime) Times left"),
+                                     primaryButton: .default(Text("Yes"), action: {
+                                        self.getMissionTime -= 1
+                                        self.presentAddNewItem.toggle()
+                                     }),
+                                     secondaryButton: .destructive(Text("No")))
+                    }
+                })
+                .padding()
+                .accentColor(Color(UIColor.systemRed))
+            }
             .navigationBarTitle(Text("To-Be Useless"))
-      .toolbar {
-        ToolbarItem() {
-            NavigationLink(
-                destination: SettingView(),
-                label: {
-                    Image(systemName: "gearshape.fill")
-            })
+            .toolbar {
+              ToolbarItem() {
+                  NavigationLink(
+                      destination: SettingView(),
+                      label: {
+                          Image(systemName: "gearshape.fill")
+                  })
+              }
+            }
         }
-      }
+        .onAppear(perform: {
+            
+        })
+        .onReceive(self.timer, perform: { time in
+            if !isGetDalyMission {
+                
+                let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
+                let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
+                let currentHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
+                let currentMinute = Calendar.current.dateComponents([.minute], from: Date()).minute ?? 0
+                
+                if currentHour > userHour || (currentHour == userHour && currentMinute >= userMinute) {
+                    isGetDalyMission.toggle()
+                    getDalyMission()
+                }
+            }
+        })
     }
-  }
 }
 
 struct TaskListView_Previews: PreviewProvider {
@@ -129,4 +175,8 @@ extension UIFont {
         }
         return font
     }
+}
+
+func getDalyMission() {
+    
 }
