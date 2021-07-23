@@ -20,6 +20,9 @@ struct TaskListView: View {
     @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
     @AppStorage("IsGetDalyMission") var isGetDalyMission = false
     @AppStorage("GetMossionTime") var getMissionTime = 1
+    @AppStorage("LastDalyMissionYear") var lastDalyMissionYear = 0
+    @AppStorage("LastDalyMissionMonth") var lastDalyMissionMonth = 0
+    @AppStorage("LastDalyMissionDay") var lastDalyMissionDay = 0
     
     init() {
         let design = UIFontDescriptor.SystemDesign.rounded
@@ -109,7 +112,17 @@ struct TaskListView: View {
             }
         }
         .onAppear(perform: {
-            
+            if !isGetDalyMission {
+                let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
+                let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
+                let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                
+                if currentYear > lastDalyMissionYear ||
+                    (currentYear == lastDalyMissionYear && currentMonth > lastDalyMissionMonth) ||
+                    (currentYear == lastDalyMissionYear && currentMonth == lastDalyMissionMonth && currentDay > lastDalyMissionDay) {
+                    self.isGetDalyMission.toggle()
+                }
+            }
         })
         .onReceive(self.timer, perform: { time in
             if !isGetDalyMission {
@@ -121,6 +134,9 @@ struct TaskListView: View {
                 
                 if currentHour > userHour || (currentHour == userHour && currentMinute >= userMinute) {
                     isGetDalyMission.toggle()
+                    lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
+                    lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
+                    lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
                     getDalyMission()
                 }
             }
@@ -178,5 +194,5 @@ extension UIFont {
 }
 
 func getDalyMission() {
-    
+    print("Get Daly Mission")
 }
