@@ -217,22 +217,38 @@ func clearMission() {
 func getMission() {
     @ObservedObject var taskListVM = TaskListViewModel()
     
-    var difficlutChose: [Int] = []
+    var difficlutChose: [Int] = [],
+        highMissionIndex: [Int] = [], highMissionNum = 0,
+        mediumMissionIndex: [Int] = [], mediumMissionNum = 0,
+        lowMissionIndex: [Int] = [], lowMissionNum = 0, tmp: Int
     
     clearMission()
     
-    while difficlutChose.reduce(0, +) < 6 {
-        difficlutChose.append(Int.random(in: 1...3))
-    }
+    while difficlutChose.reduce(0, +) < 6 { difficlutChose.append(Int.random(in: 1...3)) }
     
     for difficluty in difficlutChose {
         switch difficluty {
-        case 1:
-            taskListVM.addTask(task: LowMission.randomElement()!)
-        case 2:
-            taskListVM.addTask(task: MediumMission.randomElement()!)
-        default:
-            taskListVM.addTask(task: HighMission.randomElement()!)
+        case 1: // low difficulty mission
+            repeat {
+                tmp = Int.random(in: 0...LowMission.count-1)
+            } while ( lowMissionIndex.contains(tmp) )
+            lowMissionIndex.append(tmp)
+            taskListVM.addTask(task: LowMission[lowMissionNum])
+            lowMissionNum+=1
+        case 2: // medium difficulty mission
+            repeat {
+                tmp = Int.random(in: 0...MediumMission.count-1)
+            } while ( mediumMissionIndex.contains(tmp) )
+            mediumMissionIndex.append(tmp)
+            taskListVM.addTask(task: MediumMission[mediumMissionNum])
+            mediumMissionNum+=1
+        default: //3 high
+            repeat {
+                tmp = Int.random(in: 0...HighMission.count-1)
+            } while ( highMissionIndex.contains(tmp) )
+            highMissionIndex.append(tmp)
+            taskListVM.addTask(task: HighMission[highMissionNum])
+            highMissionNum+=1
         }
     }
 }
