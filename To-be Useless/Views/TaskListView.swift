@@ -13,7 +13,7 @@ struct TaskListView: View {
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var presentAddNewItem = false
     @State var showAlert = false
-    @State var showMissionAlertSwicher = false
+    @State var showMissionAlertSwicher = 0
     @ObservedObject var taskListVM = TaskListViewModel()
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarTitle: CGFloat = 20
@@ -49,19 +49,20 @@ struct TaskListView: View {
         NavigationView {
             VStack(alignment: .leading) {
                 List {
-                    ForEach (taskListVM.taskCellViewModels) { taskCellVM in // (8)
-                        TaskCell(taskCellVM: taskCellVM) // (1)
+                    ForEach (taskListVM.taskCellViewModels) { taskCellVM in
+                        TaskCell(taskCellVM: taskCellVM)
                 }
+                /*
                 .onDelete { indexSet in
                     self.taskListVM.removeTasks(atOffsets: indexSet)
-                }
+                }*/
                 
-                    if presentAddNewItem { // (5)
-                        TaskCell(taskCellVM: TaskCellViewModel.newTask()) { result in // (2)
+                    if presentAddNewItem {
+                        TaskCell(taskCellVM: TaskCellViewModel.newTask()) { result in
                             if case .success(let task) = result {
-                                self.taskListVM.addTask(task: task) // (3)
+                                self.taskListVM.addTask(task: task)
                             }
-                            self.presentAddNewItem.toggle() // (4)
+                            self.presentAddNewItem.toggle()
                         }
                     }
                 }
@@ -69,10 +70,10 @@ struct TaskListView: View {
                 
                 Button(action: {
                     if self.getMissionTime <= 0 {
-                        self.showMissionAlertSwicher = true
+                        self.showMissionAlertSwicher = 1
                         self.showAlert.toggle()
                     } else {
-                        self.showMissionAlertSwicher = false
+                        self.showMissionAlertSwicher = 0
                         self.showAlert.toggle()
                     }
                 }) {
@@ -84,15 +85,22 @@ struct TaskListView: View {
                     }
                 }
                 .alert(isPresented: $showAlert, content: {
-                    if showMissionAlertSwicher {
+                    
+                    switch showMissionAlertSwicher {
+                    case 1:
                         return Alert(title: Text("Run out of times"),
                                      message: Text("\(getMissionTime) Times left"))
-                    } else {
+                    case 2:
+                        return Alert(title: Text("Daily mission get!!"))
+                    default:
                         return Alert(title: Text("Are you sure?"),
                                      message: Text("\(getMissionTime) Times left"),
                                      primaryButton: .default(Text("Yes"), action: {
                                         self.getMissionTime -= 1
-                                        self.presentAddNewItem.toggle()
+                                        withAnimation{
+                                            getMission()
+                                        }
+                                        //self.presentAddNewItem.toggle()
                                      }),
                                      secondaryButton: .destructive(Text("No")))
                     }
@@ -137,7 +145,9 @@ struct TaskListView: View {
                     lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
                     lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
                     lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
-                    getDalyMission()
+                    getMission()
+                    showMissionAlertSwicher = 2
+                    showAlert.toggle()
                 }
             }
         })
@@ -151,28 +161,31 @@ struct TaskListView_Previews: PreviewProvider {
 }
 
 struct TaskCell: View {
-  @ObservedObject var taskCellVM: TaskCellViewModel // (1)
-  var onCommit: (Result<Task, InputError>) -> Void = { _ in } // (5)
-  
-  var body: some View {
-    HStack {
-      Image(systemName: taskCellVM.completionStateIconName) // (2)
-        .resizable()
-        .frame(width: 20, height: 20)
-        .onTapGesture {
-          self.taskCellVM.task.completed.toggle()
-        }
-      TextField("Enter your useless tasks", text: $taskCellVM.task.title, // (3)
-                onCommit: { //(4)
-                  if !self.taskCellVM.task.title.isEmpty {
+    @ObservedObject var taskCellVM: TaskCellViewModel
+    @ObservedObject var taskListVM = TaskListViewModel()
+    var onCommit: (Result<Task, InputError>) -> Void = { _ in }
+    var body: some View {
+        HStack {
+            Image(systemName: taskCellVM.completionStateIconName)
+                .resizable()
+                .frame(width: 20, height: 20)
+                .onTapGesture {
+                    self.taskCellVM.task.completed.toggle()
+                }
+            
+            Text(taskCellVM.task.title)
+                .font(.system(.body, design: .rounded))
+            
+            /*
+            TextField("Enter your useless tasks", text: $taskCellVM.task.title, onCommit: {
+                if !self.taskCellVM.task.title.isEmpty {
                     self.onCommit(.success(self.taskCellVM.task))
-                  }
-                  else {
+                } else {
                     self.onCommit(.failure(.empty))
-                  }
-      }).id(taskCellVM.id)
+                }
+            }).id(taskCellVM.id)*/
+        }
     }
-  }
 }
 
 enum InputError: Error {
@@ -193,6 +206,33 @@ extension UIFont {
     }
 }
 
-func getDalyMission() {
-    print("Get Daly Mission")
+func clearMission() {
+    @ObservedObject var taskListVM = TaskListViewModel()
+    
+    for _ in 0..<taskListVM.taskCellViewModels.count {
+        taskListVM.removeTasks(atOffsets: IndexSet([0]))
+    }
+}
+
+func getMission() {
+    @ObservedObject var taskListVM = TaskListViewModel()
+    
+    var difficlutChose: [Int] = []
+    
+    clearMission()
+    
+    while difficlutChose.reduce(0, +) < 6 {
+        difficlutChose.append(Int.random(in: 1...3))
+    }
+    
+    for difficluty in difficlutChose {
+        switch difficluty {
+        case 1:
+            taskListVM.addTask(task: LowMission.randomElement()!)
+        case 2:
+            taskListVM.addTask(task: MediumMission.randomElement()!)
+        default:
+            taskListVM.addTask(task: HighMission.randomElement()!)
+        }
+    }
 }

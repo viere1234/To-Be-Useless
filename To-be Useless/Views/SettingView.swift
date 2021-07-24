@@ -13,23 +13,42 @@ struct SettingView: View {
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
     @AppStorage("GetMossionTime") var getMissionTime = 1
+    @AppStorage("DeveloperActivated") var developerActivated = false
+    @AppStorage("IsGetDalyMission") var isGetDalyMission = false
+    @State private var developerCounter = 0
     @State private var changeMissionTime = false
     
     var body: some View {
         Form {
-            Section(header: Text("Beta Version Control")) {
-                Toggle(isOn: $first) {
-                    Label(
-                        title: { Text("First?") },
-                        icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
-                    )
-                }
-                
-                Picker("Refesh Mission Times", selection: $getMissionTime) {
-                        ForEach(0 ..< 100) {
-                            Text("\($0) Times")
-                        }
+            if developerActivated {
+                Section(header: Text("Developer")) {
+                    Toggle(isOn: $first) {
+                        Label(
+                            title: { Text("First?") },
+                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
+                        )
                     }
+                    
+                    Picker("Refesh Mission Times", selection: $getMissionTime) {
+                            ForEach(0 ..< 100) {
+                                Text("\($0) Times")
+                            }
+                        }
+                    
+                    Button(action: { clearMission() }, label: {
+                        Label(
+                            title: { Text("Clear Mission").foregroundColor(.black) },
+                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
+                        )
+                    })
+                    
+                    Toggle(isOn: $isGetDalyMission) {
+                        Label(
+                            title: { Text("Daily?") },
+                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
+                        )
+                    }
+                }
             }
             
             Section (header: Text("General")) {
@@ -103,6 +122,23 @@ struct SettingView: View {
                         )
                     })
             }
+            
+            Button(action: {
+                self.developerCounter += 1
+                if developerCounter == 10 {
+                    developerCounter = 0
+                    developerActivated.toggle()
+                }
+            }, label: {
+                HStack {
+                    Spacer()
+                    
+                    Text("To-be Useless Version Beta 0.1.1")
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                }
+            })
         }
     }
 }
