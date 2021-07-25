@@ -7,12 +7,13 @@
 
 import SwiftUI
 import UIKit
+import UserNotifications
 
 struct TaskListView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State var presentAddNewItem = false
-    @State var showAlert = false
+    @State private var showAlert = false
     @State var showMissionAlertSwicher = 0
     @ObservedObject var taskListVM = TaskListViewModel()
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
@@ -23,6 +24,8 @@ struct TaskListView: View {
     @AppStorage("LastDalyMissionYear") var lastDalyMissionYear = 0
     @AppStorage("LastDalyMissionMonth") var lastDalyMissionMonth = 0
     @AppStorage("LastDalyMissionDay") var lastDalyMissionDay = 0
+    @AppStorage("HapticActivated") var hapticActivated = true
+    let generrator = UINotificationFeedbackGenerator()
     
     init() {
         let design = UIFontDescriptor.SystemDesign.rounded
@@ -51,11 +54,11 @@ struct TaskListView: View {
                 List {
                     ForEach (taskListVM.taskCellViewModels) { taskCellVM in
                         TaskCell(taskCellVM: taskCellVM)
-                }
-                /*
-                .onDelete { indexSet in
-                    self.taskListVM.removeTasks(atOffsets: indexSet)
-                }*/
+                    }
+                    /*
+                    .onDelete { indexSet in
+                        self.taskListVM.removeTasks(atOffsets: indexSet)
+                    }
                 
                     if presentAddNewItem {
                         TaskCell(taskCellVM: TaskCellViewModel.newTask()) { result in
@@ -64,15 +67,17 @@ struct TaskListView: View {
                             }
                             self.presentAddNewItem.toggle()
                         }
-                    }
+                    } */
                 }
                 .listStyle(InsetListStyle())
                 
                 Button(action: {
                     if self.getMissionTime <= 0 {
+                        if hapticActivated { generrator.notificationOccurred(.error) }
                         self.showMissionAlertSwicher = 1
                         self.showAlert.toggle()
                     } else {
+                        if hapticActivated { generrator.notificationOccurred(.warning) }
                         self.showMissionAlertSwicher = 0
                         self.showAlert.toggle()
                     }
@@ -96,6 +101,7 @@ struct TaskListView: View {
                         return Alert(title: Text("Are you sure?"),
                                      message: Text("\(getMissionTime) Times left"),
                                      primaryButton: .default(Text("Yes"), action: {
+                                        if hapticActivated { generrator.notificationOccurred(.success) }
                                         self.getMissionTime -= 1
                                         withAnimation{
                                             getMission()
@@ -120,7 +126,7 @@ struct TaskListView: View {
             }
         }
         .onAppear(perform: {
-            if !isGetDalyMission {
+            if isGetDalyMission {
                 let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
                 let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
                 let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
@@ -146,7 +152,9 @@ struct TaskListView: View {
                     lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
                     lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
                     getMission()
+                    getMissionTime = 1
                     showMissionAlertSwicher = 2
+                    if hapticActivated { generrator.notificationOccurred(.success) }
                     showAlert.toggle()
                 }
             }

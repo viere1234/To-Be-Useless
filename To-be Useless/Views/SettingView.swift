@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct SettingView: View {
     
     @AppStorage("First") var first = true
@@ -17,41 +16,23 @@ struct SettingView: View {
     @AppStorage("IsGetDalyMission") var isGetDalyMission = false
     @State private var developerCounter = 0
     @State private var changeMissionTime = false
-    
+    @State private var showAlert = false    
     var body: some View {
         Form {
             if developerActivated {
                 Section(header: Text("Developer")) {
-                    Toggle(isOn: $first) {
+                    NavigationLink(destination: DeveloperView(), label: {
                         Label(
-                            title: { Text("First?") },
-                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
-                        )
-                    }
-                    
-                    Picker("Refesh Mission Times", selection: $getMissionTime) {
-                            ForEach(0 ..< 100) {
-                                Text("\($0) Times")
-                            }
-                        }
-                    
-                    Button(action: { clearMission() }, label: {
-                        Label(
-                            title: { Text("Clear Mission").foregroundColor(.black) },
+                            title: { Text("Developer Setting") },
                             icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
                         )
                     })
-                    
-                    Toggle(isOn: $isGetDalyMission) {
-                        Label(
-                            title: { Text("Daily?") },
-                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
-                        )
-                    }
                 }
             }
             
             Section (header: Text("General")) {
+                
+                /*
                 NavigationLink (
                     destination: LoginView(),
                     label: {
@@ -59,7 +40,7 @@ struct SettingView: View {
                             title: { Text("Account") },
                             icon: { Image(systemName: "person.fill").foregroundColor(.red) }
                         )
-                    })
+                    }) */
                 
                 ZStack {
                     HStack {
@@ -127,7 +108,7 @@ struct SettingView: View {
                 self.developerCounter += 1
                 if developerCounter == 10 {
                     developerCounter = 0
-                    developerActivated.toggle()
+                    showAlert.toggle()
                 }
             }, label: {
                 HStack {
@@ -138,6 +119,16 @@ struct SettingView: View {
                     
                     Spacer()
                 }
+            })
+            .alert(isPresented: $showAlert, content: {
+                return Alert(title: Text("Activate Developer Mode?"),
+                             message: Text("Wrong use will lead to serious errors"),
+                             primaryButton: .default(Text("Yes"), action: {
+                                developerActivated.toggle()
+                             }),
+                             secondaryButton: .destructive(Text("No"))
+                
+                )
             })
         }
     }
@@ -161,3 +152,4 @@ extension Date: RawRepresentable {
         self = Date.formatter.date(from: rawValue) ?? Date()
     }
 }
+

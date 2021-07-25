@@ -26,3 +26,4 @@ let LowMission = [
     Task(title: "Open your mouth 50 times", difficulty: TaskDifficulty.low, completed: false),
     Task(title: "Look at the distant scenery", difficulty: TaskDifficulty.low, completed: false)
 ]
+
