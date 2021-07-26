@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  To-be Useless
+
+  Created by 張智堯 on 2021/7/26.
+  
+*/
+
+
+//Apps
+"To-Be Useless" = "To-Be Useless";
+"Refresh Mission" = "刷新任務";
+"Refresh Mission (Used Up)" = "刷新任務 （已用盡）";
+"Run out of times" = "次數已用盡";
+"Daily mission get!!" = "已獲取每日任務！！";
+"Are you sure?" = "你確定嗎？";
+//Settings
+"General" = "一般";
+"Daly Mission Time" = "每日任務時間";
+"Support" = "幫助";
+"Sent Feedback" = "回饋";
+"Rate This App" = "評價此App";
+"Share With Friends" = "與好友分享";
+"About Us" = "關於我們";
+
+//Mission
+"Meditate for 3 minutes" = "冥想三分鐘";
+"Push up 20 times" = "伏地挺身二十次";
+"Look out the window for three minutes" = "往窗外看三分鐘";
+"Read an internet article" = "讀一篇文章";
+"Pay attention to breathing for 30 seconds" = "專注呼吸三十秒";
+"Drink a glass of water" = "喝一杯水";
+"Eat a pack of snacks" = "吃一包零食";
+"Watch a YouTube video" = "看一部YouTube影片";
+"Turn your head left and right 10 times" = "左右轉頭十次";
+"Open your mouth 50 times" = "張嘴五十次";
+"Look at the distant scenery" = "看遠方的風景";
+"Do nothing for five minutes (including using electronic devices)" = "五分鐘內不做任何事（包括使用電子設備）";
+"Take a deep breath" = "深吸一口氣";
+"Brush your teeth with your non-dominant hand" = "用非慣用手刷牙";
+"Write a sentence (anywhere)" = "寫下隨便一句話（在任何地方）";
+"Read a page of book" = "看一頁書";
+"Listen to a music that you have never heard before" = "聽一首不曾聽過的音樂";
+"Take a nap" = "睡午覺";
+"Watch a movie" = "看一部電影";
+"Read an internet article" = "看一篇網路文章";
+"Take a picture" = "拍下一張照片";
+"Smile to the mirror for 3 seconds" = "對著鏡子微笑三秒鐘";
+"Close your eyes and rest for 3 minutes" = "閉目養神三分鐘";
+"Send a message to a person and ask him \"How you doing?\"" = "發訊息給一個人，並問他“最近過得怎麼樣”";
+"Draw whatever you see today (anywhere)" = "隨便畫下你今天所看到的東西（在任何地方）";
+"Lie on the bed for 5 minutes" = "趴在床上五分鐘";
+"Drink a cup of hot water" = "喝一杯熱水";
+"Set an alarm clock earlier than usual" = "設下比平常起床時間更早的鬧鐘";

@@ -79,7 +79,7 @@ struct SettingView: View {
                 })
             }
             
-            Section (header: Text("Useless to do")) {
+            Section (header: Text("To-be Useless")) {
                 Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
                     Label(
                         title: { Text("Rate This App").foregroundColor(.black) },

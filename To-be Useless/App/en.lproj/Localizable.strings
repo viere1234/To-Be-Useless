@@ -1,0 +1,55 @@
+/* 
+  Localizable.strings
+  To-be Useless
+
+  Created by 張智堯 on 2021/7/26.
+  
+*/
+
+
+//Apps
+"To-Be Useless" = "To-Be Useless";
+"Refresh Mission" = "Refresh Mission (Used Up)";
+"Refresh Mission" = "Refresh Mission";
+"Run out of times" = "Run out of times";
+"Daily mission get!!" = "Daily mission get!!";
+"Are you sure?" = "Are you sure?";
+
+//Settings
+"General" = "General";
+"Daly Mission Time" = "Daly Mission Time";
+"Support" = "Support";
+"Sent Feedback" = "Sent Feedback";
+"Rate This App" = "Rate This App";
+"Share With Friends" = "Share With Friends";
+"About Us" = "About Us";
+
+//Mission
+"Meditate for 3 minutes" = "Meditate for 3 minutes";
+"Push up 20 times" = "Push up 20 times";
+"Look out the window for three minutes" = "Look out the window for three minutes";
+"Read an internet article" = "Read an internet article";
+"Pay attention to breathing for 30 seconds" = "Pay attention to breathing for 30 seconds";
+"Drink a glass of water" = "Drink a glass of water";
+"Eat a pack of snacks" = "Eat a pack of snacks";
+"Watch a YouTube video" = "Watch a YouTube video";
+"Turn your head left and right 10 times" = "Turn your head left and right 10 times";
+"Open your mouth 50 times" = "Open your mouth 50 times";
+"Look at the distant scenery" = "Look at the distant scenery";
+"Do nothing for five minutes (including using electronic devices)" = "Do nothing for five minutes (including using electronic devices)";
+"Take a deep breath" = "Take a deep breath";
+"Brush your teeth with your non-dominant hand" = "Brush your teeth with your non-dominant hand";
+"Write a sentence (anywhere)" = "Write a sentence (anywhere)";
+"Read a page of book" = "Read a page of book";
+"Listen to a music that you have never heard before" = "Listen to a music that you have never heard before";
+"Take a nap" = "Take a nap";
+"Watch a movie" = "Watch a movie";
+"Read an internet article" = "Read an internet article";
+"Take a picture" = "Take a picture";
+"Smile to the mirror for 3 seconds" = "Smile to the mirror for 3 seconds";
+"Close your eyes and rest for 3 minutes" = "Close your eyes and rest for 3 minutes";
+"Send a message to a person and ask him \"How you doing?\"" = "Send a message to a person and ask him \"How you doing?\"";
+"Draw whatever you see today (anywhere)" = "Draw whatever you see today (anywhere)";
+"Lie on the bed for 5 minutes" = "Lie on the bed for 5 minutes";
+"Drink a cup of hot water" = "Drink a cup of hot water";
+"Set an alarm clock earlier than usual" = "Set an alarm clock earlier than usual";

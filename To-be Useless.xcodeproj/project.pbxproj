@@ -20,9 +20,11 @@
 		D370E09326A5537F003EA11C /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = D370E09226A5537F003EA11C /* Disk */; };
 		D38F31A226A5105A00154C86 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A126A5105A00154C86 /* FirstView.swift */; };
 		D38F31A426A5126B00154C86 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A326A5126B00154C86 /* TaskListView.swift */; };
+		D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3B051E926AE5C82009BCBF4 /* Localizable.strings */; };
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
 		D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49AA026A58D670029D8B3 /* SupportView.swift */; };
 		D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */; };
+		D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */; };
 		D3FFB53E26A658EF00162E2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53D26A658EF00162E2F /* LoginView.swift */; };
 		D3FFB54026A6599000162E2F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53F26A6599000162E2F /* AboutView.swift */; };
 /* End PBXBuildFile section */
@@ -41,9 +43,12 @@
 		D370E08C26A5469B003EA11C /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		D38F31A126A5105A00154C86 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		D38F31A326A5126B00154C86 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		D3B051E826AE5C82009BCBF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D3B051EA26AE5C87009BCBF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D3F49AA026A58D670029D8B3 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
+		D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D3FFB53D26A658EF00162E2F /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3FFB53F26A6599000162E2F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				D30D606E26A4FD0C00A5F83C /* To_be_UselessApp.swift */,
+				D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */,
+				D3B051E926AE5C82009BCBF4 /* Localizable.strings */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -202,6 +209,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = D30D606226A4FD0C00A5F83C;
 			packageReferences = (
@@ -222,6 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */,
+				D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */,
 				D30D607626A4FD0D00A5F83C /* Preview Assets.xcassets in Resources */,
 				D30D607326A4FD0D00A5F83C /* Assets.xcassets in Resources */,
 			);
@@ -252,6 +262,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D3B051E926AE5C82009BCBF4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D3B051E826AE5C82009BCBF4 /* en */,
+				D3B051EA26AE5C87009BCBF4 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D30D607826A4FD0D00A5F83C /* Debug */ = {
