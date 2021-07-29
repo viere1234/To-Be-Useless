@@ -18,99 +18,93 @@ struct SettingView: View {
     @State private var changeMissionTime = false
     @State private var showAlert = false    
     var body: some View {
-        Form {
-            if developerActivated {
-                Section(header: Text("Developer")) {
-                    NavigationLink(destination: DeveloperView(), label: {
-                        Label(
-                            title: { Text("Developer Setting") },
-                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
-                        )
-                    })
+        ZStack {
+            Form {
+                if developerActivated {
+                    Section(header: Text("Developer")) {
+                        NavigationLink(destination: DeveloperView(), label: {
+                            Label(
+                                title: { Text("Developer Setting") },
+                                icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
+                            )
+                        })
+                    }
                 }
-            }
-            
-            Section (header: Text("General")) {
                 
-                /*
-                NavigationLink (
-                    destination: LoginView(),
-                    label: {
-                        Label(
-                            title: { Text("Account") },
-                            icon: { Image(systemName: "person.fill").foregroundColor(.red) }
-                        )
-                    }) */
-                
-                ZStack {
-                    HStack {
-                        Label(
-                            title: { Text("Daly Mission Time") },
-                            icon: { Image(systemName: "calendar.badge.clock").foregroundColor(.red) }
-                        )
+                Section (header: Text("General")) {
+                    
+                    /*
+                    NavigationLink (
+                        destination: LoginView(),
+                        label: {
+                            Label(
+                                title: { Text("Account") },
+                                icon: { Image(systemName: "person.fill").foregroundColor(.red) }
+                            )
+                        }) */
+                    
+                    ZStack {
+                        HStack {
+                            Label(
+                                title: { Text("Daly Mission Time") },
+                                icon: { Image(systemName: "calendar.badge.clock").foregroundColor(.red) }
+                            )
+                            
+                            Spacer()
+                        }
                         
-                        Spacer()
+                        DatePicker("", selection: $missionStartTime, displayedComponents: .hourAndMinute)
                     }
                     
-                    DatePicker("", selection: $missionStartTime, displayedComponents: .hourAndMinute)
-                }
-                
-                Toggle(isOn: $hapticActivated) {
-                    Label(
-                        title: { Text("Core Haptics") },
-                        icon: { Image(systemName: "hand.tap").foregroundColor(.red) }
-                    )
-                }
-            }
-            
-            Section (header: Text("Support")) {
-                NavigationLink(destination: SupportView()) {
-                    Label(
-                        title: { Text("Support") },
-                        icon: { Image(systemName: "person.fill.questionmark").foregroundColor(.red) }
-                    )
-                }
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Label(
-                        title: { Text("Sent Feedback").foregroundColor(.black) },
-                        icon: { Image(systemName: "paperplane").foregroundColor(.red) }
-                    )
-                })
-            }
-            
-            Section (header: Text("To-be Useless")) {
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Label(
-                        title: { Text("Rate This App").foregroundColor(.black) },
-                        icon: { Image(systemName: "star.fill").foregroundColor(.red) }
-                    )
-                })
-                
-                Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Label(
-                        title: { Text("Share With Friends").foregroundColor(.black) },
-                        icon: { Image(systemName: "square.and.arrow.up.on.square").foregroundColor(.red) }
-                    )
-                })
-                
-                NavigationLink(
-                    destination: AboutView(),
-                    label: {
+                    Toggle(isOn: $hapticActivated) {
                         Label(
-                            title: { Text("About Us").foregroundColor(.black) },
-                            icon: { Image(systemName: "crown.fill").foregroundColor(.red) }
+                            title: { Text("Core Haptics") },
+                            icon: { Image(systemName: "hand.tap").foregroundColor(.red) }
+                        )
+                    }
+                }
+                
+                Section (header: Text("Support")) {
+                    NavigationLink(destination: SupportView()) {
+                        Label(
+                            title: { Text("Support") },
+                            icon: { Image(systemName: "person.fill.questionmark").foregroundColor(.red) }
+                        )
+                    }
+                    
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Label(
+                            title: { Text("Sent Feedback").foregroundColor(.black) },
+                            icon: { Image(systemName: "paperplane").foregroundColor(.red) }
                         )
                     })
-            }
-            
-            Button(action: {
-                self.developerCounter += 1
-                if developerCounter == 10 {
-                    developerCounter = 0
-                    showAlert.toggle()
                 }
-            }, label: {
+                
+                Section (header: Text("To-be Useless")) {
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Label(
+                            title: { Text("Rate This App").foregroundColor(.black) },
+                            icon: { Image(systemName: "star.fill").foregroundColor(.red) }
+                        )
+                    })
+                    
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        Label(
+                            title: { Text("Share With Friends").foregroundColor(.black) },
+                            icon: { Image(systemName: "square.and.arrow.up.on.square").foregroundColor(.red) }
+                        )
+                    })
+                    
+                    NavigationLink(
+                        destination: AboutView(),
+                        label: {
+                            Label(
+                                title: { Text("About Us").foregroundColor(.black) },
+                                icon: { Image(systemName: "crown.fill").foregroundColor(.red) }
+                            )
+                        })
+                }
+                
                 HStack {
                     Spacer()
                     
@@ -119,17 +113,37 @@ struct SettingView: View {
                     
                     Spacer()
                 }
-            })
-            .alert(isPresented: $showAlert, content: {
-                return Alert(title: Text("Activate Developer Mode?"),
-                             message: Text("Wrong use will lead to serious errors"),
-                             primaryButton: .default(Text("Yes"), action: {
-                                developerActivated.toggle()
-                             }),
-                             secondaryButton: .destructive(Text("No"))
+            }
+            
+            VStack {
+                Spacer()
                 
-                )
-            })
+                Button(action: {
+                    self.developerCounter += 1
+                    if developerCounter == 20 {
+                        developerCounter = 0
+                        showAlert.toggle()
+                    }
+                }, label: {
+                    HStack {
+                        Spacer()
+                        
+                        Image(systemName: "square.and.arrow.up.on.square").foregroundColor(.gray.opacity(0))
+                            .padding()
+                    }
+                })
+                .alert(isPresented: $showAlert, content: {
+                    return Alert(title: Text("Activate Developer Mode?"),
+                                 message: Text("Wrong use will lead to serious errors"),
+                                 primaryButton: .default(Text("Yes"), action: {
+                                    developerActivated.toggle()
+                                 }),
+                                 secondaryButton: .destructive(Text("No"))
+                    
+                    )
+                })
+            }
+            .edgesIgnoringSafeArea(.bottom)
         }
     }
 }

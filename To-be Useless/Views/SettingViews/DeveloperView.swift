@@ -18,6 +18,8 @@ struct DeveloperView: View {
     @AppStorage("LastDalyMissionYear") var lastDalyMissionYear = 0
     @AppStorage("LastDalyMissionMonth") var lastDalyMissionMonth = 0
     @AppStorage("LastDalyMissionDay") var lastDalyMissionDay = 0
+    @AppStorage("MissionCounts") var missionCounts = 0
+    @AppStorage("MissionCompletes") var missionCompletes = 0
     
     var body: some View {
         Form {
@@ -62,13 +64,23 @@ struct DeveloperView: View {
             
             Section(header: Text("Daily Mission Date (DD/MM/YYYY)"), content: {
                 TextField("", value: $lastDalyMissionDay, formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
                 TextField("", value: $lastDalyMissionMonth, formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
                 TextField("", value: $lastDalyMissionYear, formatter: NumberFormatter())
-                    .keyboardType(.numberPad)
             })
             
+            Section(header: Text("MIssion Info (Done/Total)"), content: {
+                TextField("", value: $missionCompletes, formatter: NumberFormatter())
+                TextField("", value: $missionCounts, formatter: NumberFormatter())
+            })
+            
+            NavigationLink(
+                destination: DataView(),
+                label: {
+                    Label(
+                        title: { Text("Data") },
+                        icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
+                    )
+                })
         }
     }
 }

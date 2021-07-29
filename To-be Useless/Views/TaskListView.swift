@@ -26,6 +26,10 @@ struct TaskListView: View {
     @AppStorage("LastDalyMissionMonth") var lastDalyMissionMonth = 0
     @AppStorage("LastDalyMissionDay") var lastDalyMissionDay = 0
     @AppStorage("HapticActivated") var hapticActivated = true
+    @AppStorage("MissionCounts") var missionCounts = 1
+    @AppStorage("MissionCompletes") var missionCompletes = 0
+    @AppStorage("StatusInfo") var statusInfo = 0
+    @AppStorage("DeveloperActivated") var developerActivated = false
     let generrator = UINotificationFeedbackGenerator()
     
     init() {
@@ -120,27 +124,16 @@ struct TaskListView: View {
                     })
                     .padding()
                     .accentColor(Color(self.getMissionTime > 0 ? UIColor.systemRed : UIColor.systemGray)
-                                    .opacity(self.getMissionTime > 0 ? 1 : 0.8))
+                                    .opacity(self.getMissionTime > 0 ? 1 : 0.7))
                     
                     Spacer()
                 }
+                
+                ProgressView(percent: percent(complete: (openTask ? missionCompletes : 0), count: missionCounts))
+                    .padding([.bottom, .leading, .trailing], 16)
             }
-            .onAppear(perform: {
-                if isGetDalyMission {
-                    let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
-                    let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
-                    let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
-                    
-                    if currentYear > lastDalyMissionYear ||
-                        (currentYear == lastDalyMissionYear && currentMonth > lastDalyMissionMonth) ||
-                        (currentYear == lastDalyMissionYear && currentMonth == lastDalyMissionMonth && currentDay > lastDalyMissionDay) {
-                        self.isGetDalyMission.toggle()
-                    }
-                }
-            })
             .onReceive(self.timer, perform: { time in
                 if !isGetDalyMission {
-                    
                     let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
                     let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
                     let currentHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
@@ -156,6 +149,16 @@ struct TaskListView: View {
                         showMissionAlertSwicher = 2
                         if hapticActivated { generrator.notificationOccurred(.success) }
                         showAlert.toggle()
+                    }
+                } else {
+                    let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
+                    let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
+                    let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                    
+                    if currentYear > lastDalyMissionYear ||
+                        (currentYear == lastDalyMissionYear && currentMonth > lastDalyMissionMonth) ||
+                        (currentYear == lastDalyMissionYear && currentMonth == lastDalyMissionMonth && currentDay > lastDalyMissionDay) {
+                        self.isGetDalyMission.toggle()
                     }
                 }
             })
@@ -175,6 +178,11 @@ struct TaskListView: View {
                         openTask = true
                     }
                 }
+                if statusInfo == 0 { // Warning Disappear After
+                    getMission()
+                    statusInfo = 999
+                    developerActivated = false
+                }
             })
         }
     }
@@ -188,6 +196,12 @@ struct TaskListView: View {
             }
         }
     }
+    
+    private func percent(complete: Int, count: Int)-> CGFloat {
+        let a: CGFloat = CGFloat(complete), b: CGFloat = CGFloat(count)
+        
+        return CGFloat(a/b)
+    }
 }
 
 struct TaskListView_Previews: PreviewProvider {
@@ -198,8 +212,12 @@ struct TaskListView_Previews: PreviewProvider {
 
 struct TaskCell: View {
     
+    @AppStorage("HapticActivated") var hapticActivated = true
+    @AppStorage("MissionCompletes") var missionCompletes = 0
+    @AppStorage("MissionCounts") var missionCounts = 1
     @ObservedObject var taskCellVM: TaskCellViewModel
     let width: CGFloat
+    let generrator = UINotificationFeedbackGenerator()
     var body: some View {
         HStack {
             Spacer()
@@ -208,9 +226,6 @@ struct TaskCell: View {
                 Image(systemName: taskCellVM.completionStateIconName)
                     .resizable()
                     .frame(width: 20, height: 20)
-                    .onTapGesture {
-                        self.taskCellVM.task.completed.toggle()
-                    }
                     .padding(.leading)
                 
                 Text(LocalizedStringKey(taskCellVM.task.title))
@@ -222,6 +237,26 @@ struct TaskCell: View {
             .frame(width: (width * 0.9), height: 50)
             .background(Color.white)
             .cornerRadius(15)
+            .onTapGesture {
+                if hapticActivated {
+                    if !taskCellVM.task.completed {
+                        generrator.notificationOccurred(.success)
+                        withAnimation() {
+                            if missionCompletes != missionCounts {
+                                missionCompletes+=1
+                            }
+                        }
+                    } else {
+                        generrator.notificationOccurred(.warning)
+                        withAnimation() {
+                            if missionCompletes > 0 {
+                                missionCompletes-=1
+                            }
+                        }
+                    }
+                }
+                self.taskCellVM.task.completed.toggle()
+            }
             
             Spacer()
         }
@@ -256,18 +291,23 @@ func clearMission() {
 
 func getMission() {
     @ObservedObject var taskListVM = TaskListViewModel()
+    @AppStorage("MissionCounts") var missionCounts = 0
+    @AppStorage("MissionCompletes") var missionCompletes = 0
     
     var difficlutChose: [Int] = [],
         highMissionIndex: [Int] = [], highMissionNum = 0,
         mediumMissionIndex: [Int] = [], mediumMissionNum = 0,
         lowMissionIndex: [Int] = [], lowMissionNum = 0, tmp: Int
     
+    missionCompletes = 0
     
     clearMission()
     
-    while difficlutChose.reduce(0, +) < 7 {
+    while difficlutChose.reduce(0, +) < 9 {
         difficlutChose.append(Int.random(in: 1...3))
     }
+    
+    missionCounts = difficlutChose.count
     
     for difficluty in difficlutChose {
         switch difficluty {
@@ -293,5 +333,29 @@ func getMission() {
             taskListVM.addTask(task: HighMission[highMissionNum])
             highMissionNum+=1
         }
+    }
+}
+
+struct ProgressView: View {
+    
+    var percent: CGFloat
+    
+    var body: some View {
+        
+        ZStack(alignment: .leading) {
+            Capsule()
+                .fill(Color.black.opacity(0.04))
+                .frame(height: 8)
+            
+            Capsule()
+                .fill(LinearGradient(gradient: .init(colors: [Color("ProgressBar1"), Color("ProgressBar4")]), startPoint: .leading, endPoint: .trailing))
+                .frame(width: self.callPercent(), height: 8)
+        }
+    }
+    
+    private func callPercent()->CGFloat {
+        let width = UIScreen.main.bounds.width - 32
+        
+        return width * self.percent
     }
 }
