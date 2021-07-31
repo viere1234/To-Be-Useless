@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import StoreKit
+
 struct SettingView: View {
     
+    @Environment(\.openURL) var openURL
     @AppStorage("First") var first = true
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
@@ -58,7 +61,7 @@ struct SettingView: View {
                     
                     Toggle(isOn: $hapticActivated) {
                         Label(
-                            title: { Text("Core Haptics") },
+                            title: { Text("Haptic Touch") },
                             icon: { Image(systemName: "hand.tap").foregroundColor(.red) }
                         )
                     }
@@ -67,31 +70,41 @@ struct SettingView: View {
                 Section (header: Text("Support")) {
                     NavigationLink(destination: SupportView()) {
                         Label(
-                            title: { Text("Support") },
-                            icon: { Image(systemName: "person.fill.questionmark").foregroundColor(.red) }
+                            title: { Text("Information Center") },
+                            icon: { Image(systemName: "info.circle").foregroundColor(.red) }
                         )
                     }
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        openURL(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfucyu0HHT4mudHFv1xNnr0G0pnOhDTHG6zpx3j-57A6zhPBA/viewform")!)
+                    }, label: {
                         Label(
                             title: { Text("Sent Feedback").foregroundColor(.black) },
                             icon: { Image(systemName: "paperplane").foregroundColor(.red) }
                         )
                     })
+                    
                 }
                 
                 Section (header: Text("To-be Useless")) {
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        if let windowScene = UIApplication.shared.windows.first?.windowScene { SKStoreReviewController.requestReview(in: windowScene)
+                        }
+                    }, label: {
                         Label(
                             title: { Text("Rate This App").foregroundColor(.black) },
                             icon: { Image(systemName: "star.fill").foregroundColor(.red) }
                         )
                     })
                     
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    Button(action: {
+                        guard let data = URL(string: "https://testflight.apple.com/join/zYXqFRmM") else { return }
+                        let av = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+                        UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
+                    }, label: {
                         Label(
                             title: { Text("Share With Friends").foregroundColor(.black) },
-                            icon: { Image(systemName: "square.and.arrow.up.on.square").foregroundColor(.red) }
+                            icon: { Image(systemName: "square.and.arrow.up").foregroundColor(.red) }
                         )
                     })
                     
@@ -108,7 +121,7 @@ struct SettingView: View {
                 HStack {
                     Spacer()
                     
-                    Text("To-be Useless Version Beta 0.1.1")
+                    Text("To-be Useless Version Beta 0.1.2")
                         .foregroundColor(.gray)
                     
                     Spacer()

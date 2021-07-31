@@ -14,15 +14,27 @@
 "Run out of times" = "Run out of times";
 "Daily mission get!!" = "Daily mission get!!";
 "Are you sure?" = "Are you sure?";
+"Daliy Missions have been completed" = "Daliy Missions have been completed";
+"Pick up more Missions tomorrow" = "Pick up more Missions tomorrow";
+"Let's work hard together !" = "Let's work hard together !";
+"Continue" = "Continue";
 
 //Settings
 "General" = "General";
 "Daly Mission Time" = "Daly Mission Time";
-"Support" = "Support";
+"Information Center" = "Information Center";
 "Sent Feedback" = "Sent Feedback";
 "Rate This App" = "Rate This App";
 "Share With Friends" = "Share With Friends";
 "About Us" = "About Us";
+"Haptic Touch" = "Haptic Touch";
+
+//About
+"Developer & Designer :" = "Developer & Designer :";
+"Brian Chang" = "Brian Chang";
+"Designer & Marketing :" = "Designer & Marketing :";
+"Fu-Syuan Wang" = "Fu-Syuan Wang";
+"Social Networks" = "Social Networks";
 
 //Mission
 "Meditate for 3 minutes" = "Meditate for 3 minutes";

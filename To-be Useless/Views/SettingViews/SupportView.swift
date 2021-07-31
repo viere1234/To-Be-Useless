@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SupportView: View {
+    
+    @ObservedObject var model = WebViewModel(url: "https://to-be-useless.notion.site/to-be-useless/To-be-Useless-c78abcd5caba493bb9bce50ae093c9c1")
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        LoadingView(isShowing: self.$model.isLoading) {
+            WebView(viewModel: self.model)
+        }
     }
 }
 

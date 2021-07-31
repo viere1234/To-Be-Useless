@@ -14,14 +14,27 @@
 "Run out of times" = "次數已用盡";
 "Daily mission get!!" = "已獲取每日任務！！";
 "Are you sure?" = "你確定嗎？";
+"Daliy Missions have been completed" = "今日任務已完成";
+"Pick up more Missions tomorrow" = "明天再來領取任務吧";
+"Let's work hard together !" = "一起加油！";
+"Continue" = "繼續";
+
 //Settings
 "General" = "一般";
 "Daly Mission Time" = "每日任務時間";
-"Support" = "幫助";
+"Information Center" = "資訊中心";
 "Sent Feedback" = "回饋";
 "Rate This App" = "評價此App";
 "Share With Friends" = "與好友分享";
 "About Us" = "關於我們";
+"Haptic Touch" = "觸覺回饋";
+
+//About
+"Developer & Designer :" = "開發者 & 設計師 :";
+"Brian Chang" = "張智堯";
+"Designer & Marketing :" = "設計師 & 行銷 :";
+"Fu-Syuan Wang" = "王甫瑄";
+"Social Networks" = "社交網站";
 
 //Mission
 "Meditate for 3 minutes" = "冥想三分鐘";

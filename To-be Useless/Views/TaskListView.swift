@@ -8,14 +8,20 @@
 import SwiftUI
 import UIKit
 import UserNotifications
+import SlideOverCard
 
 struct TaskListView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    //Animation Checkmark
+    
+
+    //End
     @State var presentAddNewItem = false
     @State private var showAlert = false
     @State var showMissionAlertSwicher = 0
     @State var openTask = false
+    @State var isFinishMission = false
     @ObservedObject var taskListVM = TaskListViewModel()
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarTitle: CGFloat = 20
@@ -55,135 +61,165 @@ struct TaskListView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                GeometryReader { mainView in
-                    ScrollView {
-                        VStack(spacing: 15) {
-                            ForEach (taskListVM.taskCellViewModels) { taskCellVM in
-                                GeometryReader { item in
-                                    TaskCell(taskCellVM: taskCellVM, width: mainView.size.width)
-                                        .scaleEffect(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY), anchor: .bottom)
-                                        .opacity(Double(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY)))
-                                        .offset(x: (openTask ? 0 : mainView.size.width))
+            ZStack {
+                VStack(spacing: 0) {
+                    GeometryReader { mainView in
+                        ScrollView {
+                            VStack(spacing: 15) {
+                                ForEach (taskListVM.taskCellViewModels) { taskCellVM in
+                                    GeometryReader { item in
+                                        TaskCell(isFinishMission: $isFinishMission, taskCellVM: taskCellVM, width: mainView.size.width)
+                                            .scaleEffect(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY), anchor: .bottom)
+                                            .opacity(Double(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY)))
+                                            .offset(x: (openTask ? 0 : mainView.size.width))
+                                    }
+                                    .frame(height: 50)
                                 }
-                                .frame(height: 50)
+                            }
+                            .padding(.top, 10)
+                        }
+                        .zIndex(1)
+                        .navigationBarTitle(Text("To-Be Useless"), displayMode: .automatic)
+                        .onAppear(perform: {
+                            withAnimation {
+                                
+                            }
+                        })
+                    }
+                    
+                    HStack {
+                        Button(action: {
+                            if self.getMissionTime > 0 {
+                                if hapticActivated { generrator.notificationOccurred(.warning) }
+                                self.showMissionAlertSwicher = 0
+                                self.showAlert.toggle()
+                            }
+                        }) {
+                            HStack {
+                                Image(systemName: "rectangle.fill.on.rectangle.angled.fill")
+                                    .font(.title2)
+                                Text(LocalizedStringKey("Refresh Mission" + (self.getMissionTime > 0 ? "" : " (Used Up)")))
+                                    .font(.system(Font.TextStyle.headline, design: .rounded))
                             }
                         }
-                        .padding(.top, 10)
-                    }
-                    .zIndex(1)
-                    .navigationBarTitle(Text("To-Be Useless"), displayMode: .automatic)
-                    .onAppear(perform: {
-                        withAnimation {
+                        .alert(isPresented: $showAlert, content: {
                             
-                        }
-                    })
-                }
-                
-                HStack {
-                    Button(action: {
-                        if self.getMissionTime > 0 {
-                            if hapticActivated { generrator.notificationOccurred(.warning) }
-                            self.showMissionAlertSwicher = 0
-                            self.showAlert.toggle()
-                        }
-                    }) {
-                        HStack {
-                            Image(systemName: "rectangle.fill.on.rectangle.angled.fill")
-                                .font(.title2)
-                            Text(LocalizedStringKey("Refresh Mission" + (self.getMissionTime > 0 ? "" : " (Used Up)")))
-                                .font(.system(Font.TextStyle.headline, design: .rounded))
-                        }
-                    }
-                    .alert(isPresented: $showAlert, content: {
-                        
-                        switch showMissionAlertSwicher {
-                        /*case 1:
-                            return Alert(title: Text("Run out of times"),
-                                         message: Text("\(getMissionTime) Times left"))*/
-                        case 2:
-                            return Alert(title: Text("Daily mission get!!"))
-                        default:
-                            return Alert(title: Text("Are you sure?"),
-                                         message: Text("\(getMissionTime) Times left"),
-                                         primaryButton: .default(Text("Yes"), action: {
-                                            if hapticActivated { generrator.notificationOccurred(.success) }
-                                            self.getMissionTime -= 1
-                                            withAnimation() {
-                                                getMission()
-                                            }
-                                            
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                            switch showMissionAlertSwicher {
+                            /*case 1:
+                                return Alert(title: Text("Run out of times"),
+                                             message: Text("\(getMissionTime) Times left"))*/
+                            case 2:
+                                return Alert(title: Text("Daily mission get!!"))
+                            default:
+                                return Alert(title: Text("Are you sure?"),
+                                             message: Text("\(getMissionTime) Times left"),
+                                             primaryButton: .default(Text("Yes"), action: {
+                                                if hapticActivated { generrator.notificationOccurred(.success) }
+                                                self.getMissionTime -= 1
                                                 withAnimation() {
                                                     getMission()
                                                 }
-                                            }
-                                         }),
-                                         secondaryButton: .destructive(Text("No")))
+                                                
+                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                                    withAnimation() {
+                                                        getMission()
+                                                    }
+                                                }
+                                             }),
+                                             secondaryButton: .destructive(Text("No")))
+                            }
+                        })
+                        .padding()
+                        .accentColor(Color(self.getMissionTime > 0 ? UIColor.systemRed : UIColor.systemGray)
+                                        .opacity(self.getMissionTime > 0 ? 1 : 0.7))
+                        
+                        Spacer()
+                    }
+                    
+                    ProgressView(percent: percent(complete: (openTask ? missionCompletes : 0), count: missionCounts))
+                        .padding([.bottom, .leading, .trailing], 16)
+                }
+                .onReceive(self.timer, perform: { time in
+                    if !isGetDalyMission {
+                        let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
+                        let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
+                        let currentHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
+                        let currentMinute = Calendar.current.dateComponents([.minute], from: Date()).minute ?? 0
+                        
+                        if currentHour > userHour || (currentHour == userHour && currentMinute >= userMinute) {
+                            isGetDalyMission.toggle()
+                            lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
+                            lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
+                            lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                            getMission()
+                            getMissionTime = 1
+                            showMissionAlertSwicher = 2
+                            if hapticActivated { generrator.notificationOccurred(.success) }
+                            showAlert.toggle()
                         }
-                    })
-                    .padding()
-                    .accentColor(Color(self.getMissionTime > 0 ? UIColor.systemRed : UIColor.systemGray)
-                                    .opacity(self.getMissionTime > 0 ? 1 : 0.7))
-                    
-                    Spacer()
+                    } else {
+                        let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
+                        let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
+                        let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                        
+                        if currentYear > lastDalyMissionYear ||
+                            (currentYear == lastDalyMissionYear && currentMonth > lastDalyMissionMonth) ||
+                            (currentYear == lastDalyMissionYear && currentMonth == lastDalyMissionMonth && currentDay > lastDalyMissionDay) {
+                            self.isGetDalyMission.toggle()
+                        }
+                    }
+                })
+                .background(Color("BackGround").edgesIgnoringSafeArea(.all))
+                .toolbar {
+                  ToolbarItem() {
+                      NavigationLink(
+                          destination: SettingView(),
+                          label: {
+                              Image(systemName: "gearshape.fill")
+                      })
+                  }
                 }
-                
-                ProgressView(percent: percent(complete: (openTask ? missionCompletes : 0), count: missionCounts))
-                    .padding([.bottom, .leading, .trailing], 16)
-            }
-            .onReceive(self.timer, perform: { time in
-                if !isGetDalyMission {
-                    let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
-                    let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
-                    let currentHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
-                    let currentMinute = Calendar.current.dateComponents([.minute], from: Date()).minute ?? 0
-                    
-                    if currentHour > userHour || (currentHour == userHour && currentMinute >= userMinute) {
-                        isGetDalyMission.toggle()
-                        lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
-                        lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
-                        lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                .onAppear(perform: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                        withAnimation() {
+                            openTask = true
+                        }
+                    }
+                    if statusInfo == 0 { // Warning Disappear After
                         getMission()
-                        getMissionTime = 1
-                        showMissionAlertSwicher = 2
-                        if hapticActivated { generrator.notificationOccurred(.success) }
-                        showAlert.toggle()
+                        statusInfo = 999
+                        developerActivated = false
                     }
-                } else {
-                    let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
-                    let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
-                    let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
-                    
-                    if currentYear > lastDalyMissionYear ||
-                        (currentYear == lastDalyMissionYear && currentMonth > lastDalyMissionMonth) ||
-                        (currentYear == lastDalyMissionYear && currentMonth == lastDalyMissionMonth && currentDay > lastDalyMissionDay) {
-                        self.isGetDalyMission.toggle()
+                })
+                
+                SlideOverCard(isPresented: $isFinishMission) {
+                    VStack {
+                        Text("Daliy Missions have been completed")
+                            .font(.headline)
+                            .font(.system(.body, design: .rounded))
+                        
+                        LottieView(name: "23222-checkmark", loopMode: .playOnce)
+                            .frame(width: 100, height: 100, alignment: .center)
+                            
+                            
+                        Text("Pick up more Missions tomorrow")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            
+                        
+                        Text("Let's work hard together !")
+                            .font(.headline)
+                            .fontWeight(.light)
+                            .foregroundColor(.gray)
+                        
+                        Divider()
+                            .padding()
+                        
+                        Button("Continue", action: { isFinishMission.toggle() })
+                        .buttonStyle(SOCActionButton())
                     }
                 }
-            })
-            .background(Color("BackGround").edgesIgnoringSafeArea(.all))
-            .toolbar {
-              ToolbarItem() {
-                  NavigationLink(
-                      destination: SettingView(),
-                      label: {
-                          Image(systemName: "gearshape.fill")
-                  })
-              }
             }
-            .onAppear(perform: {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
-                    withAnimation() {
-                        openTask = true
-                    }
-                }
-                if statusInfo == 0 { // Warning Disappear After
-                    getMission()
-                    statusInfo = 999
-                    developerActivated = false
-                }
-            })
         }
     }
     func scaleValue(mainFrame: CGFloat, minY: CGFloat)-> CGFloat {
@@ -212,6 +248,8 @@ struct TaskListView_Previews: PreviewProvider {
 
 struct TaskCell: View {
     
+    
+    @Binding var isFinishMission: Bool
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionCompletes") var missionCompletes = 0
     @AppStorage("MissionCounts") var missionCounts = 1
@@ -244,6 +282,9 @@ struct TaskCell: View {
                         withAnimation() {
                             if missionCompletes != missionCounts {
                                 missionCompletes+=1
+                                if missionCompletes == missionCounts {
+                                    self.isFinishMission = true
+                                }
                             }
                         }
                     } else {
