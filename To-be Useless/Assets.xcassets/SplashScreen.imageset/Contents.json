@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "App_store_1024_1x.png",
+      "filename" : "Group 13 (1).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "App_store_1024_1x-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "App_store_1024_1x-2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

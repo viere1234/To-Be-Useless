@@ -7,9 +7,11 @@
 
 import SwiftUI
 import Resolver
+import StoreKit
 
 @main
 struct To_be_UselessApp: App {
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

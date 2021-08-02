@@ -17,6 +17,7 @@ struct TaskListView: View {
     
 
     //End
+    
     @State var presentAddNewItem = false
     @State private var showAlert = false
     @State var showMissionAlertSwicher = 0
@@ -42,16 +43,16 @@ struct TaskListView: View {
         let design = UIFontDescriptor.SystemDesign.rounded
         let descriptor = UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle).withDesign(design)!
         let largeTitle = [
-            NSAttributedString.Key.foregroundColor: UIColor.red,
+            NSAttributedString.Key.foregroundColor: UIColor.orange,
             NSAttributedString.Key.font: UIFont.init(descriptor: descriptor, size: navigationBarLargeTitle)
         ]
         let title = [
-            NSAttributedString.Key.foregroundColor: UIColor.red,
+            NSAttributedString.Key.foregroundColor: UIColor.orange,
             NSAttributedString.Key.font: UIFont.init(descriptor: descriptor, size: navigationBarTitle)
         ]
         
         //let font = UIFont.init(descriptor: descriptor, size: 30)
-        UINavigationBar.appearance().tintColor = UIColor.red
+        UINavigationBar.appearance().tintColor = UIColor.orange
         UINavigationBar.appearance().largeTitleTextAttributes = largeTitle
         UINavigationBar.appearance().titleTextAttributes = title
         //UINavigationBar.appearance().largeTitleTextAttributes = [.font : font]
@@ -79,7 +80,7 @@ struct TaskListView: View {
                             .padding(.top, 10)
                         }
                         .zIndex(1)
-                        .navigationBarTitle(Text("To-Be Useless"), displayMode: .automatic)
+                        .navigationBarTitle(Text("to-be useless"), displayMode: .automatic)
                         .onAppear(perform: {
                             withAnimation {
                                 
@@ -130,7 +131,7 @@ struct TaskListView: View {
                             }
                         })
                         .padding()
-                        .accentColor(Color(self.getMissionTime > 0 ? UIColor.systemRed : UIColor.systemGray)
+                        .accentColor(Color(self.getMissionTime > 0 ? UIColor.orange : UIColor.systemGray)
                                         .opacity(self.getMissionTime > 0 ? 1 : 0.7))
                         
                         Spacer()
@@ -276,6 +277,9 @@ struct TaskCell: View {
             .background(Color.white)
             .cornerRadius(15)
             .onTapGesture {
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    self.taskCellVM.task.completed.toggle()
+                }
                 if hapticActivated {
                     if !taskCellVM.task.completed {
                         generrator.notificationOccurred(.success)
@@ -283,7 +287,9 @@ struct TaskCell: View {
                             if missionCompletes != missionCounts {
                                 missionCompletes+=1
                                 if missionCompletes == missionCounts {
-                                    self.isFinishMission = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                                        self.isFinishMission = true
+                                    }
                                 }
                             }
                         }
@@ -296,7 +302,6 @@ struct TaskCell: View {
                         }
                     }
                 }
-                self.taskCellVM.task.completed.toggle()
             }
             
             Spacer()
@@ -389,7 +394,7 @@ struct ProgressView: View {
                 .frame(height: 8)
             
             Capsule()
-                .fill(LinearGradient(gradient: .init(colors: [Color("ProgressBar1"), Color("ProgressBar4")]), startPoint: .leading, endPoint: .trailing))
+                .fill(Color("ProgressBar"))
                 .frame(width: self.callPercent(), height: 8)
         }
     }
