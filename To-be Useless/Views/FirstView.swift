@@ -46,12 +46,12 @@ struct FirstView: View {
                                     first.toggle()
                                 }
                             }, label: {
-                                Text("Get Useless")
+                                Text("Get Started")
                                     .foregroundColor(.white)
                                     .font(.system(size: 20, design: .rounded))
-                                    .frame(width: 375, height: 44, alignment: .center)
-                                    .background(Color.green)
-                                    .cornerRadius(7)
+                                    .frame(width: UIScreen.main.bounds.width * 0.9, height: 44, alignment: .center)
+                                    .background(Color("OnBoardingUIColor"))
+                                    .cornerRadius(25)
                             })
                             
                             Spacer()

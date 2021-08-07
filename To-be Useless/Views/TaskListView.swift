@@ -80,7 +80,7 @@ struct TaskListView: View {
                             .padding(.top, 10)
                         }
                         .zIndex(1)
-                        .navigationBarTitle(Text("to-be useless"), displayMode: .automatic)
+                        .navigationBarTitle(Text("Daily Missions"), displayMode: .automatic)
                         .onAppear(perform: {
                             withAnimation {
                                 

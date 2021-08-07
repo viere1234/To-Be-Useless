@@ -20,6 +20,11 @@ struct AboutView: View {
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width / 3.5, height: UIScreen.main.bounds.width / 3.5, alignment: .center)
                 .cornerRadius(15)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.gray.opacity(0.3), lineWidth: 3)
+                )
+                
             
             Text("To-Be Useless")
                 .font(.largeTitle)
