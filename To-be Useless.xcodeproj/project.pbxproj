@@ -17,6 +17,10 @@
 		D328632126B4262000CA3723 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328632026B4262000CA3723 /* LottieView.swift */; };
 		D328632326B42B7500CA3723 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328632226B42B7500CA3723 /* TestView.swift */; };
 		D32B0BEE26AC479300F18502 /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B0BED26AC479300F18502 /* MissionRepository.swift */; };
+		D33DC20F26BE8122009D8BE0 /* 41068-man-filling-a-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */; };
+		D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */; };
+		D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */; };
+		D33DC21B26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */; };
 		D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = D340B1C526B5239A0024E13C /* 23222-checkmark.json */; };
 		D340B1C826B52AEF0024E13C /* 9844-loading-40-paperplane.json in Resources */ = {isa = PBXBuildFile; fileRef = D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */; };
 		D356FD2926AFDECA002998FD /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356FD2826AFDECA002998FD /* DataView.swift */; };
@@ -31,6 +35,8 @@
 		D370E09326A5537F003EA11C /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = D370E09226A5537F003EA11C /* Disk */; };
 		D38F31A226A5105A00154C86 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A126A5105A00154C86 /* FirstView.swift */; };
 		D38F31A426A5126B00154C86 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A326A5126B00154C86 /* TaskListView.swift */; };
+		D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFC26BE5DFA00765E81 /* OffsetPageTabView.swift */; };
+		D3933CFF26BE61EF00765E81 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFE26BE61EF00765E81 /* Intro.swift */; };
 		D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3B051E926AE5C82009BCBF4 /* Localizable.strings */; };
 		D3CF8FBE26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json in Resources */ = {isa = PBXBuildFile; fileRef = D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */; };
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
@@ -52,6 +58,10 @@
 		D328632026B4262000CA3723 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		D328632226B42B7500CA3723 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D32B0BED26AC479300F18502 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
+		D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "41068-man-filling-a-list.json"; sourceTree = "<group>"; };
+		D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "3091-process-complete.json"; sourceTree = "<group>"; };
+		D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "53194-earth-globe-rotating-with-seamless-loop-animation.json"; sourceTree = "<group>"; };
+		D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "18045-teamwork-is-all-we-need.json"; sourceTree = "<group>"; };
 		D340B1C526B5239A0024E13C /* 23222-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "23222-checkmark.json"; sourceTree = "<group>"; };
 		D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9844-loading-40-paperplane.json"; sourceTree = "<group>"; };
 		D356FD2826AFDECA002998FD /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
@@ -64,6 +74,8 @@
 		D370E08C26A5469B003EA11C /* TaskRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRepository.swift; sourceTree = "<group>"; };
 		D38F31A126A5105A00154C86 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		D38F31A326A5126B00154C86 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+		D3933CFC26BE5DFA00765E81 /* OffsetPageTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetPageTabView.swift; sourceTree = "<group>"; };
+		D3933CFE26BE61EF00765E81 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		D3B051E826AE5C82009BCBF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3B051EA26AE5C87009BCBF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "60586-developer-isometric-people-working-with-technology.json"; sourceTree = "<group>"; };
@@ -98,6 +110,7 @@
 				D370E08726A544C3003EA11C /* TaskListViewModel.swift */,
 				D328631E26B4096C00CA3723 /* WebView.swift */,
 				D328632026B4262000CA3723 /* LottieView.swift */,
+				D3933CFC26BE5DFA00765E81 /* OffsetPageTabView.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -150,6 +163,10 @@
 				D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */,
 				D340B1C526B5239A0024E13C /* 23222-checkmark.json */,
 				D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */,
+				D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */,
+				D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */,
+				D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */,
+				D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -177,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				D370E08526A52139003EA11C /* Task.swift */,
+				D3933CFE26BE61EF00765E81 /* Intro.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,7 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */,
+				D33DC21B26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json in Resources */,
+				D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */,
+				D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */,
 				D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */,
+				D33DC20F26BE8122009D8BE0 /* 41068-man-filling-a-list.json in Resources */,
 				D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */,
 				D340B1C826B52AEF0024E13C /* 9844-loading-40-paperplane.json in Resources */,
 				D30D607626A4FD0D00A5F83C /* Preview Assets.xcassets in Resources */,
@@ -305,6 +327,7 @@
 				D32B0BEE26AC479300F18502 /* MissionRepository.swift in Sources */,
 				D328632126B4262000CA3723 /* LottieView.swift in Sources */,
 				D328631F26B4096C00CA3723 /* WebView.swift in Sources */,
+				D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */,
 				D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */,
 				D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */,
 				D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */,
@@ -321,6 +344,7 @@
 				D3FFB53E26A658EF00162E2F /* LoginView.swift in Sources */,
 				D356FD2926AFDECA002998FD /* DataView.swift in Sources */,
 				D30D606F26A4FD0C00A5F83C /* To_be_UselessApp.swift in Sources */,
+				D3933CFF26BE61EF00765E81 /* Intro.swift in Sources */,
 				D370E08826A544C3003EA11C /* TaskListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

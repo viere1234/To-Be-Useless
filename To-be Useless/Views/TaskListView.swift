@@ -349,7 +349,7 @@ func getMission() {
     
     clearMission()
     
-    while difficlutChose.reduce(0, +) < 9 {
+    while difficlutChose.reduce(0, +) < 6 {
         difficlutChose.append(Int.random(in: 1...3))
     }
     
