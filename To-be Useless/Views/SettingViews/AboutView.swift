@@ -19,11 +19,8 @@ struct AboutView: View {
             Image("AppPicture")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width / 3.5, height: UIScreen.main.bounds.width / 3.5, alignment: .center)
-                .cornerRadius(15)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.gray.opacity(0.3), lineWidth: 3)
-                )
+                .cornerRadius(20)
+                
                 
             
             Text("To-Be Useless")

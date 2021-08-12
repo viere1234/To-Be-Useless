@@ -11,6 +11,8 @@
 		D30D607126A4FD0C00A5F83C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D607026A4FD0C00A5F83C /* ContentView.swift */; };
 		D30D607326A4FD0D00A5F83C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30D607226A4FD0D00A5F83C /* Assets.xcassets */; };
 		D30D607626A4FD0D00A5F83C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30D607526A4FD0D00A5F83C /* Preview Assets.xcassets */; };
+		D30FBCB026C52E3A008EEB87 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D30FBCAF26C52E3A008EEB87 /* BottomSheet */; };
+		D31777BE26C41C0700E80246 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = D31777BD26C41C0700E80246 /* Disk */; };
 		D328631A26B39FD800CA3723 /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = D328631926B39FD800CA3723 /* SlideOverCard */; };
 		D328631D26B3B5FC00CA3723 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D328631C26B3B5FC00CA3723 /* Lottie */; };
 		D328631F26B4096C00CA3723 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328631E26B4096C00CA3723 /* WebView.swift */; };
@@ -32,13 +34,14 @@
 		D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08926A544E9003EA11C /* TaskCellViewModel.swift */; };
 		D370E08D26A5469B003EA11C /* TaskRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08C26A5469B003EA11C /* TaskRepository.swift */; };
 		D370E09026A54CB4003EA11C /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = D370E08F26A54CB4003EA11C /* Resolver */; };
-		D370E09326A5537F003EA11C /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = D370E09226A5537F003EA11C /* Disk */; };
+		D37A70E726C4286600852DF3 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = D37A70E626C4286600852DF3 /* SwiftUICharts */; };
 		D38F31A226A5105A00154C86 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A126A5105A00154C86 /* FirstView.swift */; };
 		D38F31A426A5126B00154C86 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38F31A326A5126B00154C86 /* TaskListView.swift */; };
 		D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFC26BE5DFA00765E81 /* OffsetPageTabView.swift */; };
 		D3933CFF26BE61EF00765E81 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFE26BE61EF00765E81 /* Intro.swift */; };
 		D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3B051E926AE5C82009BCBF4 /* Localizable.strings */; };
 		D3CF8FBE26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json in Resources */ = {isa = PBXBuildFile; fileRef = D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */; };
+		D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0906C26C416C50053E0BC /* ChartView.swift */; };
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
 		D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49AA026A58D670029D8B3 /* SupportView.swift */; };
 		D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */; };
@@ -79,6 +82,7 @@
 		D3B051E826AE5C82009BCBF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3B051EA26AE5C87009BCBF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "60586-developer-isometric-people-working-with-technology.json"; sourceTree = "<group>"; };
+		D3E0906C26C416C50053E0BC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D3F49AA026A58D670029D8B3 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
@@ -93,9 +97,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D370E09026A54CB4003EA11C /* Resolver in Frameworks */,
+				D31777BE26C41C0700E80246 /* Disk in Frameworks */,
+				D30FBCB026C52E3A008EEB87 /* BottomSheet in Frameworks */,
 				D328631A26B39FD800CA3723 /* SlideOverCard in Frameworks */,
+				D37A70E726C4286600852DF3 /* SwiftUICharts in Frameworks */,
 				D36E8FAD26B5977900843AB3 /* StoreKit.framework in Frameworks */,
-				D370E09326A5537F003EA11C /* Disk in Frameworks */,
 				D328631D26B3B5FC00CA3723 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +221,7 @@
 				D38F31A126A5105A00154C86 /* FirstView.swift */,
 				D38F31A326A5126B00154C86 /* TaskListView.swift */,
 				D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */,
+				D3E0906C26C416C50053E0BC /* ChartView.swift */,
 				D3F49A9F26A58D410029D8B3 /* SettingViews */,
 			);
 			path = Views;
@@ -251,9 +258,11 @@
 			name = "To-be Useless";
 			packageProductDependencies = (
 				D370E08F26A54CB4003EA11C /* Resolver */,
-				D370E09226A5537F003EA11C /* Disk */,
 				D328631926B39FD800CA3723 /* SlideOverCard */,
 				D328631C26B3B5FC00CA3723 /* Lottie */,
+				D31777BD26C41C0700E80246 /* Disk */,
+				D37A70E626C4286600852DF3 /* SwiftUICharts */,
+				D30FBCAF26C52E3A008EEB87 /* BottomSheet */,
 			);
 			productName = "To-be Useless";
 			productReference = D30D606B26A4FD0C00A5F83C /* To-be Useless.app */;
@@ -285,9 +294,11 @@
 			mainGroup = D30D606226A4FD0C00A5F83C;
 			packageReferences = (
 				D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */,
-				D370E09126A5537F003EA11C /* XCRemoteSwiftPackageReference "Disk" */,
 				D328631826B39FD800CA3723 /* XCRemoteSwiftPackageReference "SlideOverCard" */,
 				D328631B26B3B5FC00CA3723 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				D31777BC26C41C0700E80246 /* XCRemoteSwiftPackageReference "Disk" */,
+				D37A70E526C4286600852DF3 /* XCRemoteSwiftPackageReference "ChartView" */,
+				D30FBCAE26C52E3A008EEB87 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
 			);
 			productRefGroup = D30D606C26A4FD0C00A5F83C /* Products */;
 			projectDirPath = "";
@@ -330,6 +341,7 @@
 				D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */,
 				D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */,
 				D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */,
+				D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */,
 				D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */,
 				D36E8FAF26B59A1500843AB3 /* StoreManger.swift in Sources */,
 				D30D607126A4FD0C00A5F83C /* ContentView.swift in Sources */,
@@ -556,31 +568,15 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		D328631826B39FD800CA3723 /* XCRemoteSwiftPackageReference "SlideOverCard" */ = {
+		D30FBCAE26C52E3A008EEB87 /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/joogps/SlideOverCard.git";
+			repositoryURL = "https://github.com/weitieda/bottom-sheet";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
+				minimumVersion = 1.0.6;
 			};
 		};
-		D328631B26B3B5FC00CA3723 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.2.3;
-			};
-		};
-		D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hmlongco/Resolver.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.3;
-			};
-		};
-		D370E09126A5537F003EA11C /* XCRemoteSwiftPackageReference "Disk" */ = {
+		D31777BC26C41C0700E80246 /* XCRemoteSwiftPackageReference "Disk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://8n38g2l@gitroyalty.com/saoudrizwan/Disk";
 			requirement = {
@@ -588,9 +584,51 @@
 				minimumVersion = 0.6.4;
 			};
 		};
+		D328631826B39FD800CA3723 /* XCRemoteSwiftPackageReference "SlideOverCard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/joogps/SlideOverCard.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.0.0;
+			};
+		};
+		D328631B26B3B5FC00CA3723 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = exactVersion;
+				version = 3.2.3;
+			};
+		};
+		D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.4.3;
+			};
+		};
+		D37A70E526C4286600852DF3 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		D30FBCAF26C52E3A008EEB87 /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D30FBCAE26C52E3A008EEB87 /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
+		};
+		D31777BD26C41C0700E80246 /* Disk */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D31777BC26C41C0700E80246 /* XCRemoteSwiftPackageReference "Disk" */;
+			productName = Disk;
+		};
 		D328631926B39FD800CA3723 /* SlideOverCard */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = D328631826B39FD800CA3723 /* XCRemoteSwiftPackageReference "SlideOverCard" */;
@@ -606,10 +644,10 @@
 			package = D370E08E26A54CB4003EA11C /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
 		};
-		D370E09226A5537F003EA11C /* Disk */ = {
+		D37A70E626C4286600852DF3 /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = D370E09126A5537F003EA11C /* XCRemoteSwiftPackageReference "Disk" */;
-			productName = Disk;
+			package = D37A70E526C4286600852DF3 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

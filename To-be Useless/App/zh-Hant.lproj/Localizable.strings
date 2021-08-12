@@ -29,6 +29,8 @@
 "Share With Friends" = "與好友分享";
 "About Us" = "關於我們";
 "Haptic Touch" = "觸覺回饋";
+"Start Menu" = "起始畫面";
+"Mission Proposal" = "任務提案"
 
 //About
 "Developer & Designer :" = "開發者 & 設計師 :";
@@ -39,7 +41,6 @@
 
 //Mission
 "Meditate for 3 minutes" = "冥想三分鐘";
-"Push up 20 times" = "伏地挺身二十次";
 "Look out the window for three minutes" = "往窗外看三分鐘";
 "Read an internet article" = "讀一篇文章";
 "Pay attention to breathing for 30 seconds" = "專注呼吸三十秒";

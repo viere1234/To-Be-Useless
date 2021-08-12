@@ -8,7 +8,6 @@
 
 let HighMission = [
     Task(title: "Meditate for 3 minutes", difficulty: TaskDifficulty.high, completed: false),
-    Task(title: "Push up 20 times", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Watch a movie", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Send a message to a person and ask him \"How you doing?\"", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Draw whatever you see today (anywhere)", difficulty: TaskDifficulty.high, completed: false),

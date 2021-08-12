@@ -10,14 +10,12 @@ import UIKit
 import UserNotifications
 import SlideOverCard
 
+
 struct TaskListView: View {
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    //Animation Checkmark
-    
 
-    //End
-    
+    @State var offset: CGFloat = 0
     @State var presentAddNewItem = false
     @State private var showAlert = false
     @State var showMissionAlertSwicher = 0
@@ -35,8 +33,9 @@ struct TaskListView: View {
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionCounts") var missionCounts = 1
     @AppStorage("MissionCompletes") var missionCompletes = 0
-    @AppStorage("StatusInfo") var statusInfo = 0
+    @AppStorage("Version") var version = ""
     @AppStorage("DeveloperActivated") var developerActivated = false
+    @AppStorage("First") var first = true
     let generrator = UINotificationFeedbackGenerator()
     
     init() {
@@ -63,6 +62,7 @@ struct TaskListView: View {
     var body: some View {
         NavigationView {
             ZStack {
+                
                 VStack(spacing: 0) {
                     GeometryReader { mainView in
                         ScrollView {
@@ -186,12 +186,14 @@ struct TaskListView: View {
                             openTask = true
                         }
                     }
-                    if statusInfo == 0 { // Warning Disappear After
-                        getMission()
-                        statusInfo = 999
-                        developerActivated = false
+                    if version != "0.1.3" { // Warning Disappear After
+                        self.first = true
+                        self.developerActivated = false
+                        version = "0.1.3"
                     }
                 })
+                
+                
                 
                 SlideOverCard(isPresented: $isFinishMission) {
                     VStack {
@@ -220,6 +222,7 @@ struct TaskListView: View {
                         .buttonStyle(SOCActionButton())
                     }
                 }
+                
             }
         }
     }
@@ -239,6 +242,7 @@ struct TaskListView: View {
         
         return CGFloat(a/b)
     }
+    
 }
 
 struct TaskListView_Previews: PreviewProvider {

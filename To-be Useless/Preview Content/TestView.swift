@@ -6,11 +6,20 @@
 //
 
 import SwiftUI
+import BottomSheet
 
 struct TestView: View {
+    
+    @State var tmp = false
+    
     var body: some View {
-        LottieView(name: "23222-checkmark", loopMode: .loop)
-            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        
+        Button(action: {self.tmp.toggle()}, label: {
+            Text("Button")
+        })
+        .bottomSheet(isPresented: $tmp, height: UIScreen.main.bounds.height) {
+            FirstView()
+        }
     }
 }
 
@@ -19,3 +28,4 @@ struct TestView_Previews: PreviewProvider {
         TestView()
     }
 }
+//, height: UIScreen.main.bounds.height / 1.3

@@ -17,6 +17,7 @@ struct SettingView: View {
     @AppStorage("GetMossionTime") var getMissionTime = 1
     @AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("IsGetDalyMission") var isGetDalyMission = false
+    @AppStorage("Version") var version = ""
     @State private var developerCounter = 0
     @State private var changeMissionTime = false
     @State private var showAlert = false    
@@ -33,6 +34,7 @@ struct SettingView: View {
                         })
                     }
                 }
+                
                 
                 Section (header: Text("General")) {
                     
@@ -68,19 +70,37 @@ struct SettingView: View {
                 }
                 
                 Section (header: Text("Support")) {
+                    Button(action: {
+                        self.first.toggle()
+                    }, label: {
+                        Label(
+                            title: { Text("Start Menu").foregroundColor(.black) },
+                            icon: { Image(systemName: "filemenu.and.selection").renderingMode(.original)}
+                        )
+                    })
+                    
                     NavigationLink(destination: SupportView()) {
                         Label(
                             title: { Text("Information Center") },
-                            icon: { Image(systemName: "info.circle").foregroundColor(.red) }
+                            icon: { Image(systemName: "info.circle.fill").renderingMode(.original) }
                         )
                     }
+                    
+                    Button(action: {
+                        openURL(URL(string: "https://forms.gle/6yws6CirUUb8nk919")!)
+                    }, label: {
+                        Label(
+                            title: { Text("Mission Proposal").foregroundColor(.black) },
+                            icon: { Image(systemName: "macwindow.badge.plus").renderingMode(.original) }
+                        )
+                    })
                     
                     Button(action: {
                         openURL(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfucyu0HHT4mudHFv1xNnr0G0pnOhDTHG6zpx3j-57A6zhPBA/viewform")!)
                     }, label: {
                         Label(
                             title: { Text("Sent Feedback").foregroundColor(.black) },
-                            icon: { Image(systemName: "paperplane").foregroundColor(.red) }
+                            icon: { Image(systemName: "paperplane.circle.fill").renderingMode(.original) }
                         )
                     })
                     
@@ -93,7 +113,7 @@ struct SettingView: View {
                     }, label: {
                         Label(
                             title: { Text("Rate This App").foregroundColor(.black) },
-                            icon: { Image(systemName: "star.fill").foregroundColor(.red) }
+                            icon: { Image(systemName: "star.fill").renderingMode(.original) }
                         )
                     })
                     
@@ -104,7 +124,7 @@ struct SettingView: View {
                     }, label: {
                         Label(
                             title: { Text("Share With Friends").foregroundColor(.black) },
-                            icon: { Image(systemName: "square.and.arrow.up").foregroundColor(.red) }
+                            icon: { Image(systemName: "square.and.arrow.up").foregroundColor(.orange) }
                         )
                     })
                     
@@ -113,7 +133,7 @@ struct SettingView: View {
                         label: {
                             Label(
                                 title: { Text("About Us").foregroundColor(.black) },
-                                icon: { Image(systemName: "crown.fill").foregroundColor(.red) }
+                                icon: { Image(systemName: "leaf.fill").renderingMode(.original) }
                             )
                         })
                 }
@@ -121,7 +141,7 @@ struct SettingView: View {
                 HStack {
                     Spacer()
                     
-                    Text("To-be Useless Version Beta 0.1.2")
+                    Text("To-be Useless Version Beta \(version)")
                         .foregroundColor(.gray)
                     
                     Spacer()

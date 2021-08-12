@@ -29,6 +29,8 @@
 "Share With Friends" = "Share With Friends";
 "About Us" = "About Us";
 "Haptic Touch" = "Haptic Touch";
+"Start Menu" = "Start Menu";
+"Mission Proposal" = "Mission Proposal";
 
 //About
 "Developer & Designer :" = "Developer & Designer :";
@@ -39,7 +41,6 @@
 
 //Mission
 "Meditate for 3 minutes" = "Meditate for 3 minutes";
-"Push up 20 times" = "Push up 20 times";
 "Look out the window for three minutes" = "Look out the window for three minutes";
 "Read an internet article" = "Read an internet article";
 "Pay attention to breathing for 30 seconds" = "Pay attention to breathing for 30 seconds";
