@@ -20,6 +20,22 @@
 "Let's work hard together !" = "Let's work hard together !";
 "Continue" = "Continue";
 
+//Onboarding
+"Welcome to \"To-be Useless\"" = "Welcome to \"To-be Useless\"";
+"I'm Dart.\nA frog-shaped slime from the Amazon.\nLet me show you how to use it." = "I'm Dart.\nA frog-shaped slime from the Amazon.\nLet me show you how to use it.";
+"How to use it?" = "How to use it?";
+"Refresh Mission" = "Refresh Mission";
+"Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day)." = "Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day).";
+"Daily Mission Time" = "Daily Mission Time";
+"We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings." = "We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings.";
+"Contribute your mission" = "Contribute your mission";
+"If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form." = "If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form.";
+"If you don't know what to do next,\njust come back and get your\ndaily mssions!" = "If you don't know what to do next,\njust come back and get your\ndaily mssions!";
+"For more information,\nplease visit \"Information Center\"\nin \"Settings\"." = "For more information,\nplease visit \"Information Center\"\nin \"Settings\".";
+"Or interact directly in our" = "Or interact directly in our";
+"Discord Community" = "Discord Community";
+"Get Started" = "Get Started";
+
 //Settings
 "General" = "General";
 "Daly Mission Time" = "Daly Mission Time";

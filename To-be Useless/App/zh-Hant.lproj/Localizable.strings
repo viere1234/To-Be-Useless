@@ -20,6 +20,22 @@
 "Let's work hard together !" = "一起加油！";
 "Continue" = "繼續";
 
+//Onboarding
+"Welcome to \"To-be Useless\"" = "歡迎使用 \"To-be Useless\"";
+"I'm Dart.\nA frog-shaped slime from the Amazon.\nLet me show you how to use it." = "我是小箭蛙\n一隻來自雅馬遜叢林的蛙型史萊姆\n讓我來告訴你怎麼使用";
+"How to use it?" = "功能介紹";
+"Refresh Mission" = "刷新任務";
+"Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day)." = "每天我們會提供您最多六個小任務，您可以點擊按鈕來刷新（每日僅限一次）";
+"Daily Mission Time" = "每日任務時間";
+"We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings." = "我們會在固定時間刷新您的任務，您可以在設置中的\"每日任務時間\"修改時間";
+"Contribute your mission" = "任務提案";
+"If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form." = "如果您想新增額外任務到我們的新版本的話，歡迎前往設定中的\"任務提案\"填寫表單";
+"If you don't know what to do next,\njust come back and get your\ndaily mssions!" = "當你不知道下一步該做什麼時\n就回來這裡領取您的\n每日任務！";
+"For more information,\nplease visit \"Information Center\"\nin \"Settings\"." = "更多資訊\n請前往設定中的\"資訊中心\"";
+"Or interact directly in our" = "或是直接和我們互動";
+"Discord Community" = "Discord 社群";
+"Get Started" = "立即開始";
+
 //Settings
 "General" = "一般";
 "Daly Mission Time" = "每日任務時間";
@@ -30,7 +46,7 @@
 "About Us" = "關於我們";
 "Haptic Touch" = "觸覺回饋";
 "Start Menu" = "起始畫面";
-"Mission Proposal" = "任務提案"
+"Mission Proposal" = "任務提案";
 
 //About
 "Developer & Designer :" = "開發者 & 設計師 :";

@@ -193,11 +193,11 @@ struct NewDetail: View {
                     .padding()
 
                 VStack(alignment: .leading) {
-                    Text(title)
+                    Text(LocalizedStringKey(title))
                         .font(.system(.body, design: .rounded))
                         .bold()
                 
-                    Text(description)
+                    Text(LocalizedStringKey(description))
                         .font(.system(.footnote, design: .rounded))
                         .fixedSize(horizontal: false, vertical: true)
                 }
