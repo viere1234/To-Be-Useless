@@ -7,6 +7,7 @@
 
 import SwiftUI
 import StoreKit
+import SafariServices
 
 struct SettingView: View {
     
@@ -20,7 +21,8 @@ struct SettingView: View {
     @AppStorage("Version") var version = ""
     @State private var developerCounter = 0
     @State private var changeMissionTime = false
-    @State private var showAlert = false    
+    @State private var showAlert = false
+    @State var showSafari = false
     var body: some View {
         ZStack {
             Form {
@@ -79,12 +81,25 @@ struct SettingView: View {
                         )
                     })
                     
+                    Button(action: {
+                        self.showSafari.toggle()
+                    }, label: {
+                        Label(
+                            title: { Text("Information Center").foregroundColor(.black) },
+                            icon: { Image(systemName: "info.circle.fill").renderingMode(.original) }
+                        )
+                    })
+                    .sheet(isPresented: $showSafari) {
+                        SafariView(url:URL(string: "https://to-be-useless.notion.site/to-be-useless/To-be-Useless-c78abcd5caba493bb9bce50ae093c9c1")!)
+                    }
+                    
+                    /*
                     NavigationLink(destination: SupportView()) {
                         Label(
                             title: { Text("Information Center") },
                             icon: { Image(systemName: "info.circle.fill").renderingMode(.original) }
                         )
-                    }
+                    }*/
                     
                     Button(action: {
                         openURL(URL(string: "https://forms.gle/6yws6CirUUb8nk919")!)
@@ -200,3 +215,16 @@ extension Date: RawRepresentable {
     }
 }
 
+struct SafariView: UIViewControllerRepresentable {
+
+    let url: URL
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
+        return SFSafariViewController(url: url)
+    }
+
+    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
+
+    }
+
+}
