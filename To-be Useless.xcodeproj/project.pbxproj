@@ -13,6 +13,7 @@
 		D30D607626A4FD0D00A5F83C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D30D607526A4FD0D00A5F83C /* Preview Assets.xcassets */; };
 		D30FBCB026C52E3A008EEB87 /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = D30FBCAF26C52E3A008EEB87 /* BottomSheet */; };
 		D31777BE26C41C0700E80246 /* Disk in Frameworks */ = {isa = PBXBuildFile; productRef = D31777BD26C41C0700E80246 /* Disk */; };
+		D326C2E026C6B9CB00F9BF2C /* BetterSafariView in Frameworks */ = {isa = PBXBuildFile; productRef = D326C2DF26C6B9CB00F9BF2C /* BetterSafariView */; };
 		D328631A26B39FD800CA3723 /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = D328631926B39FD800CA3723 /* SlideOverCard */; };
 		D328631D26B3B5FC00CA3723 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D328631C26B3B5FC00CA3723 /* Lottie */; };
 		D328631F26B4096C00CA3723 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328631E26B4096C00CA3723 /* WebView.swift */; };
@@ -43,7 +44,6 @@
 		D3CF8FBE26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json in Resources */ = {isa = PBXBuildFile; fileRef = D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */; };
 		D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0906C26C416C50053E0BC /* ChartView.swift */; };
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
-		D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49AA026A58D670029D8B3 /* SupportView.swift */; };
 		D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */; };
 		D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */; };
 		D3FFB53E26A658EF00162E2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53D26A658EF00162E2F /* LoginView.swift */; };
@@ -84,7 +84,6 @@
 		D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "60586-developer-isometric-people-working-with-technology.json"; sourceTree = "<group>"; };
 		D3E0906C26C416C50053E0BC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		D3F49AA026A58D670029D8B3 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
 		D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D3FFB53D26A658EF00162E2F /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 				D37A70E726C4286600852DF3 /* SwiftUICharts in Frameworks */,
 				D36E8FAD26B5977900843AB3 /* StoreKit.framework in Frameworks */,
 				D328631D26B3B5FC00CA3723 /* Lottie in Frameworks */,
+				D326C2E026C6B9CB00F9BF2C /* BetterSafariView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,7 +231,6 @@
 			isa = PBXGroup;
 			children = (
 				D3FFB53D26A658EF00162E2F /* LoginView.swift */,
-				D3F49AA026A58D670029D8B3 /* SupportView.swift */,
 				D3FFB53F26A6599000162E2F /* AboutView.swift */,
 				D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */,
 				D356FD2826AFDECA002998FD /* DataView.swift */,
@@ -263,6 +262,7 @@
 				D31777BD26C41C0700E80246 /* Disk */,
 				D37A70E626C4286600852DF3 /* SwiftUICharts */,
 				D30FBCAF26C52E3A008EEB87 /* BottomSheet */,
+				D326C2DF26C6B9CB00F9BF2C /* BetterSafariView */,
 			);
 			productName = "To-be Useless";
 			productReference = D30D606B26A4FD0C00A5F83C /* To-be Useless.app */;
@@ -299,6 +299,7 @@
 				D31777BC26C41C0700E80246 /* XCRemoteSwiftPackageReference "Disk" */,
 				D37A70E526C4286600852DF3 /* XCRemoteSwiftPackageReference "ChartView" */,
 				D30FBCAE26C52E3A008EEB87 /* XCRemoteSwiftPackageReference "bottom-sheet" */,
+				D326C2DE26C6B9CB00F9BF2C /* XCRemoteSwiftPackageReference "BetterSafariView" */,
 			);
 			productRefGroup = D30D606C26A4FD0C00A5F83C /* Products */;
 			projectDirPath = "";
@@ -339,7 +340,6 @@
 				D328632126B4262000CA3723 /* LottieView.swift in Sources */,
 				D328631F26B4096C00CA3723 /* WebView.swift in Sources */,
 				D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */,
-				D3F49AA126A58D670029D8B3 /* SupportView.swift in Sources */,
 				D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */,
 				D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */,
 				D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */,
@@ -584,6 +584,14 @@
 				minimumVersion = 0.6.4;
 			};
 		};
+		D326C2DE26C6B9CB00F9BF2C /* XCRemoteSwiftPackageReference "BetterSafariView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stleamist/BetterSafariView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
 		D328631826B39FD800CA3723 /* XCRemoteSwiftPackageReference "SlideOverCard" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/joogps/SlideOverCard.git";
@@ -628,6 +636,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D31777BC26C41C0700E80246 /* XCRemoteSwiftPackageReference "Disk" */;
 			productName = Disk;
+		};
+		D326C2DF26C6B9CB00F9BF2C /* BetterSafariView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D326C2DE26C6B9CB00F9BF2C /* XCRemoteSwiftPackageReference "BetterSafariView" */;
+			productName = BetterSafariView;
 		};
 		D328631926B39FD800CA3723 /* SlideOverCard */ = {
 			isa = XCSwiftPackageProductDependency;

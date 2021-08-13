@@ -21,9 +21,10 @@ struct DataView: View {
     }
 }
 
+#if DEBUG
 struct DataView_Previews: PreviewProvider {
     static var previews: some View {
         DataView()
     }
 }
-
+#endif

@@ -85,8 +85,10 @@ struct DeveloperView: View {
     }
 }
 
+#if DEBUG
 struct DeveloperView_Previews: PreviewProvider {
     static var previews: some View {
         DeveloperView()
     }
 }
+#endif

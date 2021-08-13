@@ -171,11 +171,13 @@ struct FirstView: View {
     }
 }
 
+#if DEBUG
 struct FirstView_Previews: PreviewProvider {
     static var previews: some View {
         FirstView()
     }
 }
+#endif
 
 struct NewDetail: View {
     var image: String

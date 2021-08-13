@@ -245,11 +245,13 @@ struct TaskListView: View {
     
 }
 
+#if DEBUG
 struct TaskListView_Previews: PreviewProvider {
     static var previews: some View {
         TaskListView()
     }
 }
+#endif
 
 struct TaskCell: View {
     

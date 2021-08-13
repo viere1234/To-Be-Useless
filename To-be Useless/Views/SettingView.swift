@@ -7,7 +7,7 @@
 
 import SwiftUI
 import StoreKit
-import SafariServices
+import BetterSafariView
 
 struct SettingView: View {
     
@@ -22,9 +22,12 @@ struct SettingView: View {
     @State private var developerCounter = 0
     @State private var changeMissionTime = false
     @State private var showAlert = false
-    @State var showSafari = false
+    @State var showInformationCenter = false
+    @State var showMissionProposal = false
+    @State var showFeedback = false
     var body: some View {
         ZStack {
+            
             Form {
                 if developerActivated {
                     Section(header: Text("Developer")) {
@@ -82,43 +85,67 @@ struct SettingView: View {
                     })
                     
                     Button(action: {
-                        self.showSafari.toggle()
+                        self.showInformationCenter = true
                     }, label: {
                         Label(
                             title: { Text("Information Center").foregroundColor(.black) },
                             icon: { Image(systemName: "info.circle.fill").renderingMode(.original) }
                         )
                     })
-                    .sheet(isPresented: $showSafari) {
-                        SafariView(url:URL(string: "https://to-be-useless.notion.site/to-be-useless/To-be-Useless-c78abcd5caba493bb9bce50ae093c9c1")!)
+                    .safariView(isPresented: $showInformationCenter) {
+                        SafariView(
+                            url: URL(string: "https://to-be-useless.notion.site/to-be-useless/To-be-Useless-c78abcd5caba493bb9bce50ae093c9c1")!,
+                            configuration: SafariView.Configuration(
+                                entersReaderIfAvailable: false,
+                                barCollapsingEnabled: true
+                            )
+                        )
+                        .preferredBarAccentColor(.white)
+                        .preferredControlAccentColor(.accentColor)
+                        .dismissButtonStyle(.done)
                     }
                     
-                    /*
-                    NavigationLink(destination: SupportView()) {
-                        Label(
-                            title: { Text("Information Center") },
-                            icon: { Image(systemName: "info.circle.fill").renderingMode(.original) }
-                        )
-                    }*/
-                    
                     Button(action: {
-                        openURL(URL(string: "https://forms.gle/6yws6CirUUb8nk919")!)
+                        self.showMissionProposal = true
                     }, label: {
                         Label(
                             title: { Text("Mission Proposal").foregroundColor(.black) },
                             icon: { Image(systemName: "macwindow.badge.plus").renderingMode(.original) }
                         )
                     })
+                    .safariView(isPresented: $showMissionProposal) {
+                        SafariView(
+                            url: URL(string: "https://forms.gle/6yws6CirUUb8nk919")!,
+                            configuration: SafariView.Configuration(
+                                entersReaderIfAvailable: false,
+                                barCollapsingEnabled: true
+                            )
+                        )
+                        .preferredBarAccentColor(.white)
+                        .preferredControlAccentColor(.accentColor)
+                        .dismissButtonStyle(.done)
+                    }
                     
                     Button(action: {
-                        openURL(URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfucyu0HHT4mudHFv1xNnr0G0pnOhDTHG6zpx3j-57A6zhPBA/viewform")!)
+                        self.showFeedback = true
                     }, label: {
                         Label(
                             title: { Text("Sent Feedback").foregroundColor(.black) },
                             icon: { Image(systemName: "paperplane.circle.fill").renderingMode(.original) }
                         )
                     })
-                    
+                    .safariView(isPresented: $showFeedback) {
+                        SafariView(
+                            url: URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfucyu0HHT4mudHFv1xNnr0G0pnOhDTHG6zpx3j-57A6zhPBA/viewform")!,
+                            configuration: SafariView.Configuration(
+                                entersReaderIfAvailable: false,
+                                barCollapsingEnabled: true
+                            )
+                        )
+                        .preferredBarAccentColor(.white)
+                        .preferredControlAccentColor(.accentColor)
+                        .dismissButtonStyle(.done)
+                    }
                 }
                 
                 Section (header: Text("To-be Useless")) {
@@ -196,12 +223,13 @@ struct SettingView: View {
     }
 }
 
+#if DEBUG
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
         SettingView()
     }
 }
-
+#endif
 
 extension Date: RawRepresentable {
     private static let formatter = ISO8601DateFormatter()
@@ -215,16 +243,16 @@ extension Date: RawRepresentable {
     }
 }
 
-struct SafariView: UIViewControllerRepresentable {
+struct NavigationConfigurator: UIViewControllerRepresentable {
+    var configure: (UINavigationController) -> Void = { _ in }
 
-    let url: URL
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SFSafariViewController {
-        return SFSafariViewController(url: url)
+    func makeUIViewController(context: UIViewControllerRepresentableContext<NavigationConfigurator>) -> UIViewController {
+        UIViewController()
     }
-
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
-
+    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<NavigationConfigurator>) {
+        if let nc = uiViewController.navigationController {
+            self.configure(nc)
+        }
     }
 
 }
