@@ -12,7 +12,9 @@ import SlideOverCard
 
 
 struct TaskListView: View {
-    
+    //Current Version
+    let currentVersion = "0.1.4"
+    //end
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     @State var offset: CGFloat = 0
@@ -186,10 +188,10 @@ struct TaskListView: View {
                             openTask = true
                         }
                     }
-                    if version != "0.1.3" { // Warning Disappear After
+                    if version != currentVersion { // Warning Disappear After
                         self.first = true
                         self.developerActivated = false
-                        version = "0.1.3"
+                        version = currentVersion
                     }
                 })
                 
