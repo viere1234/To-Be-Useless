@@ -25,27 +25,42 @@ struct FirstView: View {
                             case 1:
                                 VStack {
                                     Spacer()
+                                    Spacer()
+                                    Spacer()
                                     
                                     Image("AppPicture")
                                         .resizable()
-                                        .cornerRadius(30)
+                                        .cornerRadius(26)
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: UIScreen.main.bounds.width / 2)
+                                        .frame(width: UIScreen.main.bounds.width / 4)
                                         
+                                    //Spacer()
+                                    
+                                    HStack(spacing: 0) {
+                                        Text("To-be ")
+                                            .font(.system(.largeTitle, design: .rounded))
+                                            .fontWeight(.bold)
+                                        
+                                        Text("Useless")
+                                            .font(.system(.largeTitle, design: .rounded))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color("UIColor"))
+                                    }
+                                    
                                     Spacer()
                                     
+                                    LottieView(name: "11516-swipe-left-arrows", loopMode: .loop)
+                                        .frame(width: UIScreen.main.bounds.width / 5, height: UIScreen.main.bounds.width / 5, alignment: .center)
+                                    /*
                                     VStack(alignment: .leading, spacing: 22, content: {
                                         Text("Welcome to \"To-be Useless\"")
                                             .font(.system(.title, design: .rounded))
                                             .fontWeight(.bold)
-                                                                    
-                                        Text("I'm Dart.\nA frog-shaped slime from the Amazon.\nLet me show you how to use it.")
-                                            .font(.title2)
-                                            .foregroundColor(.secondary)
                                     })
                                     .padding(.top, 50)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .frame(maxWidth: .infinity, alignment: .leading) */
                                     
+                                    Spacer()
                                     Spacer()
                                 }
                             case 2:
@@ -142,9 +157,9 @@ struct FirstView: View {
                     Text("Get Started")
                         .foregroundColor(.white)
                         .font(.system(size: 20, design: .rounded))
-                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 44, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width * 0.9, height: 55, alignment: .center)
                         .background(Color("OnBoardingUIColor"))
-                        .cornerRadius(25)
+                        .cornerRadius(15)
                 })
                 
                 Spacer()

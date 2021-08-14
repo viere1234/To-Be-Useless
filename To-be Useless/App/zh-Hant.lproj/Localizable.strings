@@ -21,8 +21,6 @@
 "Continue" = "繼續";
 
 //Onboarding
-"Welcome to \"To-be Useless\"" = "歡迎使用 \"To-be Useless\"";
-"I'm Dart.\nA frog-shaped slime from the Amazon.\nLet me show you how to use it." = "我是小箭蛙\n一隻來自雅馬遜叢林的蛙型史萊姆\n讓我來告訴你怎麼使用";
 "How to use it?" = "功能介紹";
 "Refresh Mission" = "刷新任務";
 "Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day)." = "每天我們會提供您最多六個小任務，您可以點擊按鈕來刷新（每日僅限一次）";

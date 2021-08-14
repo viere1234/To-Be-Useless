@@ -46,6 +46,7 @@
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
 		D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */; };
 		D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */; };
+		D3FB655026C7F21F0074A569 /* 11516-swipe-left-arrows.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */; };
 		D3FFB53E26A658EF00162E2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53D26A658EF00162E2F /* LoginView.swift */; };
 		D3FFB54026A6599000162E2F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53F26A6599000162E2F /* AboutView.swift */; };
 /* End PBXBuildFile section */
@@ -86,6 +87,7 @@
 		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
 		D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11516-swipe-left-arrows.json"; sourceTree = "<group>"; };
 		D3FFB53D26A658EF00162E2F /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3FFB53F26A6599000162E2F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +168,7 @@
 		D340B1C026B521160024E13C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
+				D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */,
 				D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */,
 				D340B1C526B5239A0024E13C /* 23222-checkmark.json */,
 				D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */,
@@ -317,6 +320,7 @@
 			files = (
 				D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */,
 				D33DC21B26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json in Resources */,
+				D3FB655026C7F21F0074A569 /* 11516-swipe-left-arrows.json in Resources */,
 				D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */,
 				D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */,
 				D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */,
@@ -500,7 +504,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"To-be Useless/Preview Content\"";
 				DEVELOPMENT_TEAM = DW8PG2JYW5;
@@ -525,7 +529,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"To-be Useless/Preview Content\"";
 				DEVELOPMENT_TEAM = DW8PG2JYW5;

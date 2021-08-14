@@ -19,14 +19,24 @@ struct AboutView: View {
             Image("AppPicture")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width / 3.5, height: UIScreen.main.bounds.width / 3.5, alignment: .center)
-                .cornerRadius(20)
+                .cornerRadius(26)
                 
+            HStack(spacing: 0) {
+                Text("To-be ")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .fontWeight(.bold)
                 
+                Text("Useless")
+                    .font(.system(.largeTitle, design: .rounded))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("UIColor"))
+            }
             
+            /*
             Text("To-Be Useless")
                 .font(.largeTitle)
                 .font(.system(.body, design: .rounded))
-                .foregroundColor(.black.opacity(0.8))
+                .foregroundColor(.black.opacity(0.8))*/
             
             Spacer()
             

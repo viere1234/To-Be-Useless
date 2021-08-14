@@ -110,7 +110,7 @@ struct TaskListView: View {
                                 return Alert(title: Text("Run out of times"),
                                              message: Text("\(getMissionTime) Times left"))*/
                             case 2:
-                                return Alert(title: Text("Daily mission get!!"))
+                                return Alert(title: Text("Daily Mission Refreshed."))
                             default:
                                 return Alert(title: Text("Are you sure?"),
                                              message: Text("\(getMissionTime) Times left"),
