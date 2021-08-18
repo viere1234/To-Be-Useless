@@ -56,11 +56,9 @@
 //Mission
 "Meditate for 3 minutes" = "冥想三分鐘";
 "Look out the window for three minutes" = "往窗外看三分鐘";
-"Read an internet article" = "讀一篇文章";
-"Pay attention to breathing for 30 seconds" = "專注呼吸三十秒";
+"Focus on breathing for 30 seconds" = "專注呼吸三十秒";
 "Drink a glass of water" = "喝一杯水";
-"Eat a pack of snacks" = "吃一包零食";
-"Watch a YouTube video" = "看一部YouTube影片";
+"Eat a pack of snack" = "吃一包零食";
 "Turn your head left and right 10 times" = "左右轉頭十次";
 "Open your mouth 50 times" = "張嘴五十次";
 "Look at the distant scenery" = "看遠方的風景";
@@ -68,11 +66,8 @@
 "Take a deep breath" = "深吸一口氣";
 "Brush your teeth with your non-dominant hand" = "用非慣用手刷牙";
 "Write a sentence (anywhere)" = "寫下隨便一句話（在任何地方）";
-"Read a page of book" = "看一頁書";
 "Listen to a music that you have never heard before" = "聽一首不曾聽過的音樂";
 "Take a nap" = "睡午覺";
-"Watch a movie" = "看一部電影";
-"Read an internet article" = "看一篇網路文章";
 "Take a picture" = "拍下一張照片";
 "Smile to the mirror for 3 seconds" = "對著鏡子微笑三秒鐘";
 "Close your eyes and rest for 3 minutes" = "閉目養神三分鐘";
@@ -81,3 +76,15 @@
 "Lie on the bed for 5 minutes" = "趴在床上五分鐘";
 "Drink a cup of hot water" = "喝一杯熱水";
 "Set an alarm clock earlier than usual" = "設下比平常起床時間更早的鬧鐘";
+"Tidy up your desk" = "整理桌面"; // 2021/8/18
+"Send a message to your friend" = "傳一則訊息給朋友";
+"Eat a meal" = "吃一頓飯";
+"Make a dish" = "做一道菜";
+"Compliment someone" = "誇獎一個人";
+"Play a game" = "玩遊戲";
+"Make a face to your friends or a mirror" = "對鏡子或親朋好友做個鬼臉";
+"Look at yourself in the mirror for 1 minute" = "照鏡子一分鐘";
+"Find a joke" = "找一篇笑話";
+"Push up 10 times" = "伏地挺身十下";
+"Eat some fruit" = "吃些水果";
+"Touch the wall and feel the texture" = "摸摸牆壁並且感受它的紋路";

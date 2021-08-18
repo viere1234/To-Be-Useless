@@ -10,14 +10,26 @@ import Disk
 
 struct DataView: View {
     
-    let content = try! Disk.retrieve("tasks.json", from: .documents, as: [Task].self)
-    
     var body: some View {
-        VStack {
-            Button(action: {print(content)}, label: {
-                Text("Get Data")
-            })
+        VStack(alignment: .leading) {
+            
+            Text("Low")
+                .font(.title)
+            List(LowMission) { mission in
+                Text(mission.title)
+            }
+            Text("Medium")
+                .font(.title)
+            List(MediumMission) { mission in
+                Text(mission.title)
+            }
+            Text("High")
+                .font(.title)
+            List(HighMission) { mission in
+                Text(mission.title)
+            }
         }
+        .padding()
     }
 }
 

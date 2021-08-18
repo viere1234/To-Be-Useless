@@ -41,7 +41,7 @@ struct DeveloperView: View {
                 }
                 
                 Picker("", selection: $getMissionTime) {
-                    ForEach(0 ..< 100) {
+                    ForEach(0 ..< 1000) {
                         Text("\($0) Times")
                     }
                 }

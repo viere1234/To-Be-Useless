@@ -20,6 +20,11 @@
 		D328632126B4262000CA3723 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328632026B4262000CA3723 /* LottieView.swift */; };
 		D328632326B42B7500CA3723 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328632226B42B7500CA3723 /* TestView.swift */; };
 		D32B0BEE26AC479300F18502 /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B0BED26AC479300F18502 /* MissionRepository.swift */; };
+		D339840926C9084100D70D17 /* 72410-12345.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840826C9084100D70D17 /* 72410-12345.json */; };
+		D339840B26C90A6E00D70D17 /* 45708-swipe-left.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840A26C90A6E00D70D17 /* 45708-swipe-left.json */; };
+		D339840D26C90DE900D70D17 /* lf30_editor_nek0w6yb.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840C26C90DE900D70D17 /* lf30_editor_nek0w6yb.json */; };
+		D339840F26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */; };
+		D339841126C9113B00D70D17 /* lf30_editor_s2pskznt.json in Resources */ = {isa = PBXBuildFile; fileRef = D339841026C9113B00D70D17 /* lf30_editor_s2pskznt.json */; };
 		D33DC20F26BE8122009D8BE0 /* 41068-man-filling-a-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */; };
 		D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */; };
 		D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */; };
@@ -62,6 +67,11 @@
 		D328632026B4262000CA3723 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		D328632226B42B7500CA3723 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D32B0BED26AC479300F18502 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
+		D339840826C9084100D70D17 /* 72410-12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "72410-12345.json"; sourceTree = "<group>"; };
+		D339840A26C90A6E00D70D17 /* 45708-swipe-left.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "45708-swipe-left.json"; sourceTree = "<group>"; };
+		D339840C26C90DE900D70D17 /* lf30_editor_nek0w6yb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_nek0w6yb.json; sourceTree = "<group>"; };
+		D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_rrt6z0zt.json; sourceTree = "<group>"; };
+		D339841026C9113B00D70D17 /* lf30_editor_s2pskznt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_s2pskznt.json; sourceTree = "<group>"; };
 		D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "41068-man-filling-a-list.json"; sourceTree = "<group>"; };
 		D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "3091-process-complete.json"; sourceTree = "<group>"; };
 		D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "53194-earth-globe-rotating-with-seamless-loop-animation.json"; sourceTree = "<group>"; };
@@ -176,6 +186,11 @@
 				D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */,
 				D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */,
 				D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */,
+				D339840826C9084100D70D17 /* 72410-12345.json */,
+				D339840A26C90A6E00D70D17 /* 45708-swipe-left.json */,
+				D339840C26C90DE900D70D17 /* lf30_editor_nek0w6yb.json */,
+				D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */,
+				D339841026C9113B00D70D17 /* lf30_editor_s2pskznt.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -318,12 +333,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D339841126C9113B00D70D17 /* lf30_editor_s2pskznt.json in Resources */,
 				D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */,
+				D339840F26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json in Resources */,
 				D33DC21B26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json in Resources */,
+				D339840D26C90DE900D70D17 /* lf30_editor_nek0w6yb.json in Resources */,
 				D3FB655026C7F21F0074A569 /* 11516-swipe-left-arrows.json in Resources */,
 				D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */,
 				D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */,
 				D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */,
+				D339840B26C90A6E00D70D17 /* 45708-swipe-left.json in Resources */,
+				D339840926C9084100D70D17 /* 72410-12345.json in Resources */,
 				D33DC20F26BE8122009D8BE0 /* 41068-man-filling-a-list.json in Resources */,
 				D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */,
 				D340B1C826B52AEF0024E13C /* 9844-loading-40-paperplane.json in Resources */,
@@ -515,7 +535,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brianChang.To-be-Useless";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -540,7 +560,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.4;
+				MARKETING_VERSION = 0.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.brianChang.To-be-Useless";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

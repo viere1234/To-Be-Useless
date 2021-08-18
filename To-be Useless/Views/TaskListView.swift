@@ -13,7 +13,8 @@ import SlideOverCard
 
 struct TaskListView: View {
     //Current Version
-    let currentVersion = "0.1.4"
+    let currentVersion = "0.1.5"
+    @AppStorage("Version") var version = "0.1.5"
     //end
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -35,7 +36,6 @@ struct TaskListView: View {
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionCounts") var missionCounts = 1
     @AppStorage("MissionCompletes") var missionCompletes = 0
-    @AppStorage("Version") var version = ""
     @AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("First") var first = true
     let generrator = UINotificationFeedbackGenerator()
