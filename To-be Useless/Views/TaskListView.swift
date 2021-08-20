@@ -129,7 +129,7 @@ struct TaskListView: View {
                                                     }
                                                 }
                                              }),
-                                             secondaryButton: .destructive(Text("No")))
+                                             secondaryButton: .cancel())
                             }
                         })
                         .padding()
