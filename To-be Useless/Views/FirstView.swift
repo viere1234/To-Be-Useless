@@ -169,7 +169,22 @@ struct FirstView: View {
                 Spacer()
             }
             .padding(.top, 15)
-            .padding(.bottom, 20)
+            //.padding(.bottom, 20)
+            
+            Text("By started you accept our")
+                .padding(.top, 5)
+                .font(.subheadline)
+                .foregroundColor(.black.opacity(0.7))
+            
+            Button(action: {
+                openURL(URL(string: "https://www.privacypolicies.com/live/0748be9e-79ac-455c-9c3f-68ed5df5273f")!)
+            }, label: {
+                Text("Privacy Policy")
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(.black.opacity(0.9))
+                    .underline()
+            })
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         

@@ -187,6 +187,7 @@ struct TaskListView: View {
                         }
                     }
                     if version != currentVersion { // Warning Disappear After
+                        self.first = true
                         self.developerActivated = false
                         version = currentVersion
                     }
