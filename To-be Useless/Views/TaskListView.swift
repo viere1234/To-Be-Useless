@@ -13,8 +13,8 @@ import SlideOverCard
 
 struct TaskListView: View {
     //Current Version
-    let currentVersion = "0.1.5"
-    @AppStorage("Version") var version = "0.1.5"
+    let currentVersion = "0.1.6"
+    @AppStorage("Version") var version = "0.1.6"
     //end
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -83,11 +83,6 @@ struct TaskListView: View {
                         }
                         .zIndex(1)
                         .navigationBarTitle(Text("Daily Missions"), displayMode: .automatic)
-                        .onAppear(perform: {
-                            withAnimation {
-                                
-                            }
-                        })
                     }
                     
                     HStack {
@@ -192,7 +187,6 @@ struct TaskListView: View {
                         }
                     }
                     if version != currentVersion { // Warning Disappear After
-                        self.first = true
                         self.developerActivated = false
                         version = currentVersion
                     }
