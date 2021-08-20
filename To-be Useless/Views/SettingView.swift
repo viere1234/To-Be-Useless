@@ -8,6 +8,7 @@
 import SwiftUI
 import StoreKit
 import BetterSafariView
+import UserNotifications
 
 struct SettingView: View {
     
@@ -19,9 +20,11 @@ struct SettingView: View {
     @AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("IsGetDalyMission") var isGetDalyMission = false
     @AppStorage("Version") var version = ""
+    @AppStorage("Notification") var isNotification = true
     @State private var developerCounter = 0
     @State private var changeMissionTime = false
     @State private var showAlert = false
+    @State private var showNotificationAlert = false
     @State var showInformationCenter = false
     @State var showMissionProposal = false
     @State var showFeedback = false
@@ -53,6 +56,59 @@ struct SettingView: View {
                             )
                         }) */
                     
+                    Toggle(isOn: $isNotification) {
+                        Label(
+                            title: { Text("Notification") },
+                            icon: { Image(systemName: "bell" + (isNotification ? "" : ".slash")).foregroundColor(.red) }
+                        )
+                    }
+                    .onChange(of: isNotification, perform: { _ in
+                        if isNotification {
+                            let current = UNUserNotificationCenter.current()
+                            current.getNotificationSettings(completionHandler: { permission in
+                                switch permission.authorizationStatus  {
+                                case .authorized:
+                                    print("User granted permission for notification")
+                                    let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
+                                    let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
+                                    DailyNotify(title: "To-Be Useless", body: "Your daily missions are ready!", hour: userHour, minute: userMinute, id: "To-be_Useless_DailyNotify")
+                                case .denied:
+                                    print("User denied notification permission")
+                                    self.showNotificationAlert = true
+                                case .notDetermined:
+                                    print("Notification permission haven't been asked yet")
+                                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  { success, error in
+                                        if success {
+                                            print("authorization granted")
+                                            let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
+                                            let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
+                                            DailyNotify(title: "To-Be Useless", body: "Your daily missions are ready!", hour: userHour, minute: userMinute, id: "To-be_Useless_DailyNotify")
+                                        } else {
+                                            print("Error")
+                                            isNotification = false
+                                        }
+                                    }
+                                default:
+                                    print("Error")
+                                }
+                            })
+                        } else {
+                            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["To-be_Useless_DailyNotify"])
+                        }
+                    })
+                    .alert(isPresented: $showNotificationAlert, content: {
+                        return Alert(title: Text(""), message: Text("Allow To-Be Useless to send notifation under your device's settings first."),
+                                     primaryButton: .default(Text("Settings"), action: {
+                                        let url = URL(string: UIApplication.openSettingsURLString)!
+                                        UIApplication.shared.open(url)
+                                        self.isNotification = false
+                                     }),
+                                     secondaryButton: .cancel(Text("Cancel"), action: {
+                                        self.isNotification = false
+                                     })
+                        )
+                    })
+                    
                     ZStack {
                         HStack {
                             Label(
@@ -64,6 +120,15 @@ struct SettingView: View {
                         }
                         
                         DatePicker("", selection: $missionStartTime, displayedComponents: .hourAndMinute)
+                            .onChange(of: missionStartTime, perform: { value in
+                                if isNotification {
+                                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["To-be_Useless_DailyNotify"])
+                                    let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
+                                    let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
+                                    DailyNotify(title: "To-Be Useless", body: "Your daily missions are ready!", hour: userHour, minute: userMinute, id: "To-be_Useless_DailyNotify")
+                                    print("success")
+                                }
+                            })
                     }
                     
                     Toggle(isOn: $hapticActivated) {

@@ -112,7 +112,7 @@ struct FirstView: View {
                                             .multilineTextAlignment(.center)
                                         
                                         Button(action: {
-                                            openURL(URL(string: "https://discord.gg/bxt2XYyx")!)
+                                            openURL(URL(string: "https://discord.gg/ReEwSbNdMV")!)
                                         }, label: {
                                             HStack {
                                                 Text("Discord Community")

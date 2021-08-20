@@ -143,6 +143,9 @@ struct TaskListView: View {
                         .padding([.bottom, .leading, .trailing], 16)
                 }
                 .onReceive(self.timer, perform: { time in
+                    if UIApplication.shared.applicationIconBadgeNumber != 0 {
+                        UIApplication.shared.applicationIconBadgeNumber = 0
+                    }
                     if !isGetDalyMission {
                         let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
                         let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
