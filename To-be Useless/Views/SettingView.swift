@@ -14,6 +14,7 @@ struct SettingView: View {
     
     let currentVersion = "1.0.0"
     
+    @Environment(\.scenePhase) var scenePhase
     @Environment(\.openURL) var openURL
     @AppStorage("First") var first = true
     @AppStorage("HapticActivated") var hapticActivated = true
@@ -30,6 +31,7 @@ struct SettingView: View {
     @State var showInformationCenter = false
     @State var showMissionProposal = false
     @State var showFeedback = false
+    @State var pendingCheck = false
     var body: some View {
         ZStack {
             
@@ -102,14 +104,41 @@ struct SettingView: View {
                         return Alert(title: Text(""), message: Text("Allow To-Be Useless to send notifation under your device's settings first."),
                                      primaryButton: .default(Text("Settings"), action: {
                                         let url = URL(string: UIApplication.openSettingsURLString)!
+                                        pendingCheck = true
                                         UIApplication.shared.open(url)
-                                        self.isNotification = false
                                      }),
                                      secondaryButton: .cancel(Text("Cancel"), action: {
                                         self.isNotification = false
                                      })
                         )
                     })
+                    .onChange(of: scenePhase) { newPhase in
+                        if pendingCheck {
+                            if newPhase == .inactive {
+                                print("Inactive")
+                            } else if newPhase == .active {
+                                print("active")
+                                if isNotification {
+                                    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  { success, error in
+                                        if success {
+                                            print("authorization granted")
+                                            let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
+                                            let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
+                                            DailyNotify(title: "To-Be Useless", body: "Your daily missions are ready!", hour: userHour, minute: userMinute, id: "To-be_Useless_DailyNotify")
+                                        } else {
+                                            print("Error")
+                                            isNotification = false
+                                        }
+                                    }
+                                }
+                                
+                                pendingCheck = false
+                            } else if newPhase == .background {
+                                print("Background")
+                            }
+                        }
+                    }
+                    
                     
                     ZStack {
                         HStack {
@@ -287,6 +316,19 @@ struct SettingView: View {
             }
             .edgesIgnoringSafeArea(.bottom)
         }
+        .onAppear(perform: {
+            if isNotification {
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound])  { success, error in
+                    if success {
+                        print("Success")
+                    } else {
+                        print("Error")
+                        UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["To-be_Useless_DailyNotify"])
+                        isNotification = false
+                    }
+                }
+            }
+        })
     }
 }
 

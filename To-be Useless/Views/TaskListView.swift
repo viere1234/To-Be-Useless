@@ -123,8 +123,8 @@ struct TaskListView: View {
                                              message: Text("\(getMissionTime) Times left"))*/
                             case 2:
                                 return Alert(title: Text("Daily Mission Refreshed."))
-                            default://"\(getMissionTime)" + String(LocalizedStringKey("Times left"))
-                                return Alert(title: Text("Are you sure?"),  //Text(String(format: NSLocalizedString("startCustom %.1f", comment: ""), self.customDistance))
+                            default:
+                                return Alert(title: Text("Are you sure?"),
                                              message: Text(String(format: NSLocalizedString("%d Times left", comment: ""), self.getMissionTime)),
                                              primaryButton: .default(Text("Yes"), action: {
                                                 if hapticActivated { generrator.notificationOccurred(.success) }
