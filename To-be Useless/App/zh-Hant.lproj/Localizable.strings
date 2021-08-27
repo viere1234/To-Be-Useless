@@ -19,6 +19,8 @@
 "Pick up more Missions tomorrow" = "明天再來領取任務吧";
 "Let's work hard together !" = "一起加油！";
 "Continue" = "繼續";
+"Yes" = "確定";
+"%d Times left" = "剩餘%d次";
 
 //Onboarding
 "How to use it?" = "功能介紹";

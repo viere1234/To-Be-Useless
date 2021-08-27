@@ -12,9 +12,6 @@ import SlideOverCard
 
 
 struct TaskListView: View {
-    //Current Version
-    let currentVersion = "1.0.0"
-    @AppStorage("Version") var version = "1.0.0"
     //end
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -42,7 +39,7 @@ struct TaskListView: View {
     @AppStorage("MissionCompletes") var missionCompletes = 0
     @AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("First") var first = true
-    @ObservedObject var model = Model()
+    //@ObservedObject var model = Model()
     let generrator = UINotificationFeedbackGenerator()
     
     init() {
@@ -126,9 +123,9 @@ struct TaskListView: View {
                                              message: Text("\(getMissionTime) Times left"))*/
                             case 2:
                                 return Alert(title: Text("Daily Mission Refreshed."))
-                            default:
-                                return Alert(title: Text("Are you sure?"),
-                                             message: Text("\(getMissionTime) Times left"),
+                            default://"\(getMissionTime)" + String(LocalizedStringKey("Times left"))
+                                return Alert(title: Text("Are you sure?"),  //Text(String(format: NSLocalizedString("startCustom %.1f", comment: ""), self.customDistance))
+                                             message: Text(String(format: NSLocalizedString("%d Times left", comment: ""), self.getMissionTime)),
                                              primaryButton: .default(Text("Yes"), action: {
                                                 if hapticActivated { generrator.notificationOccurred(.success) }
                                                 self.getMissionTime -= 1
@@ -166,44 +163,54 @@ struct TaskListView: View {
                         UIApplication.shared.applicationIconBadgeNumber = 0
                     }
                     if !isGetDalyMission {
+                        isGetDalyMission.toggle()
+                        lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
+                        lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
+                        lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                        
+                        getMissionTime = 1
+                        showMissionAlertSwicher = 2
+                        if hapticActivated { generrator.notificationOccurred(.success) }
+                        showAlert.toggle()
+                        
+                        DispatchQueue.main.async {
+                            withAnimation() {
+                                openTask = false
+                            }
+                            
+                            getMission()
+                            textSize = [:]
+                            
+                            withAnimation() {
+                                openTask = true
+                            }
+                        }
+                        /*
                         let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0
                         let userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0
                         let currentHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0
                         let currentMinute = Calendar.current.dateComponents([.minute], from: Date()).minute ?? 0
                         
                         if currentHour > userHour || (currentHour == userHour && currentMinute >= userMinute) {
-                            isGetDalyMission.toggle()
-                            lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
-                            lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
-                            lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
                             
-                            getMissionTime = 1
-                            showMissionAlertSwicher = 2
-                            if hapticActivated { generrator.notificationOccurred(.success) }
-                            showAlert.toggle()
-                            
-                            DispatchQueue.main.async {
-                                withAnimation() {
-                                    openTask = false
-                                }
-                                
-                                getMission()
-                                textSize = [:]
-                                
-                                withAnimation() {
-                                    openTask = true
-                                }
-                            }
-                        }
+                        }*/
                     } else {
-                        let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
-                        let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
-                        let currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                        let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0,
+                            currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0,
+                            currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
                         
                         if currentYear > lastDalyMissionYear ||
                             (currentYear == lastDalyMissionYear && currentMonth > lastDalyMissionMonth) ||
                             (currentYear == lastDalyMissionYear && currentMonth == lastDalyMissionMonth && currentDay > lastDalyMissionDay) {
-                            self.isGetDalyMission.toggle()
+                            
+                            let userHour = Calendar.current.dateComponents([.hour], from: missionStartTime).hour ?? 0,
+                                userMinute = Calendar.current.dateComponents([.minute], from: missionStartTime).minute ?? 0,
+                                currentHour = Calendar.current.dateComponents([.hour], from: Date()).hour ?? 0,
+                                currentMinute = Calendar.current.dateComponents([.minute], from: Date()).minute ?? 0
+                            
+                            if currentHour > userHour || (currentHour == userHour && currentMinute >= userMinute) {
+                                self.isGetDalyMission = false
+                            }
                         }
                     }
                 })
@@ -222,12 +229,6 @@ struct TaskListView: View {
                         withAnimation() {
                             openTask = true
                         }
-                    }
-                    if version != currentVersion { // Warning Disappear After
-                        getMission()
-                        textSize = [:]
-                        self.developerActivated = false
-                        version = currentVersion
                     }
                 })
                 

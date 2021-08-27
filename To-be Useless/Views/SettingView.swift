@@ -12,6 +12,8 @@ import UserNotifications
 
 struct SettingView: View {
     
+    let currentVersion = "1.0.0"
+    
     @Environment(\.openURL) var openURL
     @AppStorage("First") var first = true
     @AppStorage("HapticActivated") var hapticActivated = true
@@ -248,7 +250,7 @@ struct SettingView: View {
                 HStack {
                     Spacer()
                     
-                    Text("To-be Useless Version \(version)")
+                    Text("To-be Useless Version \(currentVersion)")
                         .foregroundColor(.gray)
                     
                     Spacer()
