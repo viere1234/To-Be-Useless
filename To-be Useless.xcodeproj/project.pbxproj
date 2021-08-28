@@ -37,7 +37,6 @@
 		D36E308A26D8ECD50070D8D4 /* SwiftUIFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E308926D8ECD50070D8D4 /* SwiftUIFunc.swift */; };
 		D36E8FAD26B5977900843AB3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36E8FAC26B5977900843AB3 /* StoreKit.framework */; };
 		D36E8FAF26B59A1500843AB3 /* StoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E8FAE26B59A1500843AB3 /* StoreManger.swift */; };
-		D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E8FB026B59BE100843AB3 /* TipView.swift */; };
 		D370E08626A52139003EA11C /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08526A52139003EA11C /* Task.swift */; };
 		D370E08826A544C3003EA11C /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08726A544C3003EA11C /* TaskListViewModel.swift */; };
 		D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D370E08926A544E9003EA11C /* TaskCellViewModel.swift */; };
@@ -50,12 +49,10 @@
 		D3933CFF26BE61EF00765E81 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFE26BE61EF00765E81 /* Intro.swift */; };
 		D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3B051E926AE5C82009BCBF4 /* Localizable.strings */; };
 		D3CF8FBE26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json in Resources */ = {isa = PBXBuildFile; fileRef = D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */; };
-		D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3E0906C26C416C50053E0BC /* ChartView.swift */; };
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
 		D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */; };
 		D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */; };
 		D3FB655026C7F21F0074A569 /* 11516-swipe-left-arrows.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */; };
-		D3FFB53E26A658EF00162E2F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53D26A658EF00162E2F /* LoginView.swift */; };
 		D3FFB54026A6599000162E2F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53F26A6599000162E2F /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,7 +84,6 @@
 		D36E308926D8ECD50070D8D4 /* SwiftUIFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFunc.swift; sourceTree = "<group>"; };
 		D36E8FAC26B5977900843AB3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D36E8FAE26B59A1500843AB3 /* StoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManger.swift; sourceTree = "<group>"; };
-		D36E8FB026B59BE100843AB3 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		D370E08526A52139003EA11C /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D370E08726A544C3003EA11C /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		D370E08926A544E9003EA11C /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
@@ -99,12 +95,10 @@
 		D3B051E826AE5C82009BCBF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3B051EA26AE5C87009BCBF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "60586-developer-isometric-people-working-with-technology.json"; sourceTree = "<group>"; };
-		D3E0906C26C416C50053E0BC /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
 		D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11516-swipe-left-arrows.json"; sourceTree = "<group>"; };
-		D3FFB53D26A658EF00162E2F /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D3FFB53F26A6599000162E2F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -256,7 +250,6 @@
 				D38F31A126A5105A00154C86 /* FirstView.swift */,
 				D38F31A326A5126B00154C86 /* TaskListView.swift */,
 				D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */,
-				D3E0906C26C416C50053E0BC /* ChartView.swift */,
 				D3F49A9F26A58D410029D8B3 /* SettingViews */,
 			);
 			path = Views;
@@ -265,11 +258,9 @@
 		D3F49A9F26A58D410029D8B3 /* SettingViews */ = {
 			isa = PBXGroup;
 			children = (
-				D3FFB53D26A658EF00162E2F /* LoginView.swift */,
 				D3FFB53F26A6599000162E2F /* AboutView.swift */,
 				D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */,
 				D356FD2826AFDECA002998FD /* DataView.swift */,
-				D36E8FB026B59BE100843AB3 /* TipView.swift */,
 			);
 			path = SettingViews;
 			sourceTree = "<group>";
@@ -382,8 +373,6 @@
 				D328631F26B4096C00CA3723 /* WebView.swift in Sources */,
 				D357594C26CF7BF600E8F6D4 /* NotificationFunc.swift in Sources */,
 				D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */,
-				D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */,
-				D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */,
 				D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */,
 				D36E8FAF26B59A1500843AB3 /* StoreManger.swift in Sources */,
 				D30D607126A4FD0C00A5F83C /* ContentView.swift in Sources */,
@@ -397,7 +386,6 @@
 				D38F31A426A5126B00154C86 /* TaskListView.swift in Sources */,
 				D370E08626A52139003EA11C /* Task.swift in Sources */,
 				D38F31A226A5105A00154C86 /* FirstView.swift in Sources */,
-				D3FFB53E26A658EF00162E2F /* LoginView.swift in Sources */,
 				D356FD2926AFDECA002998FD /* DataView.swift in Sources */,
 				D30D606F26A4FD0C00A5F83C /* To_be_UselessApp.swift in Sources */,
 				D3933CFF26BE61EF00765E81 /* Intro.swift in Sources */,
