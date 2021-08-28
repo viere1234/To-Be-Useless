@@ -45,6 +45,7 @@
 "Haptic Touch" = "Haptic Touch";
 "Start Menu" = "Start Menu";
 "Mission Proposal" = "Mission Proposal";
+"Notification" = "Notification";
 
 //About
 "Developer & Designer :" = "Developer & Designer :";
@@ -52,6 +53,8 @@
 "Designer & Marketing :" = "Designer & Marketing :";
 "Fu-Syuan Wang" = "Fu-Syuan Wang";
 "Social Networks" = "Social Networks";
+"Interact directly with us!" = "Interact directly with us!";
+"Privacy Policy" = "Privacy Policy";
 
 //Mission
 "Meditate for 3 minutes" = "Meditate for 3 minutes";
@@ -62,7 +65,7 @@
 "Turn your head left and right 10 times" = "Turn your head left and right 10 times";
 "Open your mouth 50 times" = "Open your mouth 50 times";
 "Look at the distant scenery" = "Look at the distant scenery";
-"Do nothing for five minutes (including using electronic devices)" = "Do nothing for five minutes (including using electronic devices)";
+"Do nothing for five minutes\n(including using electronic devices)" = "Do nothing for five minutes\n(including using electronic devices)";
 "Take a deep breath" = "Take a deep breath";
 "Brush your teeth with your non-dominant hand" = "Brush your teeth with your non-dominant hand";
 "Write a sentence (anywhere)" = "Write a sentence (anywhere)";
@@ -71,8 +74,8 @@
 "Take a picture" = "Take a picture";
 "Smile to the mirror for 3 seconds" = "Smile to the mirror for 3 seconds";
 "Close your eyes and rest for 3 minutes" = "Close your eyes and rest for 3 minutes";
-"Send a message to a person and ask him \"How you doing?\"" = "Send a message to a person and ask him \"How you doing?\"";
-"Draw whatever you see today (anywhere)" = "Draw whatever you see today (anywhere)";
+"Send a message to a person and ask him/her\n\"How's your day\"" = "Send a message to a person and ask him/her\n\"How's your day\"";
+"Draw whatever you see today\n(anywhere)" = "Draw whatever you see today\n(anywhere)";
 "Lie on the bed for 5 minutes" = "Lie on the bed for 5 minutes";
 "Drink a cup of hot water" = "Drink a cup of hot water";
 "Set an alarm clock earlier than usual" = "Set an alarm clock earlier than usual";

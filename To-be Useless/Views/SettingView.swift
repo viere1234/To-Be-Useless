@@ -159,7 +159,7 @@ struct SettingView: View {
                     })
                     .safariView(isPresented: $showInformationCenter) {
                         SafariView(
-                            url: URL(string: "https://to-be-useless.notion.site/to-be-useless/To-be-Useless-c78abcd5caba493bb9bce50ae093c9c1")!,
+                            url: URL(string: "https://to-be-useless.notion.site/To-be-Useless-Information-center-EN-US-1fa2ee954194411d809d6649d919c623")!,
                             configuration: SafariView.Configuration(
                                 entersReaderIfAvailable: false,
                                 barCollapsingEnabled: true
@@ -225,7 +225,7 @@ struct SettingView: View {
                     })
                     
                     Button(action: {
-                        guard let data = URL(string: "https://testflight.apple.com/join/zYXqFRmM") else { return }
+                        guard let data = URL(string: "https://apps.apple.com/us/app/to-be-useless/id1577163391") else { return }
                         let av = UIActivityViewController(activityItems: [data], applicationActivities: nil)
                         UIApplication.shared.windows.first?.rootViewController?.present(av, animated: true, completion: nil)
                     }, label: {
@@ -248,7 +248,7 @@ struct SettingView: View {
                 HStack {
                     Spacer()
                     
-                    Text("To-be Useless Version Beta \(version)")
+                    Text("To-be Useless Version \(version)")
                         .foregroundColor(.gray)
                     
                     Spacer()

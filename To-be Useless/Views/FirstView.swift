@@ -33,7 +33,7 @@ struct FirstView: View {
                                         
                                         Image("AppPicture")
                                             .resizable()
-                                            .cornerRadius(26)
+                                            .cornerRadius(UIScreen.main.bounds.width / 15.9230769)
                                             .aspectRatio(contentMode: .fit)
                                             .frame(width: UIScreen.main.bounds.width / 4)
                                             //.padding([.top], UIScreen.main.bounds.height / 4.5)
@@ -65,27 +65,34 @@ struct FirstView: View {
                                         Spacer()
                                     }
                                 case 2:
-                                    VStack(alignment: .leading, spacing: 50) {
+                                    VStack(alignment: .leading) {
+                                        Spacer()
+                                        Spacer()
                                         
                                         Text("How to use it?")
                                             .font(.system(.largeTitle, design: .rounded))
                                             .fontWeight(.bold)
                                             .padding(.leading)
-                                            .padding(.bottom)
                                         
-                                        VStack(alignment: .leading, spacing: 40) {
-                                            NewDetail(image: "rectangle.fill.on.rectangle.angled.fill", imageColor: .orange,
-                                                      title: "Refresh Mission",
-                                                      description: "Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day).")
-                                            
-                                            NewDetail(image: "calendar.badge.clock", imageColor: .red,
-                                                      title: "Daily Mission Time",
-                                                      description: "We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings.")
-                                            
-                                            NewDetail(image: "arrow.turn.right.up", imageColor: .blue,
-                                                      title: "Contribute your mission",
-                                                      description: "If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form.")
-                                        }
+                                        Spacer()
+                                        
+                                        NewDetail(image: "rectangle.fill.on.rectangle.angled.fill", imageColor: .orange,
+                                                  title: "Refresh Mission",
+                                                  description: "Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day).")
+                                            .padding([.bottom])
+                                        
+                                        NewDetail(image: "calendar.badge.clock", imageColor: .red,
+                                                  title: "Daily Mission Time",
+                                                  description: "We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings.")
+                                            .padding([.top, .bottom])
+                                        
+                                        NewDetail(image: "arrow.turn.right.up", imageColor: .blue,
+                                                  title: "Contribute your mission",
+                                                  description: "If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form.")
+                                            .padding([.top])
+                                        
+                                        Spacer()
+                                        Spacer()
                                     }
                                     //.padding([.top], UIScreen.main.bounds.height / 6.5)
                                     //.frame(height: UIScreen.main.bounds.height / 1.3)
@@ -161,7 +168,7 @@ struct FirstView: View {
                     Text("Get Started")
                         .foregroundColor(.white)
                         .font(.system(size: 20, design: .rounded))
-                        .frame(width: UIScreen.main.bounds.width * 0.88, height: 50, alignment: .center)
+                        .frame(width: UIScreen.main.bounds.width * 0.88, height: UIScreen.main.bounds.width / 8.28, alignment: .center)
                         .background(Color("OnBoardingUIColor"))
                         .cornerRadius(15)
                 })
@@ -171,20 +178,24 @@ struct FirstView: View {
             .padding(.top, 15)
             //.padding(.bottom, 20)
             
-            Text("By started you accept our")
-                .padding(.top, 5)
-                .font(.subheadline)
-                .foregroundColor(.black.opacity(0.7))
-            
-            Button(action: {
-                openURL(URL(string: "https://www.privacypolicies.com/live/0748be9e-79ac-455c-9c3f-68ed5df5273f")!)
-            }, label: {
-                Text("Privacy Policy")
+            VStack {
+                Text("By started you accept our")
+                    .padding(.top, 5)
                     .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundColor(.black.opacity(0.9))
-                    .underline()
-            })
+                    .foregroundColor(.black.opacity(0.7))
+                
+                Button(action: {
+                    openURL(URL(string: "https://www.privacypolicies.com/live/0748be9e-79ac-455c-9c3f-68ed5df5273f")!)
+                }, label: {
+                    Text("Privacy Policy")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.black.opacity(0.9))
+                        .underline()
+                })
+            }
+            //.ignoresSafeArea(.all)
+            .padding(.bottom)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         
@@ -223,8 +234,8 @@ struct NewDetail: View {
         HStack(alignment: .center) {
             HStack {
                 Image(systemName: image)
-                    .font(.system(size: 40))
-                    .frame(width: 50)
+                    .font(.system(size: UIScreen.main.bounds.width / 10.35))
+                    .frame(width: UIScreen.main.bounds.width / 8.92)
                     .foregroundColor(imageColor)
                     .padding()
 

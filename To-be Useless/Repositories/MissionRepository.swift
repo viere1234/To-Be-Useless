@@ -8,8 +8,8 @@
 
 let HighMission = [
     Task(title: "Meditate for 3 minutes", difficulty: TaskDifficulty.high, completed: false),
-    Task(title: "Send a message to a person and ask him \"How you doing?\"", difficulty: TaskDifficulty.high, completed: false),
-    Task(title: "Draw whatever you see today (anywhere)", difficulty: TaskDifficulty.high, completed: false),
+    Task(title: "Send a message to a person and ask him/her\n\"How's your day\"", difficulty: TaskDifficulty.high, completed: false),
+    Task(title: "Draw whatever you see today\n(anywhere)", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Drink a cup of hot water", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Set an alarm clock earlier than usual", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Push up 10 times", difficulty: TaskDifficulty.high, completed: false)
@@ -18,7 +18,7 @@ let HighMission = [
 let MediumMission = [
     Task(title: "Look out the window for three minutes", difficulty: TaskDifficulty.medium, completed: false),
     Task(title: "Focus on breathing for 30 seconds", difficulty: TaskDifficulty.medium, completed: false),
-    Task(title: "Do nothing for five minutes (including using electronic devices)", difficulty: TaskDifficulty.medium, completed: false),
+    Task(title: "Do nothing for five minutes\n(including using electronic devices)", difficulty: TaskDifficulty.medium, completed: false),
     Task(title: "Brush your teeth with your non-dominant hand", difficulty: TaskDifficulty.medium, completed: false),
     Task(title: "Take a nap", difficulty: TaskDifficulty.medium, completed: false),
     Task(title: "Close your eyes and rest for 3 minutes", difficulty: TaskDifficulty.medium, completed: false),

@@ -32,7 +32,9 @@
 		D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = D340B1C526B5239A0024E13C /* 23222-checkmark.json */; };
 		D340B1C826B52AEF0024E13C /* 9844-loading-40-paperplane.json in Resources */ = {isa = PBXBuildFile; fileRef = D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */; };
 		D356FD2926AFDECA002998FD /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356FD2826AFDECA002998FD /* DataView.swift */; };
-		D357594C26CF7BF600E8F6D4 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357594B26CF7BF600E8F6D4 /* Notification.swift */; };
+		D357594C26CF7BF600E8F6D4 /* NotificationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357594B26CF7BF600E8F6D4 /* NotificationFunc.swift */; };
+		D36569EB26D65D740096A0CD /* MissionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36569EA26D65D740096A0CD /* MissionFunc.swift */; };
+		D36E308A26D8ECD50070D8D4 /* SwiftUIFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E308926D8ECD50070D8D4 /* SwiftUIFunc.swift */; };
 		D36E8FAD26B5977900843AB3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36E8FAC26B5977900843AB3 /* StoreKit.framework */; };
 		D36E8FAF26B59A1500843AB3 /* StoreManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E8FAE26B59A1500843AB3 /* StoreManger.swift */; };
 		D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36E8FB026B59BE100843AB3 /* TipView.swift */; };
@@ -80,7 +82,9 @@
 		D340B1C526B5239A0024E13C /* 23222-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "23222-checkmark.json"; sourceTree = "<group>"; };
 		D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9844-loading-40-paperplane.json"; sourceTree = "<group>"; };
 		D356FD2826AFDECA002998FD /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
-		D357594B26CF7BF600E8F6D4 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		D357594B26CF7BF600E8F6D4 /* NotificationFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFunc.swift; sourceTree = "<group>"; };
+		D36569EA26D65D740096A0CD /* MissionFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionFunc.swift; sourceTree = "<group>"; };
+		D36E308926D8ECD50070D8D4 /* SwiftUIFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFunc.swift; sourceTree = "<group>"; };
 		D36E8FAC26B5977900843AB3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D36E8FAE26B59A1500843AB3 /* StoreManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManger.swift; sourceTree = "<group>"; };
 		D36E8FB026B59BE100843AB3 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
@@ -201,7 +205,9 @@
 		D357594A26CF7BC500E8F6D4 /* Functions */ = {
 			isa = PBXGroup;
 			children = (
-				D357594B26CF7BF600E8F6D4 /* Notification.swift */,
+				D357594B26CF7BF600E8F6D4 /* NotificationFunc.swift */,
+				D36569EA26D65D740096A0CD /* MissionFunc.swift */,
+				D36E308926D8ECD50070D8D4 /* SwiftUIFunc.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -374,15 +380,17 @@
 				D32B0BEE26AC479300F18502 /* MissionRepository.swift in Sources */,
 				D328632126B4262000CA3723 /* LottieView.swift in Sources */,
 				D328631F26B4096C00CA3723 /* WebView.swift in Sources */,
-				D357594C26CF7BF600E8F6D4 /* Notification.swift in Sources */,
+				D357594C26CF7BF600E8F6D4 /* NotificationFunc.swift in Sources */,
 				D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */,
 				D36E8FB126B59BE100843AB3 /* TipView.swift in Sources */,
 				D3E0906D26C416C50053E0BC /* ChartView.swift in Sources */,
 				D370E08A26A544E9003EA11C /* TaskCellViewModel.swift in Sources */,
 				D36E8FAF26B59A1500843AB3 /* StoreManger.swift in Sources */,
 				D30D607126A4FD0C00A5F83C /* ContentView.swift in Sources */,
+				D36569EB26D65D740096A0CD /* MissionFunc.swift in Sources */,
 				D328632326B42B7500CA3723 /* TestView.swift in Sources */,
 				D370E08D26A5469B003EA11C /* TaskRepository.swift in Sources */,
+				D36E308A26D8ECD50070D8D4 /* SwiftUIFunc.swift in Sources */,
 				D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */,
 				D3FFB54026A6599000162E2F /* AboutView.swift in Sources */,
 				D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */,

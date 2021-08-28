@@ -8,14 +8,14 @@
 import Foundation
 
 enum TaskDifficulty: Int, Codable {
-  case high
-  case medium
-  case low
+    case high
+    case medium
+    case low
 }
 
-struct Task: Codable, Identifiable {
-  var id: String = UUID().uuidString
-  var title: String
-  var difficulty: TaskDifficulty
-  var completed: Bool
+struct Task: Codable, Identifiable, Hashable {
+    var id: String = UUID().uuidString
+    var title: String
+    var difficulty: TaskDifficulty
+    var completed: Bool
 }

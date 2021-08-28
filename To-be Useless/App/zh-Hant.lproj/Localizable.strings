@@ -45,6 +45,7 @@
 "Haptic Touch" = "觸覺回饋";
 "Start Menu" = "起始畫面";
 "Mission Proposal" = "任務提案";
+"Notification" = "通知";
 
 //About
 "Developer & Designer :" = "開發者 & 設計師 :";
@@ -52,6 +53,8 @@
 "Designer & Marketing :" = "設計師 & 行銷 :";
 "Fu-Syuan Wang" = "王甫瑄";
 "Social Networks" = "社交網站";
+"Interact directly with us!" = "直接和我們互動！";
+"Privacy Policy" = "隱私權政策";
 
 //Mission
 "Meditate for 3 minutes" = "冥想三分鐘";
@@ -62,7 +65,7 @@
 "Turn your head left and right 10 times" = "左右轉頭十次";
 "Open your mouth 50 times" = "張嘴五十次";
 "Look at the distant scenery" = "看遠方的風景";
-"Do nothing for five minutes (including using electronic devices)" = "五分鐘內不做任何事（包括使用電子設備）";
+"Do nothing for five minutes\n(including using electronic devices)" = "五分鐘內不做任何事\n(包括使用電子設備)";
 "Take a deep breath" = "深吸一口氣";
 "Brush your teeth with your non-dominant hand" = "用非慣用手刷牙";
 "Write a sentence (anywhere)" = "寫下隨便一句話（在任何地方）";
@@ -71,8 +74,8 @@
 "Take a picture" = "拍下一張照片";
 "Smile to the mirror for 3 seconds" = "對著鏡子微笑三秒鐘";
 "Close your eyes and rest for 3 minutes" = "閉目養神三分鐘";
-"Send a message to a person and ask him \"How you doing?\"" = "發訊息給一個人，並問他“最近過得怎麼樣”";
-"Draw whatever you see today (anywhere)" = "隨便畫下你今天所看到的東西（在任何地方）";
+"Send a message to a person and ask him/her\n\"How's your day\"" = "發訊息給一個人，並問他/她\n\"最近過得怎麼樣\"";
+"Draw whatever you see today\n(anywhere)" = "隨便畫下你今天所看到的東西\n(在任何地方)";
 "Lie on the bed for 5 minutes" = "趴在床上五分鐘";
 "Drink a cup of hot water" = "喝一杯熱水";
 "Set an alarm clock earlier than usual" = "設下比平常起床時間更早的鬧鐘";

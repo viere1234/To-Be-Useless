@@ -15,11 +15,11 @@ struct AboutView: View {
     @Environment(\.openURL) var openURL
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             Image("AppPicture")
                 .resizable()
                 .frame(width: UIScreen.main.bounds.width / 3.5, height: UIScreen.main.bounds.width / 3.5, alignment: .center)
-                .cornerRadius(26)
+                .cornerRadius(UIScreen.main.bounds.width / 15.9230769)
                 
             HStack(spacing: 0) {
                 Text("To-be ")
@@ -40,17 +40,21 @@ struct AboutView: View {
             
             Spacer()
             
-            HStack {
+            VStack {
                 Text("Developer & Designer :")
-                Text("Brian Chang")
-                    .underline()
-                    .foregroundColor(.blue)
-                    .onTapGesture(perform: {
-                        self.showBrianLinks.toggle()
-                    })
-                Image(systemName: "link")
+                    .font(.title3)
+                    .padding(.bottom, 1)
+                
+                HStack {
+                    Text("Brian Chang")
+                        .underline()
+                        .foregroundColor(.blue)
+                        .onTapGesture(perform: {
+                            self.showBrianLinks.toggle()
+                        })
+                }
             }
-            .padding(.bottom, 5)
+            .padding(.bottom, 10)
             .actionSheet(isPresented: $showBrianLinks) {
                 ActionSheet(title: Text("Social Networks"), buttons: [
                     .default(Text("Facebook : Brian Chang")) {
@@ -60,16 +64,21 @@ struct AboutView: View {
                     .cancel()
                 ])
             }
+            .padding([.horizontal])
             
-            HStack {
+            VStack {
                 Text("Designer & Marketing :")
-                Text("Fu-Syuan Wang")
-                    .underline()
-                    .foregroundColor(.blue)
-                    .onTapGesture(perform: {
-                        self.showTerryLinks.toggle()
-                    })
-                Image(systemName: "link")
+                    .font(.title3)
+                    .padding(.bottom, 1)
+                
+                HStack {
+                    Text("Fu-Syuan Wang")
+                        .underline()
+                        .foregroundColor(.blue)
+                        .onTapGesture(perform: {
+                            self.showTerryLinks.toggle()
+                        })
+                }
             }
             .actionSheet(isPresented: $showTerryLinks) {
                 ActionSheet(title: Text("Social Networks"), buttons: [
@@ -80,11 +89,42 @@ struct AboutView: View {
                     .cancel()
                 ])
             }
+            .padding([.horizontal])
             
             Spacer()
             
+            VStack {
+                Text("Interact directly with us!")
+                    .font(.title3)
+                    .padding(.bottom, 1)
+                
+                Button(action: {
+                    openURL(URL(string: "https://discord.gg/ReEwSbNdMV")!)
+                }, label: {
+                    HStack {
+                        Text("Discord Community")
+                            .underline()
+                            .foregroundColor(.blue)
+                    }
+                })
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                openURL(URL(string: "https://www.privacypolicies.com/live/0748be9e-79ac-455c-9c3f-68ed5df5273f")!)
+            }, label: {
+                Text("Privacy Policy")
+                    .foregroundColor(.blue)
+                    .underline()
+            })
+            
+            Spacer()
+            
+            /*
             LottieView(name: "60586-developer-isometric-people-working-with-technology", loopMode: .loop)
-                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width, alignment: .center)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: .infinity)*/
             
         }
     }

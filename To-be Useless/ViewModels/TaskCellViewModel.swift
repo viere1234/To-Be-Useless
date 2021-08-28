@@ -38,7 +38,7 @@ class TaskCellViewModel: ObservableObject, Identifiable  {
     
     $task
       .dropFirst()
-      .debounce(for: 0.8, scheduler: RunLoop.main)
+        .debounce(for: .milliseconds(10), scheduler: RunLoop.main)
       .sink { [weak self] task in
         self?.taskRepository.updateTask(task)
       }

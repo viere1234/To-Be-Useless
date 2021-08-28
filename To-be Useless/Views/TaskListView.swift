@@ -13,8 +13,8 @@ import SlideOverCard
 
 struct TaskListView: View {
     //Current Version
-    let currentVersion = "0.1.6"
-    @AppStorage("Version") var version = "0.1.6"
+    let currentVersion = "1.0.0"
+    @AppStorage("Version") var version = "1.0.0"
     //end
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -24,6 +24,10 @@ struct TaskListView: View {
     @State var showMissionAlertSwicher = 0
     @State var openTask = false
     @State var isFinishMission = false
+    @State var missionSize: [CGSize] = [.zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero]
+    @State var textSize: Dictionary<String, CGSize> = [:]
+    @State var size: CGSize = .zero
+    @State var reload = false
     @ObservedObject var taskListVM = TaskListViewModel()
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarTitle: CGFloat = 20
@@ -38,6 +42,7 @@ struct TaskListView: View {
     @AppStorage("MissionCompletes") var missionCompletes = 0
     @AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("First") var first = true
+    @ObservedObject var model = Model()
     let generrator = UINotificationFeedbackGenerator()
     
     init() {
@@ -59,6 +64,12 @@ struct TaskListView: View {
         //UINavigationBar.appearance().largeTitleTextAttributes = [.font : font]
         //UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont.rounded]
         //UINavigationBar.appearance().titleTextAttributes = [.font: UIFont.rounded]
+        
+        /*
+        for taskCell in taskListVM.taskCellViewModels {
+            textSize[taskCell.task] = CGFloat(10)
+        }
+         */
     }
     
     var body: some View {
@@ -69,14 +80,21 @@ struct TaskListView: View {
                     GeometryReader { mainView in
                         ScrollView {
                             VStack(spacing: 15) {
-                                ForEach (taskListVM.taskCellViewModels) { taskCellVM in
-                                    GeometryReader { item in
-                                        TaskCell(isFinishMission: $isFinishMission, taskCellVM: taskCellVM, width: mainView.size.width)
-                                            .scaleEffect(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY), anchor: .bottom)
-                                            .opacity(Double(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY)))
-                                            .offset(x: (openTask ? 0 : mainView.size.width))
+                                if !reload {
+                                    ForEach (taskListVM.taskCellViewModels) { taskCellVM in
+                                        //textSize[taskCellVM.task] = .zero
+                                        GeometryReader { item in
+                                            TaskCell(isFinishMission: $isFinishMission,
+                                                     taskCellVM: taskCellVM,
+                                                     width: mainView.size.width)
+                                                .scaleEffect(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY), anchor: .bottom)
+                                                .opacity(Double(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY)))
+                                                .offset(x: (openTask ? 0 : mainView.size.width))
+                                                .readIntrinsicContentSize(to: $textSize[taskCellVM.task.id])
+                                                .id(taskCellVM.task.id)
+                                        }
+                                        .frame(height: (textSize[taskCellVM.task.id]?.height ?? CGFloat(0)) + 25)
                                     }
-                                    .frame(height: 50)
                                 }
                             }
                             .padding(.top, 10)
@@ -114,13 +132,19 @@ struct TaskListView: View {
                                              primaryButton: .default(Text("Yes"), action: {
                                                 if hapticActivated { generrator.notificationOccurred(.success) }
                                                 self.getMissionTime -= 1
-                                                withAnimation() {
-                                                    getMission()
-                                                }
                                                 
-                                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                                                DispatchQueue.main.async {
                                                     withAnimation() {
-                                                        getMission()
+                                                        openTask = false
+                                                    }
+                                                    
+                                                    getMission()
+                                                    textSize = [:]
+                                                    
+                                                    
+                                                    
+                                                    withAnimation() {
+                                                        openTask = true
                                                     }
                                                 }
                                              }),
@@ -152,11 +176,24 @@ struct TaskListView: View {
                             lastDalyMissionYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
                             lastDalyMissionMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0
                             lastDalyMissionDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
-                            getMission()
+                            
                             getMissionTime = 1
                             showMissionAlertSwicher = 2
                             if hapticActivated { generrator.notificationOccurred(.success) }
                             showAlert.toggle()
+                            
+                            DispatchQueue.main.async {
+                                withAnimation() {
+                                    openTask = false
+                                }
+                                
+                                getMission()
+                                textSize = [:]
+                                
+                                withAnimation() {
+                                    openTask = true
+                                }
+                            }
                         }
                     } else {
                         let currentYear = Calendar.current.dateComponents([.year], from: Date()).year ?? 0
@@ -187,7 +224,8 @@ struct TaskListView: View {
                         }
                     }
                     if version != currentVersion { // Warning Disappear After
-                        self.first = true
+                        getMission()
+                        textSize = [:]
                         self.developerActivated = false
                         version = currentVersion
                     }
@@ -226,7 +264,7 @@ struct TaskListView: View {
             }
         }
     }
-    func scaleValue(mainFrame: CGFloat, minY: CGFloat)-> CGFloat {
+    private func scaleValue(mainFrame: CGFloat, minY: CGFloat)-> CGFloat {
         withAnimation(.easeOut) {
             let scale = (minY - mainFrame*0.55) / mainFrame * 2
             if scale > 1 {
@@ -242,7 +280,6 @@ struct TaskListView: View {
         
         return CGFloat(a/b)
     }
-    
 }
 
 #if DEBUG
@@ -261,6 +298,8 @@ struct TaskCell: View {
     @AppStorage("MissionCompletes") var missionCompletes = 0
     @AppStorage("MissionCounts") var missionCounts = 1
     @ObservedObject var taskCellVM: TaskCellViewModel
+    @State var size: CGSize? = .zero
+    
     let width: CGFloat
     let generrator = UINotificationFeedbackGenerator()
     var body: some View {
@@ -275,15 +314,17 @@ struct TaskCell: View {
                 
                 Text(LocalizedStringKey(taskCellVM.task.title))
                     .font(.system(.body, design: .rounded))
+                    .readIntrinsicContentSize(to: $size)
                     .foregroundColor(.black)
                 
                 Spacer()
             }
-            .frame(width: (width * 0.9), height: 50)
+            .frame(width: (width * 0.9), height: (size!.height + 25))
+            .id(taskCellVM.task.id)
             .background(Color.white)
             .cornerRadius(15)
             .onTapGesture {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                DispatchQueue.main.async {
                     self.taskCellVM.task.completed.toggle()
                 }
                 if hapticActivated {
@@ -333,61 +374,6 @@ extension UIFont {
     }
 }
 
-func clearMission() {
-    @ObservedObject var taskListVM = TaskListViewModel()
-    
-    for _ in 0..<taskListVM.taskCellViewModels.count {
-        taskListVM.removeTasks(atOffsets: IndexSet([0]))
-    }
-}
-
-func getMission() {
-    @ObservedObject var taskListVM = TaskListViewModel()
-    @AppStorage("MissionCounts") var missionCounts = 0
-    @AppStorage("MissionCompletes") var missionCompletes = 0
-    
-    var difficlutChose: [Int] = [],
-        highMissionIndex: [Int] = [], highMissionNum = 0,
-        mediumMissionIndex: [Int] = [], mediumMissionNum = 0,
-        lowMissionIndex: [Int] = [], lowMissionNum = 0, tmp: Int
-    
-    missionCompletes = 0
-    
-    clearMission()
-    
-    while difficlutChose.reduce(0, +) < 6 {
-        difficlutChose.append(Int.random(in: 1...3))
-    }
-    
-    missionCounts = difficlutChose.count
-    
-    for difficluty in difficlutChose {
-        switch difficluty {
-        case 1: // low difficulty mission
-            repeat {
-                tmp = Int.random(in: 0...LowMission.count-1)
-            } while ( lowMissionIndex.contains(tmp) )
-            lowMissionIndex.append(tmp)
-            taskListVM.addTask(task: LowMission[lowMissionNum])
-            lowMissionNum+=1
-        case 2: // medium difficulty mission
-            repeat {
-                tmp = Int.random(in: 0...MediumMission.count-1)
-            } while ( mediumMissionIndex.contains(tmp) )
-            mediumMissionIndex.append(tmp)
-            taskListVM.addTask(task: MediumMission[mediumMissionNum])
-            mediumMissionNum+=1
-        default: //3 high
-            repeat {
-                tmp = Int.random(in: 0...HighMission.count-1)
-            } while ( highMissionIndex.contains(tmp) )
-            highMissionIndex.append(tmp)
-            taskListVM.addTask(task: HighMission[highMissionNum])
-            highMissionNum+=1
-        }
-    }
-}
-
 struct ProgressView: View {
     
     var percent: CGFloat
@@ -411,3 +397,36 @@ struct ProgressView: View {
         return width * self.percent
     }
 }
+
+struct IntrinsicContentSizePreferenceKey: PreferenceKey {
+    static let defaultValue: CGSize = .zero
+
+    static func reduce(value: inout CGSize, nextValue: () -> CGSize) {
+        value = nextValue()
+    }
+}
+
+extension View {
+    func readIntrinsicContentSize(to size: Binding<CGSize?>) -> some View {
+        background(GeometryReader { proxy in
+            Color.clear.preference(
+                key: IntrinsicContentSizePreferenceKey.self,
+                value: proxy.size
+            )
+        })
+        .onPreferenceChange(IntrinsicContentSizePreferenceKey.self) { value in
+            DispatchQueue.main.async {
+                size.wrappedValue = value//$0
+            }
+        }
+    }
+}
+
+class Model: ObservableObject {
+    func reloadView() {
+        objectWillChange.send()
+    }
+}
+
+//50
+//25
