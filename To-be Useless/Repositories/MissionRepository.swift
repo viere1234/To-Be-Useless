@@ -12,7 +12,8 @@ let HighMission = [
     Task(title: "Draw whatever you see today\n(anywhere)", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Drink a cup of hot water", difficulty: TaskDifficulty.high, completed: false),
     Task(title: "Set an alarm clock earlier than usual", difficulty: TaskDifficulty.high, completed: false),
-    Task(title: "Push up 10 times", difficulty: TaskDifficulty.high, completed: false)
+    Task(title: "Push up 10 times", difficulty: TaskDifficulty.high, completed: false),
+    Task(title: "Stand against the wall for 10 minutes", difficulty: TaskDifficulty.high, completed: false)
 ]
 
 let MediumMission = [
@@ -27,7 +28,8 @@ let MediumMission = [
     Task(title: "Eat a meal", difficulty: TaskDifficulty.medium, completed: false),
     Task(title: "Make a dish", difficulty: TaskDifficulty.medium, completed: false),
     Task(title: "Look at yourself in the mirror for 1 minute", difficulty: TaskDifficulty.medium, completed: false),
-    Task(title: "Eat some fruit", difficulty: TaskDifficulty.medium, completed: false)
+    Task(title: "Eat some fruit", difficulty: TaskDifficulty.medium, completed: false),
+    Task(title: "Write a diary", difficulty: TaskDifficulty.medium, completed: false)
 ]
 
 let LowMission = [
@@ -46,5 +48,8 @@ let LowMission = [
     Task(title: "Play a game", difficulty: TaskDifficulty.low, completed: false),
     Task(title: "Make a face to your friends or a mirror", difficulty: TaskDifficulty.low, completed: false),
     Task(title: "Find a joke", difficulty: TaskDifficulty.low, completed: false),
-    Task(title: "Touch the wall and feel the texture", difficulty: TaskDifficulty.low, completed: false)
+    Task(title: "Touch the wall and feel the texture", difficulty: TaskDifficulty.low, completed: false),
+    Task(title: "Listen to a song", difficulty: TaskDifficulty.low, completed: false),
+    Task(title: "Read a news article", difficulty: TaskDifficulty.low, completed: false),
+    Task(title: "Listen to an episode of the podcast", difficulty: TaskDifficulty.low, completed: false)
 ]
