@@ -20,7 +20,7 @@ struct SettingView: View {
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
     @AppStorage("GetMossionTime") var getMissionTime = 1
-    @AppStorage("DeveloperActivated") var developerActivated = false
+    //@AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("IsGetDalyMission") var isGetDalyMission = false
     @AppStorage("Version") var version = ""
     @AppStorage("Notification") var isNotification = true
@@ -36,6 +36,7 @@ struct SettingView: View {
         ZStack {
             
             Form {
+                /*
                 if developerActivated {
                     Section(header: Text("Developer")) {
                         NavigationLink(destination: DeveloperView(), label: {
@@ -45,7 +46,7 @@ struct SettingView: View {
                             )
                         })
                     }
-                }
+                }*/
                 
                 
                 Section (header: Text("General")) {
@@ -286,6 +287,7 @@ struct SettingView: View {
                 }
             }
             
+            /*
             VStack {
                 Spacer()
                 
@@ -314,7 +316,7 @@ struct SettingView: View {
                     )
                 })
             }
-            .edgesIgnoringSafeArea(.bottom)
+            .edgesIgnoringSafeArea(.bottom)*/
         }
         .onAppear(perform: {
             if isNotification {

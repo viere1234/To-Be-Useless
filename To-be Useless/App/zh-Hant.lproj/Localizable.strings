@@ -13,7 +13,6 @@
 "Refresh Mission" = "刷新任務";
 "Refresh Mission (Used Up)" = "刷新任務 （已用盡）";
 "Run out of times" = "次數已用盡";
-"Daily mission get!!" = "已獲取每日任務！！";
 "Are you sure?" = "你確定嗎？";
 "Daliy Missions have been completed" = "今日任務已完成";
 "Pick up more Missions tomorrow" = "明天再來領取任務吧";
@@ -21,6 +20,7 @@
 "Continue" = "繼續";
 "Yes" = "確定";
 "%d Times left" = "剩餘%d次";
+"Daily Mission Refreshed." = "每日任務已刷新.";
 
 //Onboarding
 "How to use it?" = "功能介紹";
@@ -35,6 +35,7 @@
 "Or interact directly in our" = "或是直接和我們互動";
 "Discord Community" = "Discord 社群";
 "Get Started" = "立即開始";
+"By started you accept our" = "當開始時代表您接受";
 
 //Settings
 "General" = "一般";

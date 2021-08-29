@@ -20,17 +20,8 @@
 		D328632126B4262000CA3723 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328632026B4262000CA3723 /* LottieView.swift */; };
 		D328632326B42B7500CA3723 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328632226B42B7500CA3723 /* TestView.swift */; };
 		D32B0BEE26AC479300F18502 /* MissionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32B0BED26AC479300F18502 /* MissionRepository.swift */; };
-		D339840926C9084100D70D17 /* 72410-12345.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840826C9084100D70D17 /* 72410-12345.json */; };
-		D339840B26C90A6E00D70D17 /* 45708-swipe-left.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840A26C90A6E00D70D17 /* 45708-swipe-left.json */; };
-		D339840D26C90DE900D70D17 /* lf30_editor_nek0w6yb.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840C26C90DE900D70D17 /* lf30_editor_nek0w6yb.json */; };
 		D339840F26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json in Resources */ = {isa = PBXBuildFile; fileRef = D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */; };
-		D339841126C9113B00D70D17 /* lf30_editor_s2pskznt.json in Resources */ = {isa = PBXBuildFile; fileRef = D339841026C9113B00D70D17 /* lf30_editor_s2pskznt.json */; };
-		D33DC20F26BE8122009D8BE0 /* 41068-man-filling-a-list.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */; };
-		D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */; };
-		D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */; };
-		D33DC21B26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json in Resources */ = {isa = PBXBuildFile; fileRef = D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */; };
 		D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */ = {isa = PBXBuildFile; fileRef = D340B1C526B5239A0024E13C /* 23222-checkmark.json */; };
-		D340B1C826B52AEF0024E13C /* 9844-loading-40-paperplane.json in Resources */ = {isa = PBXBuildFile; fileRef = D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */; };
 		D356FD2926AFDECA002998FD /* DataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356FD2826AFDECA002998FD /* DataView.swift */; };
 		D357594C26CF7BF600E8F6D4 /* NotificationFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D357594B26CF7BF600E8F6D4 /* NotificationFunc.swift */; };
 		D36569EB26D65D740096A0CD /* MissionFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36569EA26D65D740096A0CD /* MissionFunc.swift */; };
@@ -48,11 +39,9 @@
 		D3933CFD26BE5DFA00765E81 /* OffsetPageTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFC26BE5DFA00765E81 /* OffsetPageTabView.swift */; };
 		D3933CFF26BE61EF00765E81 /* Intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3933CFE26BE61EF00765E81 /* Intro.swift */; };
 		D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D3B051E926AE5C82009BCBF4 /* Localizable.strings */; };
-		D3CF8FBE26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json in Resources */ = {isa = PBXBuildFile; fileRef = D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */; };
 		D3F49A9E26A57F8D0029D8B3 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */; };
 		D3F6E72C26AD1F79002FA104 /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */; };
 		D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */; };
-		D3FB655026C7F21F0074A569 /* 11516-swipe-left-arrows.json in Resources */ = {isa = PBXBuildFile; fileRef = D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */; };
 		D3FFB54026A6599000162E2F /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FFB53F26A6599000162E2F /* AboutView.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,17 +56,8 @@
 		D328632026B4262000CA3723 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		D328632226B42B7500CA3723 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D32B0BED26AC479300F18502 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
-		D339840826C9084100D70D17 /* 72410-12345.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "72410-12345.json"; sourceTree = "<group>"; };
-		D339840A26C90A6E00D70D17 /* 45708-swipe-left.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "45708-swipe-left.json"; sourceTree = "<group>"; };
-		D339840C26C90DE900D70D17 /* lf30_editor_nek0w6yb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_nek0w6yb.json; sourceTree = "<group>"; };
 		D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_rrt6z0zt.json; sourceTree = "<group>"; };
-		D339841026C9113B00D70D17 /* lf30_editor_s2pskznt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_s2pskznt.json; sourceTree = "<group>"; };
-		D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "41068-man-filling-a-list.json"; sourceTree = "<group>"; };
-		D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "3091-process-complete.json"; sourceTree = "<group>"; };
-		D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "53194-earth-globe-rotating-with-seamless-loop-animation.json"; sourceTree = "<group>"; };
-		D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "18045-teamwork-is-all-we-need.json"; sourceTree = "<group>"; };
 		D340B1C526B5239A0024E13C /* 23222-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "23222-checkmark.json"; sourceTree = "<group>"; };
-		D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9844-loading-40-paperplane.json"; sourceTree = "<group>"; };
 		D356FD2826AFDECA002998FD /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		D357594B26CF7BF600E8F6D4 /* NotificationFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFunc.swift; sourceTree = "<group>"; };
 		D36569EA26D65D740096A0CD /* MissionFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionFunc.swift; sourceTree = "<group>"; };
@@ -94,11 +74,9 @@
 		D3933CFE26BE61EF00765E81 /* Intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intro.swift; sourceTree = "<group>"; };
 		D3B051E826AE5C82009BCBF4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D3B051EA26AE5C87009BCBF4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "60586-developer-isometric-people-working-with-technology.json"; sourceTree = "<group>"; };
 		D3F49A9D26A57F8D0029D8B3 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		D3F6E72B26AD1F79002FA104 /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
 		D3F6E73026AD2F31002FA104 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "11516-swipe-left-arrows.json"; sourceTree = "<group>"; };
 		D3FFB53F26A6599000162E2F /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,19 +157,8 @@
 		D340B1C026B521160024E13C /* Lottie */ = {
 			isa = PBXGroup;
 			children = (
-				D3FB654F26C7F21F0074A569 /* 11516-swipe-left-arrows.json */,
-				D340B1C726B52AEF0024E13C /* 9844-loading-40-paperplane.json */,
 				D340B1C526B5239A0024E13C /* 23222-checkmark.json */,
-				D3CF8FBD26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json */,
-				D33DC20E26BE8122009D8BE0 /* 41068-man-filling-a-list.json */,
-				D33DC21626BE8DC2009D8BE0 /* 3091-process-complete.json */,
-				D33DC21826BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json */,
-				D33DC21A26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json */,
-				D339840826C9084100D70D17 /* 72410-12345.json */,
-				D339840A26C90A6E00D70D17 /* 45708-swipe-left.json */,
-				D339840C26C90DE900D70D17 /* lf30_editor_nek0w6yb.json */,
 				D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */,
-				D339841026C9113B00D70D17 /* lf30_editor_s2pskznt.json */,
 			);
 			path = Lottie;
 			sourceTree = "<group>";
@@ -341,23 +308,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D339841126C9113B00D70D17 /* lf30_editor_s2pskznt.json in Resources */,
 				D3F6E73126AD2F31002FA104 /* Launch Screen.storyboard in Resources */,
 				D339840F26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json in Resources */,
-				D33DC21B26BE9C2E009D8BE0 /* 18045-teamwork-is-all-we-need.json in Resources */,
-				D339840D26C90DE900D70D17 /* lf30_editor_nek0w6yb.json in Resources */,
-				D3FB655026C7F21F0074A569 /* 11516-swipe-left-arrows.json in Resources */,
-				D33DC21926BE94CD009D8BE0 /* 53194-earth-globe-rotating-with-seamless-loop-animation.json in Resources */,
-				D33DC21726BE8DC2009D8BE0 /* 3091-process-complete.json in Resources */,
 				D340B1C626B5239A0024E13C /* 23222-checkmark.json in Resources */,
-				D339840B26C90A6E00D70D17 /* 45708-swipe-left.json in Resources */,
-				D339840926C9084100D70D17 /* 72410-12345.json in Resources */,
-				D33DC20F26BE8122009D8BE0 /* 41068-man-filling-a-list.json in Resources */,
 				D3B051E726AE5C82009BCBF4 /* Localizable.strings in Resources */,
-				D340B1C826B52AEF0024E13C /* 9844-loading-40-paperplane.json in Resources */,
 				D30D607626A4FD0D00A5F83C /* Preview Assets.xcassets in Resources */,
 				D30D607326A4FD0D00A5F83C /* Assets.xcassets in Resources */,
-				D3CF8FBE26B5372D00B446BC /* 60586-developer-isometric-people-working-with-technology.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +488,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"To-be Useless/Preview Content\"";
 				DEVELOPMENT_TEAM = DW8PG2JYW5;
@@ -557,7 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_ASSET_PATHS = "\"To-be Useless/Preview Content\"";
 				DEVELOPMENT_TEAM = DW8PG2JYW5;

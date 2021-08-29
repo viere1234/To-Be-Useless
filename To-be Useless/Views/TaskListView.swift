@@ -37,7 +37,7 @@ struct TaskListView: View {
     @AppStorage("HapticActivated") var hapticActivated = true
     @AppStorage("MissionCounts") var missionCounts = 1
     @AppStorage("MissionCompletes") var missionCompletes = 0
-    @AppStorage("DeveloperActivated") var developerActivated = false
+    //@AppStorage("DeveloperActivated") var developerActivated = false
     @AppStorage("First") var first = true
     //@ObservedObject var model = Model()
     let generrator = UINotificationFeedbackGenerator()

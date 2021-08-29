@@ -10,22 +10,24 @@ import Disk
 
 struct DataView: View {
     
+    let missionRep = MissionRepsitory()
+    
     var body: some View {
         VStack(alignment: .leading) {
             
             Text("Low")
                 .font(.title)
-            List(LowMission) { mission in
+            List(missionRep.LowMission) { mission in
                 Text(mission.title)
             }
             Text("Medium")
                 .font(.title)
-            List(MediumMission) { mission in
+            List(missionRep.MediumMission) { mission in
                 Text(mission.title)
             }
             Text("High")
                 .font(.title)
-            List(HighMission) { mission in
+            List(missionRep.HighMission) { mission in
                 Text(mission.title)
             }
         }

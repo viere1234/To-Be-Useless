@@ -13,7 +13,6 @@
 "Refresh Mission (Used Up)" = "Refresh Mission (Used Up)";
 "Refresh Mission" = "Refresh Mission";
 "Run out of times" = "Run out of times";
-"Daily mission get!!" = "Daily mission get!!";
 "Are you sure?" = "Are you sure?";
 "Daliy Missions have been completed" = "Daliy Missions have been completed";
 "Pick up more Missions tomorrow" = "Pick up more Missions tomorrow";
@@ -21,6 +20,7 @@
 "Continue" = "Continue";
 "Yes" = "Yes";
 "%d Times left" = "%d Times left";
+"Daily Mission Refreshed." = "Daily Mission Refreshed.";
 
 //Onboarding
 "How to use it?" = "How to use it?";
@@ -35,6 +35,7 @@
 "Or interact directly in our" = "Or interact directly in our";
 "Discord Community" = "Discord Community";
 "Get Started" = "Get Started";
+"By started you accept our" = "By started you accept our";
 
 //Settings
 "General" = "General";

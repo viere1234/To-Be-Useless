@@ -13,6 +13,8 @@ func getMission() {
     @AppStorage("MissionCounts") var missionCounts = 0
     @AppStorage("MissionCompletes") var missionCompletes = 0
     
+    let missionRep = MissionRepsitory()
+    
     var difficlutChose: [Int] = [],
         highMissionIndex: [Task] = [],
         mediumMissionIndex: [Task] = [],
@@ -37,17 +39,17 @@ func getMission() {
         switch difficluty {
         case 1: // low difficulty mission
             repeat {
-                tmpTask = LowMission.randomElement()!//Int.random(in: 0...LowMission.count-1)
+                tmpTask = missionRep.LowMission.randomElement()!//Int.random(in: 0...LowMission.count-1)
             } while ( lowMissionIndex.contains(tmpTask) || currentMissions.contains(tmpTask))
             lowMissionIndex.append(tmpTask)
         case 2: // medium difficulty mission
             repeat {
-                tmpTask = MediumMission.randomElement()!//Int.random(in: 0...MediumMission.count-1)
+                tmpTask = missionRep.MediumMission.randomElement()!//Int.random(in: 0...MediumMission.count-1)
             } while ( mediumMissionIndex.contains(tmpTask) || currentMissions.contains(tmpTask))
             mediumMissionIndex.append(tmpTask)
         default: //case 3: high diffculty mission
             repeat {
-                tmpTask = HighMission.randomElement()!//Int.random(in: 0...HighMission.count-1)
+                tmpTask = missionRep.HighMission.randomElement()!//Int.random(in: 0...HighMission.count-1)
             } while ( highMissionIndex.contains(tmpTask) || currentMissions.contains(tmpTask))
             highMissionIndex.append(tmpTask)
         }
