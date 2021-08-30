@@ -25,6 +25,7 @@ struct TaskListView: View {
     @State var textSize: Dictionary<String, CGSize> = [:]
     @State var size: CGSize = .zero
     @State var reload = false
+    @State var preSize: CGSize? = .zero
     @ObservedObject var taskListVM = TaskListViewModel()
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
     @ScaledMetric(relativeTo: .largeTitle) var navigationBarTitle: CGFloat = 20
@@ -83,6 +84,7 @@ struct TaskListView: View {
                                         GeometryReader { item in
                                             TaskCell(isFinishMission: $isFinishMission,
                                                      taskCellVM: taskCellVM,
+                                                     preSize: preSize,
                                                      width: mainView.size.width)
                                                 .scaleEffect(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY), anchor: .bottom)
                                                 .opacity(Double(scaleValue(mainFrame: mainView.frame(in: .global).minY, minY: item.frame(in: .global).minY)))
@@ -90,7 +92,7 @@ struct TaskListView: View {
                                                 .readIntrinsicContentSize(to: $textSize[taskCellVM.task.id])
                                                 .id(taskCellVM.task.id)
                                         }
-                                        .frame(height: (textSize[taskCellVM.task.id]?.height ?? CGFloat(0)) + 25)
+                                        .frame(height: (textSize[taskCellVM.task.id]?.height ?? CGFloat(0)) + (preSize?.height ?? CGFloat(0)) * 1.2)
                                     }
                                 }
                             }
@@ -113,6 +115,7 @@ struct TaskListView: View {
                                     .font(.title2)
                                 Text(LocalizedStringKey("Refresh Mission" + (self.getMissionTime > 0 ? "" : " (Used Up)")))
                                     .font(.system(Font.TextStyle.headline, design: .rounded))
+                                    .readIntrinsicContentSize(to: $preSize)
                             }
                         }
                         .alert(isPresented: $showAlert, content: {
@@ -301,6 +304,7 @@ struct TaskCell: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
     @State var size: CGSize? = .zero
     
+    let preSize: CGSize?
     let width: CGFloat
     let generrator = UINotificationFeedbackGenerator()
     var body: some View {
@@ -320,7 +324,7 @@ struct TaskCell: View {
                 
                 Spacer()
             }
-            .frame(width: (width * 0.9), height: (size!.height + 25))
+            .frame(width: (width * 0.9), height: (size!.height + preSize!.height * 1.2))
             .id(taskCellVM.task.id)
             .background(Color.white)
             .cornerRadius(15)

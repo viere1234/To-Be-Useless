@@ -37,17 +37,14 @@ struct SettingView: View {
             
             Form {
                 /*
-                if developerActivated {
-                    Section(header: Text("Developer")) {
-                        NavigationLink(destination: DeveloperView(), label: {
-                            Label(
-                                title: { Text("Developer Setting") },
-                                icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
-                            )
-                        })
-                    }
+                Section(header: Text("Developer")) {
+                    NavigationLink(destination: DeveloperView(), label: {
+                        Label(
+                            title: { Text("Developer Setting") },
+                            icon: { Image(systemName: "questionmark.diamond").foregroundColor(.red) }
+                        )
+                    })
                 }*/
-                
                 
                 Section (header: Text("General")) {
                     
