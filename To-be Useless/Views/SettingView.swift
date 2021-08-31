@@ -12,7 +12,7 @@ import UserNotifications
 
 struct SettingView: View {
     
-    let currentVersion = "1.0.0"
+    let currentVersion = "1.0.1"
     
     @Environment(\.scenePhase) var scenePhase
     @Environment(\.openURL) var openURL
