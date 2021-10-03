@@ -8,6 +8,7 @@
 import Foundation
 import Disk
 
+
 class BaseTaskRepository {
   @Published var tasks = [Task]()
 }
@@ -43,7 +44,7 @@ class LocalTaskRepository: BaseTaskRepository, TaskRepository, ObservableObject 
   }
   
   private func loadData() {
-    if let retrievedTasks = try? Disk.retrieve("tasks.json", from: .documents, as: [Task].self) { // (1)
+      if let retrievedTasks = try? Disk.retrieve("tasks.json", from: .documents, as: [Task].self) { // (1)
       self.tasks = retrievedTasks
     }
   }

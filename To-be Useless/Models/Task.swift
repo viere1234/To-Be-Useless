@@ -18,4 +18,5 @@ struct Task: Codable, Identifiable, Hashable {
     var title: String
     var difficulty: TaskDifficulty
     var completed: Bool
+    var link: String
 }

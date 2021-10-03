@@ -101,7 +101,7 @@ struct FirstView: View {
                                         Spacer()
                                             .frame(height: UIScreen.main.bounds.height / 13)
                                         
-                                        Text("If you don't know what to do next,\njust come back and get your\ndaily mssions!")
+                                        Text("If you don't know what to do next,\njust come back and get your\ndaily missions!")
                                             .font(.system(.title2, design: .rounded))
                                             .fontWeight(.bold)
                                             .padding([.bottom, .top])

@@ -9,39 +9,41 @@ import SwiftUI
 import UIKit
 import UserNotifications
 import SlideOverCard
+import Lottie
 
 
 struct TaskListView: View {
     //end
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-    @State var offset: CGFloat = 0
-    @State var presentAddNewItem = false
+    @State private var offset: CGFloat = 0
+    @State private var presentAddNewItem = false
     @State private var showAlert = false
-    @State var showMissionAlertSwicher = 0
-    @State var openTask = false
-    @State var isFinishMission = false
-    @State var missionSize: [CGSize] = [.zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero]
-    @State var textSize: Dictionary<String, CGSize> = [:]
-    @State var size: CGSize = .zero
-    @State var reload = false
-    @State var preSize: CGSize? = .zero
-    @ObservedObject var taskListVM = TaskListViewModel()
-    @ScaledMetric(relativeTo: .largeTitle) var navigationBarLargeTitle: CGFloat = 40
-    @ScaledMetric(relativeTo: .largeTitle) var navigationBarTitle: CGFloat = 20
-    @AppStorage("MissionStartTime") var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
-    @AppStorage("IsGetDalyMission") var isGetDalyMission = false
-    @AppStorage("GetMossionTime") var getMissionTime = 1
-    @AppStorage("LastDalyMissionYear") var lastDalyMissionYear = 0
-    @AppStorage("LastDalyMissionMonth") var lastDalyMissionMonth = 0
-    @AppStorage("LastDalyMissionDay") var lastDalyMissionDay = 0
-    @AppStorage("HapticActivated") var hapticActivated = true
-    @AppStorage("MissionCounts") var missionCounts = 1
-    @AppStorage("MissionCompletes") var missionCompletes = 0
+    @State private var showMissionAlertSwicher = 0
+    @State private var openTask = false
+    @State private var isFinishMission = false
+    @State private var missionSize: [CGSize] = [.zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero, .zero]
+    @State private var textSize: Dictionary<String, CGSize> = [:]
+    @State private var size: CGSize = .zero
+    @State private var reload = false
+    @State private var preSize: CGSize? = .zero
+    @ObservedObject private var taskListVM = TaskListViewModel()
+    @ScaledMetric(relativeTo: .largeTitle) private var navigationBarLargeTitle: CGFloat = 40
+    @ScaledMetric(relativeTo: .largeTitle) private var navigationBarTitle: CGFloat = 20
+    @AppStorage("MissionStartTime") private var missionStartTime = Calendar.current.nextDate(after: Date(), matching: .init(hour: 8), matchingPolicy: .strict)!
+    @AppStorage("IsGetDalyMission") private var isGetDalyMission = false
+    @AppStorage("GetMossionTime") private var getMissionTime = 1
+    @AppStorage("LastDalyMissionYear") private var lastDalyMissionYear = 0
+    @AppStorage("LastDalyMissionMonth") private var lastDalyMissionMonth = 0
+    @AppStorage("LastDalyMissionDay") private var lastDalyMissionDay = 0
+    @AppStorage("HapticActivated") private var hapticActivated = true
+    @AppStorage("MissionCounts") private var missionCounts = 1
+    @AppStorage("MissionCompletes") private var missionCompletes = 0
     //@AppStorage("DeveloperActivated") var developerActivated = false
-    @AppStorage("First") var first = true
+    @AppStorage("First") private var first = true
+    @AppStorage("StatusCheck") private var statusCheck = 0
     //@ObservedObject var model = Model()
-    let generrator = UINotificationFeedbackGenerator()
+    private let generrator = UINotificationFeedbackGenerator()
     
     init() {
         let design = UIFontDescriptor.SystemDesign.rounded
@@ -99,8 +101,49 @@ struct TaskListView: View {
                             .padding(.top, 10)
                         }
                         .zIndex(1)
-                        .navigationBarTitle(Text("Daily Missions"), displayMode: .automatic)
+                        .navigationBarTitle(Text("Daily Missions"), displayMode: .large)
                     }
+                    
+                    if true {
+                        NavigationLink(
+                            destination: TaskListView10_10(preSize: preSize!.height),
+                            label: {
+                                HStack {
+                                    Image(systemName: "staroflife.circle.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .foregroundColor(Color("UIColor10_10"))
+                                        .frame(width: UIScreen.main.bounds.width / 13)
+                                        .padding(.leading)
+                                        
+                                    
+                                    VStack(alignment: .leading, spacing: 7) {
+                                        Text("Special Event:\nWorld Mental Health Day")
+                                            .font(.system(.body, design: .rounded))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                        Text("Every October 10th is World Mental Health Day for global mental health education.")
+                                            .font(.system(.body, design: .rounded))
+                                            .foregroundColor(Color.black)
+                                            .multilineTextAlignment(.leading)
+                                        
+                                        Text("Event end on October 15th")
+                                            .font(.subheadline)
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color("UIColor10_10"))
+                                    }
+                                    .padding()
+                                }
+                                .frame(width: UIScreen.main.bounds.width * 0.9)
+                                .background(Color.white)
+                                .cornerRadius(20)
+                                .shadow(color: Color.gray.opacity(0.5), radius: 4)
+                        })
+                            .padding([.bottom])
+                    }
+                    
                     
                     HStack {
                         Button(action: {
@@ -158,7 +201,7 @@ struct TaskListView: View {
                         Spacer()
                     }
                     
-                    ProgressView(percent: percent(complete: (openTask ? missionCompletes : 0), count: missionCounts))
+                    ProgressView(percent: percent(complete: (openTask ? missionCompletes : 0), count: missionCounts), color: "ProgressBar")
                         .padding([.bottom, .leading, .trailing], 16)
                 }
                 .onReceive(self.timer, perform: { time in
@@ -228,6 +271,10 @@ struct TaskListView: View {
                   }
                 }
                 .onAppear(perform: {
+                    if statusCheck != 1 {
+                        getMission()
+                        statusCheck = 1
+                    }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
                         withAnimation() {
                             openTask = true
@@ -329,9 +376,6 @@ struct TaskCell: View {
             .background(Color.white)
             .cornerRadius(15)
             .onTapGesture {
-                DispatchQueue.main.async {
-                    self.taskCellVM.task.completed.toggle()
-                }
                 if hapticActivated {
                     if !taskCellVM.task.completed {
                         generrator.notificationOccurred(.success)
@@ -354,6 +398,8 @@ struct TaskCell: View {
                         }
                     }
                 }
+                
+                self.taskCellVM.task.completed.toggle()
             }
             
             Spacer()
@@ -382,6 +428,7 @@ extension UIFont {
 struct ProgressView: View {
     
     var percent: CGFloat
+    let color: String
     
     var body: some View {
         
@@ -391,7 +438,7 @@ struct ProgressView: View {
                 .frame(height: 8)
             
             Capsule()
-                .fill(Color("ProgressBar"))
+                .fill(Color(self.color))
                 .frame(width: self.callPercent(), height: 8)
         }
     }
