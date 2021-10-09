@@ -112,7 +112,7 @@ struct TaskListView10_10: View {
                 GeometryReader { mainView in
                     ScrollView {
                         VStack(spacing: 15) {
-                            if !reload {
+                            if !specialFirst {
                                 ForEach(specialTaskDifficultyList.indices, id: \.self) { i in//for i in 0...specialMissionCounts-1
                                     switch ((specialMissionCounts != 0 ? specialTaskDifficultyList[i] : 0)) {
                                     case 1:
@@ -189,11 +189,11 @@ struct TaskListView10_10: View {
                     LottieView(name: "23222-checkmark", loopMode: .playOnce)
                         .frame(width: 100, height: 100, alignment: .center)
                         
-                    Text("Pick up more Missions tomorrow")
+                    Text("Thanks for your praticipation")
                         .font(.headline)
                         .fontWeight(.light)
                     
-                    Text("Let's work hard together !")
+                    Text("See you next year!")
                         .font(.headline)
                         .fontWeight(.light)
                         .foregroundColor(.gray)
@@ -284,39 +284,6 @@ struct TaskCell_10_10: View {
                     .foregroundColor(.black)
                 
                 Spacer()
-                
-                
-                Button(action: {
-                    self.openLink = true
-                }, label: {
-                    HStack(alignment: .center) {
-                        Image(systemName: "link")
-                            .resizable()
-                            .frame(width: 15, height: 15)
-                            .foregroundColor(Color.white)
-                        
-                        Text("Link")
-                            .foregroundColor(Color.white)
-                            .font(.caption)
-                    }
-                    .frame(height: 25)
-                    .padding(.horizontal)
-                    .background(Color.blue)
-                    .cornerRadius(20)
-                })
-                    .padding(.trailing)
-                .safariView(isPresented: $openLink) {
-                    SafariView(
-                        url: URL(string: taskCellVM.link)!,
-                        configuration: SafariView.Configuration(
-                            entersReaderIfAvailable: false,
-                            barCollapsingEnabled: true
-                        )
-                    )
-                    .preferredBarAccentColor(.white)
-                    .preferredControlAccentColor(.accentColor)
-                    .dismissButtonStyle(.done)
-                }
             }
             .frame(width: (width * 0.9), height: (size!.height + preSize * 1.2))//
             .id(taskCellVM.id)
@@ -338,6 +305,25 @@ struct TaskCell_10_10: View {
                         }
                     } else {
                         generrator.notificationOccurred(.warning)
+                        withAnimation() {
+                            if specialMissionCompletes > 0 {
+                                specialMissionCompletes-=1
+                            }
+                        }
+                    }
+                } else {
+                    if !self.specialTaskFinishList[index] {
+                        withAnimation() {
+                            if specialMissionCompletes != specialMissionCounts {
+                                specialMissionCompletes+=1
+                                if specialMissionCompletes == specialMissionCounts {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                                        self.isFinishMission = true
+                                    }
+                                }
+                            }
+                        }
+                    } else {
                         withAnimation() {
                             if specialMissionCompletes > 0 {
                                 specialMissionCompletes-=1

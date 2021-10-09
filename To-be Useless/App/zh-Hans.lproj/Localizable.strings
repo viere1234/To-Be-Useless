@@ -1,0 +1,133 @@
+/* 
+  Localizable.strings
+  To-be Useless
+
+  Created by 張智堯 on 2021/7/26.
+  
+*/
+
+
+//Apps
+"Daily Missions" = "Daily Missions";
+"To-Be Useless" = "To-Be Useless";
+"Refresh Mission (Used Up)" = "Refresh Mission (Used Up)";
+"Refresh Mission" = "Refresh Mission";
+"Run out of times" = "Run out of times";
+"Are you sure?" = "Are you sure?";
+"Daliy Missions have been completed" = "Daliy Missions have been completed";
+"Pick up more Missions tomorrow" = "Pick up more Missions tomorrow";
+"Let's work hard together !" = "Let's work hard together !";
+"Continue" = "Continue";
+"Yes" = "Yes";
+"%d Times left" = "%d Times left";
+"Daily Mission Refreshed." = "Daily Mission Refreshed.";
+
+//Onboarding
+"How to use it?" = "How to use it?";
+"Refresh Mission" = "Refresh Mission";
+"Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day)." = "Every day we will provide you with up to 6 missions, and you can refresh it by the button (once per day).";
+"Daily Mission Time" = "Daily Mission Time";
+"We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings." = "We will refresh your missions every day, and you can change the refresh time at \"Daily Mission Time\" in Settings.";
+"Contribute your mission" = "Contribute your mission";
+"If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form." = "If you want to add any mission to this app, you can go to \"Mission Proposal\" in Settings and fill in the form.";
+"If you don't know what to do next,\njust come back and get your\ndaily missions!" = "If you don't know what to do next,\njust come back and get your\ndaily missions!";
+"For more information,\nplease visit \"Information Center\"\nin \"Settings\"." = "For more information,\nplease visit \"Information Center\"\nin \"Settings\".";
+"Or interact directly in our" = "Or interact directly in our";
+"Discord Community" = "Discord Community";
+"Get Started" = "Get Started";
+"By started you accept our" = "By started you accept our";
+
+//Settings
+"General" = "General";
+"Daly Mission Time" = "Daly Mission Time";
+"Information Center" = "Information Center";
+"Sent Feedback" = "Sent Feedback";
+"Rate This App" = "Rate This App";
+"Share With Friends" = "Share With Friends";
+"About Us" = "About Us";
+"Haptic Touch" = "Haptic Touch";
+"Start Menu" = "Start Menu";
+"Mission Proposal" = "Mission Proposal";
+"Notification" = "Notification";
+
+//About
+"Developer & Designer :" = "Developer & Designer :";
+"Brian Chang" = "Brian Chang";
+"Designer & Marketing :" = "Designer & Marketing :";
+"Fu-Syuan Wang" = "Fu-Syuan Wang";
+"Social Networks" = "Social Networks";
+"Interact directly with us!" = "Interact directly with us!";
+"Privacy Policy" = "Privacy Policy";
+
+//Mission
+"Meditate for 3 minutes" = "Meditate for 3 minutes";
+"Look out the window for three minutes" = "Look out the window for three minutes";
+"Focus on breathing for 30 seconds" = "Focus on breathing for 30 seconds";
+"Drink a glass of water" = "Drink a glass of water";
+"Eat a pack of snack" = "Eat a pack of snack";
+"Turn your head left and right 10 times" = "Turn your head left and right 10 times";
+"Open your mouth 50 times" = "Open your mouth 50 times";
+"Look at the distant scenery" = "Look at the distant scenery";
+"Do nothing for five minutes\n(including using electronic devices)" = "Do nothing for five minutes\n(including using electronic devices)";
+"Take a deep breath" = "Take a deep breath";
+"Brush your teeth with your non-dominant hand" = "Brush your teeth with your non-dominant hand";
+"Write a sentence (anywhere)" = "Write a sentence (anywhere)";
+"Listen to a music that you have never heard before" = "Listen to a music that you have never heard before";
+"Take a nap" = "Take a nap";
+"Take a picture" = "Take a picture";
+"Smile to the mirror for 3 seconds" = "Smile to the mirror for 3 seconds";
+"Close your eyes and rest for 3 minutes" = "Close your eyes and rest for 3 minutes";
+"Send a message to a person and ask him/her\n\"How's your day\"" = "Send a message to a person and ask him/her\n\"How's your day\"";
+"Draw whatever you see today\n(anywhere)" = "Draw whatever you see today\n(anywhere)";
+"Lie on the bed for 5 minutes" = "Lie on the bed for 5 minutes";
+"Drink a cup of hot water" = "Drink a cup of hot water";
+"Set an alarm clock earlier than usual" = "Set an alarm clock earlier than usual";
+"Tidy up your desk" = "Tidy up your desk"; // 2021/8/18
+"Send a message to your friend" = "Send a message to your friend";
+"Eat a meal" = "Eat a meal";
+"Make a dish" = "Make a dish";
+"Compliment someone" = "Compliment someone";
+"Play a game" = "Play a game";
+"Make a face to your friends or a mirror" = "Make a face to your family or a mirror";
+"Look at yourself in the mirror for 1 minute" = "Look at yourself in the mirror for 1 minute";
+"Find a joke" = "Find a joke";
+"Push up 10 times" = "Push up 10 times";
+"Eat some fruit" = "Eat some fruit";
+"Touch the wall and feel the texture" = "Touch the wall and feel the texture"; //-----------
+"Write a diary" = "Write a diary";
+"Listen to a song" = "Listen to a song";
+"Read a news article" = "Read a news article";
+"Stand against the wall for 10 minutes" = "Stand against the wall for 10 minutes";
+"Listen to an episode of the podcast" = "Listen to an episode of the Podcast"; //2021/8/28
+
+//Special Event 10-10
+"Write a sentence to the person who has been sexually assaulted." = "给受到性侵害的女性写一句话";
+"Write down: What kind of behavior is sexual harassment? And how to tell?" = "写出：什么样的行为属于性骚扰？以及如何辨别？";
+"Read your country’s laws on women’s rights and interpret one of them." = "阅读您所在的国家有关妇女权益的法律，并对其中一条进行解读";
+"Relevant protective measures when searching online and encountering sexual assault." = "上网搜寻遇到性侵时的相关防护措施";
+"Write down the basic self-defense skills you think you should learn." = "写一写你认为应该学会的基本防身技能";
+"Write down: What to do if you encounter sexual harassment." = "写出：如果遭遇性骚扰应该如何去应对";
+"Use a piece of card to write down your views on female protection." = "用一张小卡片写下你对于女性保护的看法";
+"Write a card to the left-behind girls to teach them how to be inviolable." = "写一个卡片送给留守女童教她们如何不受侵犯";
+"Understand the definition of \"victim guilt\"." = "了解\"受害者有罪论\"的定义";
+"Learn about the incidents of female Alibaba employees." = "了解阿里巴巴女员工的事件";
+"List three common accusations (such as travel time, clothing, rights protection purpose, etc.) that the general public has against victims and find out the reasons for the rebuttal." = "列出三点大众普遍对受害者的指责（如出行时间、服装、维权目的等）并找出反驳的原因";
+"Learn about the several waves of feminism in your country and document them." = "了解您的国家有关女权主义的几次浪潮并记录";
+"Write down what you would do if you encounter sexual harassment. (Write down some examples)" = "写下如果遇到性骚扰，你会怎么办(例举几项措施)";
+"Tell a story about a case you have ever heard of harming women’s rights." = "讲述一件你曾经听说过损害妇女权益的案例";
+"Understand the several legal amendments on \"sexual assault\" in history, and think about the reasons and meanings." = "了解历史上关于\"性侵\"的几次法律修改，并思考原因意义";
+"Write down what you think about the release of the murderer of the South Korean \"Sowon\" case. Do you think it should be released and why?" = "写一写你怎么看待 — 韩国“素媛”案件的凶手被释放这件事，你认为是否应该被释放，为什么？";
+"Pick a country, search for people’s general views on women’s sexual assault and record." = "挑选一个国家，搜索该国家的人民普遍对女性遭受性侵的看法并记录";
+"Interview a man and a woman around you, ask them to talk about their views on the \"criminal theory of victims\" of sexual assault and record them." = "采访你身边的一男一女，请他们说说对于性侵犯“受害者有罪论”的看法并记录";
+"Learn about a specific example of a sexual assault victim who suffered online violence." = "了解一个性侵犯受害者遭受网络暴力的具体事例";
+"Write down three or two points that are more controversial in the \"Alibaba Female Employee Incident\"." = "写下三到两个在\"阿里巴巴女员工事件\"中发现比较有争议的点";
+"Understand the whole process of Wu Yifan incident and draw a timeline." = "了解吴亦凡事件的全过程并画时间线";
+"Understand the whole process of South Korea's \"Suwon\" case, and write down several measures that can help victims and their families. (It can be suggestions or comfort)" = "了解韩国“素媛”案全过程，写出可以帮助受害者以及家属的几种措施（可以是建议或安慰的话）";
+"Watch the movie \"Silenced\" and list three sinister scenes in the movie." = "观看电影《熔炉》，并且列出电影中三个反应人心险恶的场景";
+"Understand the Tang Lanlan incident, write down your feelings about the reasons why this incident occurred, and your views on the doubts in this incident." = "了解汤兰兰事件，写下感受你觉得会发生这种事件的原因，对于这个事件的疑点的看法";
+"Shoot a video clip to promote the protection of women's rights." = "拍摄一个小视频宣传女性的权益保护";
+"Shooting a small video against sexual assault to raise public awareness." = "拍摄一个反性侵害小视频提高公众意识";
+"Draw a small poster or handwritten newspaper with the theme of \"Caring for Sexual Assault on Women\"." = "以\"关爱性侵女性\"为主题，画一张小海报或手抄报";
+"Write down your views on the Korean court’s final trial in the case of \"Sowon\" or the practice of the family of the main culprit \"Jo Doo-soon\" in the case." = "写下你对韩国法院针对\"素媛\"案件最终审判的看法或是对案中主犯“赵斗淳”家属做法的看法";
+"Analyze the psychology of many people in support of \"the guilt of the victim\" and the impact of this view on society and the victim." = "分析很多大众支持“被害者有罪论”的心理以及此观点对于社会和被施害者的影响";
+"Make a poster. The content is as follows:\n1: To avoid sexual assault, what we can do, please write three specific items.\n2: Effective vocalization methods after being sexually assaulted." = "制作一张海报，内容如下：1）避免性侵的发生，我们可以做什么，请具体写三条。2）被性侵后有效的发声办法";

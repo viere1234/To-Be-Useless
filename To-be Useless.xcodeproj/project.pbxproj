@@ -61,6 +61,7 @@
 		D32B0BED26AC479300F18502 /* MissionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionRepository.swift; sourceTree = "<group>"; };
 		D339840E26C90F6400D70D17 /* lf30_editor_rrt6z0zt.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lf30_editor_rrt6z0zt.json; sourceTree = "<group>"; };
 		D340B1C526B5239A0024E13C /* 23222-checkmark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "23222-checkmark.json"; sourceTree = "<group>"; };
+		D341F9E42711CE690098D07F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D356FD2826AFDECA002998FD /* DataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataView.swift; sourceTree = "<group>"; };
 		D357594B26CF7BF600E8F6D4 /* NotificationFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationFunc.swift; sourceTree = "<group>"; };
 		D36569EA26D65D740096A0CD /* MissionFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionFunc.swift; sourceTree = "<group>"; };
@@ -340,6 +341,7 @@
 				en,
 				Base,
 				"zh-Hant",
+				"zh-Hans",
 			);
 			mainGroup = D30D606226A4FD0C00A5F83C;
 			packageReferences = (
@@ -417,6 +419,7 @@
 			children = (
 				D3B051E826AE5C82009BCBF4 /* en */,
 				D3B051EA26AE5C87009BCBF4 /* zh-Hant */,
+				D341F9E42711CE690098D07F /* zh-Hans */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

@@ -104,7 +104,15 @@ struct TaskListView: View {
                         .navigationBarTitle(Text("Daily Missions"), displayMode: .large)
                     }
                     
-                    if true {
+                    /*
+                     let currentMonth = Calendar.current.dateComponents([.month], from: Date()).month ?? 0,
+                         currentDay = Calendar.current.dateComponents([.day], from: Date()).day ?? 0
+                     
+                     */
+                    
+                    if ((Calendar.current.dateComponents([.month], from: Date()).month ?? 0) == 10 &&
+                        (Calendar.current.dateComponents([.day], from: Date()).day ?? 0) >= 5 &&
+                        (Calendar.current.dateComponents([.day], from: Date()).day ?? 0) <= 15) {
                         NavigationLink(
                             destination: TaskListView10_10(preSize: preSize!.height),
                             label: {
@@ -391,6 +399,25 @@ struct TaskCell: View {
                         }
                     } else {
                         generrator.notificationOccurred(.warning)
+                        withAnimation() {
+                            if missionCompletes > 0 {
+                                missionCompletes-=1
+                            }
+                        }
+                    }
+                } else {
+                    if !taskCellVM.task.completed {
+                        withAnimation() {
+                            if missionCompletes != missionCounts {
+                                missionCompletes+=1
+                                if missionCompletes == missionCounts {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+                                        self.isFinishMission = true
+                                    }
+                                }
+                            }
+                        }
+                    } else {
                         withAnimation() {
                             if missionCompletes > 0 {
                                 missionCompletes-=1
