@@ -86,7 +86,7 @@ struct TaskListView10_10: View {
                             .padding(.bottom, 3)
                         
                         HStack {
-                            Text("The COVID-19 pandemic has had a major impact on people’s mental health.")
+                            Text("Complete the following missions and follow the issue of sexual harassment with the student club\"HER\"")
                                 .font(.system(.subheadline, design: .rounded))
                             
                                 .fontWeight(.regular)
@@ -189,7 +189,7 @@ struct TaskListView10_10: View {
                     LottieView(name: "23222-checkmark", loopMode: .playOnce)
                         .frame(width: 100, height: 100, alignment: .center)
                         
-                    Text("Thanks for your praticipation")
+                    Text("Thanks for your participation")
                         .font(.headline)
                         .fontWeight(.light)
                     

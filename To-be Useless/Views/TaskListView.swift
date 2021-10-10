@@ -275,6 +275,7 @@ struct TaskListView: View {
                           destination: SettingView(),
                           label: {
                               Image(systemName: "gearshape.fill")
+                                  .foregroundColor(Color.orange)
                       })
                   }
                 }
