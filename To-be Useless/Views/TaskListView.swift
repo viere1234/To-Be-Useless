@@ -112,7 +112,7 @@ struct TaskListView: View {
                     
                     if ((Calendar.current.dateComponents([.month], from: Date()).month ?? 0) == 10 &&
                         (Calendar.current.dateComponents([.day], from: Date()).day ?? 0) >= 5 &&
-                        (Calendar.current.dateComponents([.day], from: Date()).day ?? 0) <= 15) {
+                        (Calendar.current.dateComponents([.day], from: Date()).day ?? 0) <= 30) {
                         NavigationLink(
                             destination: TaskListView10_10(preSize: preSize!.height),
                             label: {
@@ -137,7 +137,7 @@ struct TaskListView: View {
                                             .foregroundColor(Color.black)
                                             .multilineTextAlignment(.leading)
                                         
-                                        Text("Event end on October 15th")
+                                        Text("Event end on October 30th")
                                             .font(.subheadline)
                                             .fontWeight(.bold)
                                             .foregroundColor(Color("UIColor10_10"))
