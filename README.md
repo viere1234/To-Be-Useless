@@ -4,4 +4,4 @@
 
 A To-do app that provide useless to do.
 
-AppStore(Global): https://apps.apple.com/tw/app/to-be-useless-take-a-break/id1577163391?l=en
+AppStore(Global): https://apps.apple.com/tw/app/to-be-useless-take-a-break/id1577163391
